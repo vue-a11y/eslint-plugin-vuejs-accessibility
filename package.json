@@ -4,9 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
-  "keywords": [],
   "author": "Kevin Deisz",
   "license": "MIT",
   "peerDependencies": {
@@ -16,6 +15,12 @@
     "vue-eslint-parser": "^7.0.0"
   },
   "devDependencies": {
-    "eslint": "^6.8.0"
+    "eslint": "^6.8.0",
+    "jest": "^25.4.0"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ]
   }
 }
