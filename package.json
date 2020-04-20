@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-vue-accessibility",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "An eslint plugin for checking Vue.js files for accessibility",
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint --cache .",
