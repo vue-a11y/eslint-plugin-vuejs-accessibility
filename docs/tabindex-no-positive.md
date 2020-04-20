@@ -1,6 +1,6 @@
 # tabindex-no-positive
 
-Avoid positive tabIndex property values to synchronize the flow of the page with keyboard tab order.
+Avoid positive tabindex property values to synchronize the flow of the page with keyboard tab order.
 
 [AX_FOCUS_03](https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_focus_03)
 
