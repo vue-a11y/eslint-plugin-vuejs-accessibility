@@ -8,5 +8,14 @@
   },
   "keywords": [],
   "author": "Kevin Deisz",
-  "license": "MIT"
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": "^5.0.0 || ^6.0.0"
+  },
+  "dependencies": {
+    "vue-eslint-parser": "^7.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
 }
