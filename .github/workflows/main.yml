@@ -1,0 +1,25 @@
+name: Main
+on: push
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 11.x
+      - id: yarn-cache
+        run: echo "::set-output name=directory::$(yarn cache dir)"
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache.outputs.directory }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn install --frozen-lockfile
+      - run: yarn prettier --check '**/*'
+      - run: yarn lint
+      - run: yarn test

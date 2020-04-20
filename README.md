@@ -1,5 +1,7 @@
 # eslint-plugin-vue-accessibility
 
+[![Build Status](https://github.com/kddeisz/eslint-plugin-vue-accessibility/workflows/Main/badge.svg)](https://github.com/kddeisz/eslint-plugin-vue-accessibility/actions)
+
 An `eslint` plugin for checking accessibility rules from within `.vue` files.
 
 ## Usage

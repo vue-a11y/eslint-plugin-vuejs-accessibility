@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "lint": "eslint --cache .",
     "test": "jest"
   },
   "author": "Kevin Deisz",
@@ -20,6 +21,19 @@
     "jest": "^25.4.0",
     "prettier": "^2.0.4",
     "pretty-quick": "^2.0.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2015
+    }
   },
   "husky": {
     "hooks": {
