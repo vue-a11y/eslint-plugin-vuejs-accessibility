@@ -9,9 +9,7 @@ module.exports = {
       experimentalObjectRestSpread: true
     }
   },
-  plugins: [
-    "vue-accessibility"
-  ],
+  plugins: ["vue-accessibility"],
   env: {
     browser: true,
     es6: true

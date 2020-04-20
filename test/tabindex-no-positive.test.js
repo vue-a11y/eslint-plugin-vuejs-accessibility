@@ -17,19 +17,19 @@ tester.run("tabindex-no-positive", rule, {
   valid: [
     {
       filename: "test.vue",
-      code: "<template><span tabindex='0'></span></template>",
+      code: "<template><span tabindex='0'></span></template>"
     },
     {
       filename: "test.vue",
-      code: "<template><span v-if='true' tabindex='0'></span></template>",
+      code: "<template><span v-if='true' tabindex='0'></span></template>"
     },
     {
       filename: "test.vue",
-      code: "<template><span tabindex='-1'></span></template>",
+      code: "<template><span tabindex='-1'></span></template>"
     },
     {
       filename: "test.vue",
-      code: "<template><span :tabindex='number'></span></template>",
+      code: "<template><span :tabindex='number'></span></template>"
     }
   ],
   invalid: [
@@ -48,5 +48,5 @@ tester.run("tabindex-no-positive", rule, {
       code: "<template><span :tabindex='2'></span></template>",
       errors: [{ message }]
     }
-   ]
+  ]
 });

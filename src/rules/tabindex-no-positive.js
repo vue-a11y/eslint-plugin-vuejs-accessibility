@@ -1,22 +1,29 @@
 const { defineTemplateBodyVisitor } = require("../utils");
 
-const isPlainLiteral = (attribute) => !attribute.directive && attribute.value;
-const isBoundLiteral = (attribute) => (
-  attribute.directive &&
-    attribute.key.name.name === "bind" &&
-    attribute.value &&
-    attribute.value.expression &&
-    attribute.value.expression.type === "Literal"
-);
+const makeMeta = (name) => ({
+  docs: {
+    url: `https://github.com/kddeisz/eslint-plugin-vue-accessibility/blob/master/docs/${name}.md`
+  }
+});
 
-const getTabIndex = (node) => {
+const isPlainLiteral = (attribute) => !attribute.directive && attribute.value;
+const isBoundLiteral = (attribute) =>
+  attribute.directive &&
+  attribute.key.name.name === "bind" &&
+  attribute.value &&
+  attribute.value.expression &&
+  attribute.value.expression.type === "Literal";
+
+const getAttributeLiteral = (node, name) => {
   for (const attribute of node.startTag.attributes) {
-    if (isPlainLiteral(attribute) && attribute.key.name === "tabindex") {
-      return attribute.value.value;
+    const { key, value } = attribute;
+
+    if (isPlainLiteral(attribute) && key.name === name) {
+      return value.value;
     }
 
-    if (isBoundLiteral(attribute) && attribute.key.argument.name === "tabindex") {
-      return attribute.value.expression.value;
+    if (isBoundLiteral(attribute) && key.argument.name === name) {
+      return value.expression.value;
     }
   }
 
@@ -24,23 +31,18 @@ const getTabIndex = (node) => {
 };
 
 module.exports = {
-  meta: {
-    docs: {
-      url: "https://github.com/kddeisz/eslint-plugin-vue-accessibility/blob/master/docs/tabindex-no-positive.md"
-    }
-  },
+  meta: makeMeta("tabindex-no-positive"),
   create(context) {
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
-        const tabIndex = getTabIndex(node);
-        if (+tabIndex <= 0) {
-          return;
-        }
+        const tabIndex = getAttributeLiteral(node, "tabindex");
 
-        context.report({
-          node,
-          message: "Avoid positive integer values for tabIndex.",
-        });
+        if (tabIndex && +tabIndex > 0) {
+          context.report({
+            node,
+            message: "Avoid positive integer values for tabindex."
+          });
+        }
       }
     });
   }
