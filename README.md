@@ -36,27 +36,27 @@ You can also enable all the recommended rules at once. Add `plugin:vue-accessibi
 
 I'm currently working on getting parity between this project and `eslint-plugin-vue-a11y`. These are the rules I currently plan to support:
 
-[ ] accessible-emoji
-[ ] alt-text
-[ ] anchor-has-content
-[ ] aria-props
-[ ] aria-role
-[ ] aria-unsupported-elements
-[ ] click-events-have-key-events
-[ ] form-has-label
-[ ] heading-has-content
-[ ] iframe-has-title
-[ ] interactive-supports-focus
-[ ] label-has-for
-[ ] media-has-caption
-[ ] mouse-events-have-key-events
-[ ] no-access-key
-[ ] no-autofocus
-[ ] no-distracting-elements
-[ ] no-onchange
-[ ] no-redundant-roles
-[ ] role-has-required-aria-props
-[x] tabindex-no-positive
+- [ ] accessible-emoji
+- [ ] alt-text
+- [ ] anchor-has-content
+- [ ] aria-props
+- [ ] aria-role
+- [ ] aria-unsupported-elements
+- [ ] click-events-have-key-events
+- [ ] form-has-label
+- [ ] heading-has-content
+- [ ] iframe-has-title
+- [ ] interactive-supports-focus
+- [ ] label-has-for
+- [ ] media-has-caption
+- [ ] mouse-events-have-key-events
+- [ ] no-access-key
+- [ ] no-autofocus
+- [ ] no-distracting-elements
+- [ ] no-onchange
+- [ ] no-redundant-roles
+- [ ] role-has-required-aria-props
+- [x] tabindex-no-positive
 
 ## Development
 
