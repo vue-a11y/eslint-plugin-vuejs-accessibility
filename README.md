@@ -45,7 +45,7 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 - [ ] click-events-have-key-events
 - [ ] form-has-label
 - [ ] heading-has-content
-- [ ] iframe-has-title
+- [x] iframe-has-title
 - [ ] interactive-supports-focus
 - [ ] label-has-for
 - [ ] media-has-caption
