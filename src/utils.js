@@ -1,6 +1,6 @@
 // Taken directly from eslint-plugin-vue
 const defineTemplateBodyVisitor = (context, templateVisitor, scriptVisitor) => {
-  if (context.parserServices.defineTemplateBodyVisitor == null) {
+  if (context.parserServices.defineTemplateBodyVisitor === null) {
     context.report({
       loc: { line: 1, column: 0 },
       message:
@@ -21,10 +21,9 @@ const isBoundValue = (attribute) =>
   attribute.directive &&
   attribute.key.name.name === "bind" &&
   attribute.value &&
-  attribute.value.expression &&
-  attribute.value.expression.type === "Literal";
+  attribute.value.expression;
 
-const getAttributeValue = (node, name) => {
+const getLiteralAttributeValue = (node, name) => {
   for (const attribute of node.startTag.attributes) {
     const { key, value } = attribute;
 
@@ -32,7 +31,11 @@ const getAttributeValue = (node, name) => {
       return value.value;
     }
 
-    if (isBoundValue(attribute) && key.argument.name === name) {
+    if (
+      isBoundValue(attribute) &&
+      value.expression.type === "Literal" &&
+      key.argument.name === name
+    ) {
       return value.expression.value;
     }
   }
@@ -40,11 +43,21 @@ const getAttributeValue = (node, name) => {
   return null;
 };
 
+const isAttributeWithValue = (node, name) => {
+  const { key } = node;
+
+  return (
+    (isPlainValue(node) && key.name === name) ||
+    (isBoundValue(node) && key.argument.name === name)
+  );
+};
+
 const makeDocsURL = (name) =>
   `https://github.com/kddeisz/eslint-plugin-vue-accessibility/blob/master/docs/${name}.md"`;
 
 module.exports = {
   defineTemplateBodyVisitor,
-  getAttributeValue,
+  getLiteralAttributeValue,
+  isAttributeWithValue,
   makeDocsURL
 };

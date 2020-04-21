@@ -1,6 +1,6 @@
 const {
   defineTemplateBodyVisitor,
-  getAttributeValue,
+  getLiteralAttributeValue,
   makeDocsURL
 } = require("../utils");
 
@@ -13,7 +13,7 @@ module.exports = {
   create(context) {
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
-        const tabIndex = getAttributeValue(node, "tabindex");
+        const tabIndex = getLiteralAttributeValue(node, "tabindex");
 
         if (tabIndex && +tabIndex > 0) {
           context.report({

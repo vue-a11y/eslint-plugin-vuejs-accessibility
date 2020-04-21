@@ -1,6 +1,6 @@
 const {
   defineTemplateBodyVisitor,
-  getAttributeValue,
+  getLiteralAttributeValue,
   makeDocsURL
 } = require("../utils");
 
@@ -29,7 +29,8 @@ module.exports = {
       VElement(node) {
         const config = context.options[0] || {};
         const elementTypes = config.elements || defaultElements;
-        const elementType = getAttributeValue(node, "is") || node.rawName;
+        const elementType =
+          getLiteralAttributeValue(node, "is") || node.rawName;
 
         if (elementTypes.includes(elementType)) {
           context.report({

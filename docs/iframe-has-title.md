@@ -13,8 +13,7 @@ This rule takes no arguments.
 ### Succeed
 
 ```vue
-<iframe title="This is a unique title" />
-<iframe :title="uniqueTitle" />
+<iframe title="This is a unique title" /> <iframe :title="uniqueTitle" />
 ```
 
 ### Fail

@@ -50,7 +50,7 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 - [ ] label-has-for
 - [ ] media-has-caption
 - [ ] mouse-events-have-key-events
-- [ ] no-access-key
+- [x] no-access-key
 - [ ] no-autofocus
 - [x] no-distracting-elements
 - [ ] no-onchange
