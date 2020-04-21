@@ -43,6 +43,18 @@ const getLiteralAttributeValue = (node, name) => {
   return null;
 };
 
+const getElementType = (node) =>
+  getLiteralAttributeValue(node, "is") || node.rawName;
+
+const isAttribute = (node, name) => {
+  const { key } = node;
+
+  return (
+    (!node.directive && key.name === name) ||
+    (node.directive && key.name.name === "bind" && key.argument.name === name)
+  );
+};
+
 const isAttributeWithValue = (node, name) => {
   const { key } = node;
 
@@ -57,7 +69,9 @@ const makeDocsURL = (name) =>
 
 module.exports = {
   defineTemplateBodyVisitor,
+  getElementType,
   getLiteralAttributeValue,
+  isAttribute,
   isAttributeWithValue,
   makeDocsURL
 };

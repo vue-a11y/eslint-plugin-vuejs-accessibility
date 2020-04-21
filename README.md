@@ -51,7 +51,7 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 - [ ] media-has-caption
 - [ ] mouse-events-have-key-events
 - [x] no-access-key
-- [ ] no-autofocus
+- [x] no-autofocus
 - [x] no-distracting-elements
 - [ ] no-onchange
 - [ ] no-redundant-roles

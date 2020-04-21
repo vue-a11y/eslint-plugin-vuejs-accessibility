@@ -1,6 +1,6 @@
 const {
   defineTemplateBodyVisitor,
-  getLiteralAttributeValue,
+  getElementType,
   makeDocsURL
 } = require("../utils");
 
@@ -27,13 +27,10 @@ module.exports = {
   create(context) {
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
-        const options = context.options[0] || {};
+        const { elements = defaultElements } = context.options[0] || {};
+        const elementType = getElementType(node);
 
-        const elementTypes = options.elements || defaultElements;
-        const elementType =
-          getLiteralAttributeValue(node, "is") || node.rawName;
-
-        if (elementTypes.includes(elementType)) {
+        if (elements.includes(elementType)) {
           context.report({
             node,
             message: `Do not use <${elementType}> elements as they can create visual accessibility issues and are deprecated.`
