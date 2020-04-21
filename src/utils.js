@@ -65,7 +65,7 @@ const isAttributeWithValue = (node, name) => {
 };
 
 const makeDocsURL = (name) =>
-  `https://github.com/kddeisz/eslint-plugin-vue-accessibility/blob/master/docs/${name}.md"`;
+  `https://github.com/kddeisz/eslint-plugin-vue-accessibility/blob/master/docs/rules/${name}.md"`;
 
 module.exports = {
   defineTemplateBodyVisitor,
