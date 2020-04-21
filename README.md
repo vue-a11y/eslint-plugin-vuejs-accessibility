@@ -62,6 +62,15 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 
 Ensure you have `node` and `yarn` installed on your system. Then run `yarn` in the root of the repository to install the dependencies.
 
+### Adding a new rule
+
+To add a new rule, you need to take the following steps:
+
+- Add the configuration and require to `src/index.js`.
+- Add the rule itself into `src/rules`.
+- Add the corresponding test in `src/rules/__tests__`.
+- Add the corresponding documentation in `docs/rules`.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/kddeisz/eslint-plugin-vue-accessibility.
