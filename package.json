@@ -43,7 +43,8 @@
   "jest": {
     "setupFilesAfterEnv": [
       "./jest.setup.js"
-    ]
+    ],
+    "testRegex": ".test.js$"
   },
   "prettier": {
     "trailingComma": "none"

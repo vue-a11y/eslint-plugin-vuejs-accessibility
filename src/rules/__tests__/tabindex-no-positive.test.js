@@ -1,19 +1,9 @@
-const rule = require("../src/rules/tabindex-no-positive");
-const { RuleTester } = require("eslint");
+const rule = require("../tabindex-no-positive");
+const makeRuleTester = require("./makeRuleTester");
 
 const message = "Avoid positive integer values for tabindex.";
-const tester = new RuleTester({
-  parser: require.resolve("vue-eslint-parser"),
-  parserOptions: {
-    ecmaVersion: 2015,
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true
-    }
-  }
-});
 
-tester.run("tabindex-no-positive", rule, {
+makeRuleTester("tabindex-no-positive", rule, {
   valid: [
     {
       filename: "test.vue",

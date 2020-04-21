@@ -1,19 +1,50 @@
-module.exports = {
-  // Taken directly from eslint-plugin-vue
-  defineTemplateBodyVisitor(context, templateBodyVisitor, scriptVisitor) {
-    if (context.parserServices.defineTemplateBodyVisitor == null) {
-      context.report({
-        loc: { line: 1, column: 0 },
-        message:
-          "Use the latest vue-eslint-parser. See also https://eslint.vuejs.org/user-guide/#what-is-the-use-the-latest-vue-eslint-parser-error"
-      });
+// Taken directly from eslint-plugin-vue
+const defineTemplateBodyVisitor = (context, templateVisitor, scriptVisitor) => {
+  if (context.parserServices.defineTemplateBodyVisitor == null) {
+    context.report({
+      loc: { line: 1, column: 0 },
+      message:
+        "Use the latest vue-eslint-parser. See also https://eslint.vuejs.org/user-guide/#what-is-the-use-the-latest-vue-eslint-parser-error"
+    });
 
-      return {};
+    return {};
+  }
+
+  return context.parserServices.defineTemplateBodyVisitor(
+    templateVisitor,
+    scriptVisitor
+  );
+};
+
+const isPlainValue = (attribute) => !attribute.directive && attribute.value;
+const isBoundValue = (attribute) =>
+  attribute.directive &&
+  attribute.key.name.name === "bind" &&
+  attribute.value &&
+  attribute.value.expression &&
+  attribute.value.expression.type === "Literal";
+
+const getAttributeValue = (node, name) => {
+  for (const attribute of node.startTag.attributes) {
+    const { key, value } = attribute;
+
+    if (isPlainValue(attribute) && key.name === name) {
+      return value.value;
     }
 
-    return context.parserServices.defineTemplateBodyVisitor(
-      templateBodyVisitor,
-      scriptVisitor
-    );
+    if (isBoundValue(attribute) && key.argument.name === name) {
+      return value.expression.value;
+    }
   }
+
+  return null;
+};
+
+const makeDocsURL = (name) =>
+  `https://github.com/kddeisz/eslint-plugin-vue-accessibility/blob/master/docs/${name}.md"`;
+
+module.exports = {
+  defineTemplateBodyVisitor,
+  getAttributeValue,
+  makeDocsURL
 };

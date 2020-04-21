@@ -52,7 +52,7 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 - [ ] mouse-events-have-key-events
 - [ ] no-access-key
 - [ ] no-autofocus
-- [ ] no-distracting-elements
+- [x] no-distracting-elements
 - [ ] no-onchange
 - [ ] no-redundant-roles
 - [ ] role-has-required-aria-props
