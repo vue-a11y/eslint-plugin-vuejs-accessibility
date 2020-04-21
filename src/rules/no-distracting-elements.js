@@ -5,6 +5,9 @@ const {
 } = require("../utils");
 
 const defaultElements = ["marquee", "blink"];
+const makeMessage = (element) => `\
+Do not use <${element}> elements as they can create visual accessibility \
+issues and are deprecated.`;
 
 module.exports = {
   meta: {
@@ -31,12 +34,10 @@ module.exports = {
         const elementType = getElementType(node);
 
         if (elements.includes(elementType)) {
-          context.report({
-            node,
-            message: `Do not use <${elementType}> elements as they can create visual accessibility issues and are deprecated.`
-          });
+          context.report({ node, message: makeMessage(elementType) });
         }
       }
     });
-  }
+  },
+  makeMessage
 };

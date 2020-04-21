@@ -17,29 +17,17 @@ makeRuleTester("no-autofocus", rule, {
     {
       filename: "test.vue",
       code: "<template><div autofocus /></template>",
-      errors: [
-        {
-          message: rule.message
-        }
-      ]
+      errors: [{ message: rule.message }]
     },
     {
       filename: "test.vue",
       code: "<template><div autofocus='true' /></template>",
-      errors: [
-        {
-          message: rule.message
-        }
-      ]
+      errors: [{ message: rule.message }]
     },
     {
       filename: "test.vue",
       code: "<template><div :autofocus='sth' /></template>",
-      errors: [
-        {
-          message: rule.message
-        }
-      ]
+      errors: [{ message: rule.message }]
     }
   ]
 });

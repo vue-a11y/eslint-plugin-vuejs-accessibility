@@ -16,20 +16,12 @@ makeRuleTester("no-access-key", rule, {
     {
       filename: "test.vue",
       code: '<template><div accesskey="h"></div></template>',
-      errors: [
-        {
-          message: rule.message
-        }
-      ]
+      errors: [{ message: rule.message }]
     },
     {
       filename: "test.vue",
       code: '<template><div :accesskey="h"></div></template>',
-      errors: [
-        {
-          message: rule.message
-        }
-      ]
+      errors: [{ message: rule.message }]
     }
   ]
 });

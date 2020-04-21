@@ -4,6 +4,8 @@ const {
   makeDocsURL
 } = require("../utils");
 
+const message = "Avoid positive integer values for tabindex.";
+
 module.exports = {
   meta: {
     docs: {
@@ -16,12 +18,10 @@ module.exports = {
         const tabIndex = getLiteralAttributeValue(node, "tabindex");
 
         if (tabIndex && +tabIndex > 0) {
-          context.report({
-            node,
-            message: "Avoid positive integer values for tabindex."
-          });
+          context.report({ node, message });
         }
       }
     });
-  }
+  },
+  message
 };

@@ -8,8 +8,7 @@ const {
 
 const message = `\
 The autofocus prop should not be used, as it can reduce usability and \
-accessibility for users.\
-`;
+accessibility for users.`;
 
 module.exports = {
   meta: {
@@ -40,7 +39,7 @@ module.exports = {
           return;
         }
 
-        context.report({ node, loc: node.loc, message });
+        context.report({ node, message });
       }
     });
   },

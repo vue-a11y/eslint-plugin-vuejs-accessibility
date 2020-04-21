@@ -12,22 +12,12 @@ makeRuleTester("no-distracting-elements", rule, {
     {
       filename: "test.vue",
       code: "<template><blink /></template>",
-      errors: [
-        {
-          message:
-            "Do not use <blink> elements as they can create visual accessibility issues and are deprecated."
-        }
-      ]
+      errors: [{ message: rule.makeMessage("blink") }]
     },
     {
       filename: "test.vue",
       code: "<template><marquee /></template>",
-      errors: [
-        {
-          message:
-            "Do not use <marquee> elements as they can create visual accessibility issues and are deprecated."
-        }
-      ]
+      errors: [{ message: rule.makeMessage("marquee") }]
     }
   ]
 });

@@ -7,8 +7,7 @@ const {
 const message = `\
 No access key attribute allowed. Inconsistencies between keyboard shortcuts \
 and keyboard comments used by screenreader and keyboard only users create \
-a11y complications.\
-`;
+a11y complications.`;
 
 module.exports = {
   meta: {
