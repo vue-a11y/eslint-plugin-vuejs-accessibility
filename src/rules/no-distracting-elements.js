@@ -27,8 +27,9 @@ module.exports = {
   create(context) {
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
-        const config = context.options[0] || {};
-        const elementTypes = config.elements || defaultElements;
+        const options = context.options[0] || {};
+
+        const elementTypes = options.elements || defaultElements;
         const elementType =
           getLiteralAttributeValue(node, "is") || node.rawName;
 
