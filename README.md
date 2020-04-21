@@ -32,7 +32,20 @@ You can also enable all the recommended rules at once. Add `plugin:vue-accessibi
 }
 ```
 
-## Status
+## Development
+
+Ensure you have `node` and `yarn` installed on your system. Then run `yarn` in the root of the repository to install the dependencies.
+
+### Adding a new rule
+
+To add a new rule, you need to take the following steps:
+
+- Add the configuration and require to `src/index.js`.
+- Add the rule itself into `src/rules`.
+- Add the corresponding test in `src/rules/__tests__`.
+- Add the corresponding documentation in `docs/rules`.
+
+### Status
 
 I'm currently working on getting parity between this project and `eslint-plugin-vue-a11y`. These are the rules I currently plan to support:
 
@@ -57,19 +70,6 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 - [ ] no-redundant-roles
 - [ ] role-has-required-aria-props
 - [x] tabindex-no-positive
-
-## Development
-
-Ensure you have `node` and `yarn` installed on your system. Then run `yarn` in the root of the repository to install the dependencies.
-
-### Adding a new rule
-
-To add a new rule, you need to take the following steps:
-
-- Add the configuration and require to `src/index.js`.
-- Add the rule itself into `src/rules`.
-- Add the corresponding test in `src/rules/__tests__`.
-- Add the corresponding documentation in `docs/rules`.
 
 ## Contributing
 
