@@ -53,7 +53,7 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 - [ ] alt-text
 - [ ] anchor-has-content
 - [x] aria-props
-- [ ] aria-role
+- [x] aria-role
 - [ ] aria-unsupported-elements
 - [ ] click-events-have-key-events
 - [ ] form-has-label
