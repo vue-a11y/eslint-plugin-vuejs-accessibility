@@ -1,5 +1,6 @@
 module.exports = {
   rules: {
+    "aria-props": require("./rules/aria-props"),
     "heading-has-content": require("./rules/heading-has-content"),
     "iframe-has-title": require("./rules/iframe-has-title"),
     "no-access-key": require("./rules/no-access-key"),
@@ -17,6 +18,7 @@ module.exports = {
         }
       },
       rules: {
+        "vue-accessibility/aria-props": "error",
         "vue-accessibility/heading-has-content": "error",
         "vue-accessibility/iframe-has-title": "error",
         "vue-accessibility/no-access-key": "error",

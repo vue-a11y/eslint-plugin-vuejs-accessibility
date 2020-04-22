@@ -52,7 +52,7 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 - [ ] accessible-emoji
 - [ ] alt-text
 - [ ] anchor-has-content
-- [ ] aria-props
+- [x] aria-props
 - [ ] aria-role
 - [ ] aria-unsupported-elements
 - [ ] click-events-have-key-events
