@@ -1,5 +1,6 @@
 const defineTemplateBodyVisitor = require("./utils/defineTemplateBodyVisitor");
 const hasContent = require("./utils/hasContent");
+const isAttribute = require("./utils/isAttribute");
 const makeDocsURL = require("./utils/makeDocsURL");
 
 const isPlainValue = (attribute) => !attribute.directive && attribute.value;
@@ -31,15 +32,6 @@ const getLiteralAttributeValue = (node, name) => {
 
 const getElementType = (node) =>
   getLiteralAttributeValue(node, "is") || node.rawName;
-
-const isAttribute = (node, name) => {
-  const { key } = node;
-
-  return (
-    (!node.directive && key.name === name) ||
-    (node.directive && key.name.name === "bind" && key.argument.name === name)
-  );
-};
 
 const isAttributeWithValue = (node, name) => {
   const { key } = node;
