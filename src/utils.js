@@ -1,22 +1,6 @@
+const defineTemplateBodyVisitor = require("./utils/defineTemplateBodyVisitor");
 const hasContent = require("./utils/hasContent");
-
-// Taken directly from eslint-plugin-vue
-const defineTemplateBodyVisitor = (context, templateVisitor, scriptVisitor) => {
-  if (context.parserServices.defineTemplateBodyVisitor === null) {
-    context.report({
-      loc: { line: 1, column: 0 },
-      message:
-        "Use the latest vue-eslint-parser. See also https://eslint.vuejs.org/user-guide/#what-is-the-use-the-latest-vue-eslint-parser-error"
-    });
-
-    return {};
-  }
-
-  return context.parserServices.defineTemplateBodyVisitor(
-    templateVisitor,
-    scriptVisitor
-  );
-};
+const makeDocsURL = require("./utils/makeDocsURL");
 
 const isPlainValue = (attribute) => !attribute.directive && attribute.value;
 const isBoundValue = (attribute) =>
@@ -65,9 +49,6 @@ const isAttributeWithValue = (node, name) => {
     (isBoundValue(node) && key.argument.name === name)
   );
 };
-
-const makeDocsURL = (name) =>
-  `https://github.com/kddeisz/eslint-plugin-vue-accessibility/blob/master/docs/rules/${name}.md"`;
 
 module.exports = {
   defineTemplateBodyVisitor,
