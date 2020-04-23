@@ -19,7 +19,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "vue-accessibility/rule-name": 2
+    "vue-accessibility/rule-name": "error"
   }
 }
 ```
