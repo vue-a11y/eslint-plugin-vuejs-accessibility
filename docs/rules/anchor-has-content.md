@@ -27,14 +27,13 @@ For the `components` option, these strings determine which elements (**always in
 
 ### Succeed
 
+<!-- prettier-ignore -->
 ```vue
 <a>Anchor Content!</a>
-<a
-  ><TextWrapper /><a>
-    <a is="TextWrapper" />
-    <a v-text="msg" />
-    <a v-html="msg" /></a
-></a>
+<a><TextWrapper /><a>
+<a is="TextWrapper" />
+<a v-text="msg" />
+<a v-html="msg" />
 ```
 
 ### Fail
