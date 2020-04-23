@@ -1,30 +1,7 @@
-const getAttributeValue = (node, name) => {
-  for (const attribute of node.startTag.attributes) {
-    const { key, value } = attribute;
-
-    if (!value) {
-      continue;
-    }
-
-    if (!attribute.directive && key.name === name) {
-      return value.value;
-    }
-
-    if (
-      attribute.directive &&
-      key.name.name === "bind" &&
-      key.argument.name === name &&
-      value.expression
-    ) {
-      return value.expression.value;
-    }
-  }
-
-  return null;
-};
+const getElementAttributeValue = require("./getElementAttributeValue");
 
 const isHiddenFromScreenReader = (node) => {
-  const ariaHidden = getAttributeValue(node, "aria-hidden");
+  const ariaHidden = getElementAttributeValue(node, "aria-hidden");
   return ariaHidden && ariaHidden.toString() === "true";
 };
 

@@ -1,6 +1,7 @@
 const { dom, roles } = require("aria-query");
 const {
   defineTemplateBodyVisitor,
+  getAttributeValue,
   getElementType,
   isAttribute,
   makeDocsURL
@@ -8,24 +9,6 @@ const {
 
 const message =
   "Elements with ARIA roles must use a valid, non-abstract ARIA role.";
-
-const getAttributeValue = (node) => {
-  const { key, value } = node;
-
-  if (!value) {
-    return null;
-  }
-
-  if (!node.directive) {
-    return value.value;
-  }
-
-  if (key.name.name === "bind" && value.expression) {
-    return value.expression.value;
-  }
-
-  return null;
-};
 
 module.exports = {
   meta: {
