@@ -51,7 +51,7 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 
 - [ ] accessible-emoji
 - [ ] alt-text
-- [ ] anchor-has-content
+- [x] anchor-has-content
 - [x] aria-props
 - [x] aria-role
 - [ ] aria-unsupported-elements

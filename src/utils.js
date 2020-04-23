@@ -1,3 +1,5 @@
+const hasContent = require("./utils/hasContent");
+
 // Taken directly from eslint-plugin-vue
 const defineTemplateBodyVisitor = (context, templateVisitor, scriptVisitor) => {
   if (context.parserServices.defineTemplateBodyVisitor === null) {
@@ -71,6 +73,7 @@ module.exports = {
   defineTemplateBodyVisitor,
   getElementType,
   getLiteralAttributeValue,
+  hasContent,
   isAttribute,
   isAttributeWithValue,
   makeDocsURL

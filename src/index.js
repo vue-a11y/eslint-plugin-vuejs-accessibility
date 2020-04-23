@@ -1,5 +1,6 @@
 module.exports = {
   rules: {
+    "anchor-has-content": require("./rules/anchor-has-content"),
     "aria-props": require("./rules/aria-props"),
     "aria-role": require("./rules/aria-role"),
     "heading-has-content": require("./rules/heading-has-content"),
@@ -19,6 +20,7 @@ module.exports = {
         }
       },
       rules: {
+        "vue-accessibility/anchor-has-content": "error",
         "vue-accessibility/aria-props": "error",
         "vue-accessibility/aria-role": "error",
         "vue-accessibility/heading-has-content": "error",

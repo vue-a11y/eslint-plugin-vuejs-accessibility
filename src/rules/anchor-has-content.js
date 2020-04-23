@@ -5,15 +5,14 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
 const message = `\
-Headings must have content and the content must be accessible by a screen \
+Anchors must have content and the content must be accessible by a screen \
 reader.`;
 
 module.exports = {
   meta: {
     docs: {
-      url: makeDocsURL("heading-has-content")
+      url: makeDocsURL("anchor-has-content")
     },
     schema: [
       {
@@ -32,7 +31,7 @@ module.exports = {
       VElement(node) {
         const { components = [] } = context.options[0] || {};
 
-        const elementTypes = headings.concat(components);
+        const elementTypes = ["a"].concat(components);
         const elementType = getElementType(node);
 
         if (elementTypes.includes(elementType) && !hasContent(node)) {
