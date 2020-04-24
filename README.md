@@ -49,7 +49,7 @@ To add a new rule, you need to take the following steps:
 
 I'm currently working on getting parity between this project and `eslint-plugin-vue-a11y`. These are the rules I currently plan to support:
 
-- [ ] accessible-emoji
+- [x] accessible-emoji
 - [ ] alt-text
 - [x] anchor-has-content
 - [x] aria-props
