@@ -66,7 +66,7 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 - [x] no-access-key
 - [x] no-autofocus
 - [x] no-distracting-elements
-- [ ] no-onchange
+- [x] no-onchange
 - [x] no-redundant-roles
 - [x] role-has-required-aria-props
 - [x] tabindex-no-positive
