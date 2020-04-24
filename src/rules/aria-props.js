@@ -1,14 +1,9 @@
 const { aria } = require("aria-query");
-const { defineTemplateBodyVisitor, makeDocsURL } = require("../utils");
-
-const getAttributeName = (node) => {
-  const { key } = node;
-
-  if (!node.directive) {
-    return key.name;
-  }
-  return key.name.name === "bind" && key.argument.name;
-};
+const {
+  defineTemplateBodyVisitor,
+  getAttributeName,
+  makeDocsURL
+} = require("../utils");
 
 const makeMessage = (name) =>
   `${name}: This attribute is an invalid ARIA attribute.`;

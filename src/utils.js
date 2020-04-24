@@ -1,4 +1,5 @@
 const defineTemplateBodyVisitor = require("./utils/defineTemplateBodyVisitor");
+const getAttributeName = require("./utils/getAttributeName");
 const getAttributeValue = require("./utils/getAttributeValue");
 const getElementAttribute = require("./utils/getElementAttribute");
 const getElementAttributeValue = require("./utils/getElementAttributeValue");
@@ -47,6 +48,7 @@ const isAttributeWithValue = (node, name) => {
 
 module.exports = {
   defineTemplateBodyVisitor,
+  getAttributeName,
   getAttributeValue,
   getElementAttribute,
   getElementAttributeValue,
