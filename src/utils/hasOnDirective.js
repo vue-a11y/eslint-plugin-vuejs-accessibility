@@ -1,9 +1,13 @@
 const hasOnDirective = (node, name) =>
-  node.startTag.attributes.some(
-    (attribute) =>
+  node.startTag.attributes.some((attribute) => {
+    const { key, value } = attribute;
+
+    return (
       attribute.directive &&
-      attribute.key.name.name === "on" &&
-      attribute.key.argument.name === name
-  );
+      key.name.name === "on" &&
+      key.argument.name === name &&
+      !!value.expression.body
+    );
+  });
 
 module.exports = hasOnDirective;

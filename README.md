@@ -62,7 +62,7 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 - [ ] interactive-supports-focus
 - [ ] label-has-for
 - [ ] media-has-caption
-- [ ] mouse-events-have-key-events
+- [x] mouse-events-have-key-events
 - [x] no-access-key
 - [x] no-autofocus
 - [x] no-distracting-elements

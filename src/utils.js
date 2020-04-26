@@ -6,6 +6,7 @@ const getElementAttributeValue = require("./utils/getElementAttributeValue");
 const getElementType = require("./utils/getElementType");
 const hasContent = require("./utils/hasContent");
 const hasOnDirective = require("./utils/hasOnDirective");
+const hasOnDirectives = require("./utils/hasOnDirectives");
 const isAttribute = require("./utils/isAttribute");
 const isHiddenFromScreenReader = require("./utils/isHiddenFromScreenReader");
 const isInteractiveElement = require("./utils/isInteractiveElement");
@@ -58,6 +59,7 @@ module.exports = {
   getLiteralAttributeValue,
   hasContent,
   hasOnDirective,
+  hasOnDirectives,
   isAttribute,
   isAttributeWithValue,
   isHiddenFromScreenReader,

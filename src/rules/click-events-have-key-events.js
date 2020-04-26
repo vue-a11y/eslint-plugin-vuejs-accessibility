@@ -5,6 +5,7 @@ const {
   getElementAttribute,
   getElementAttributeValue,
   hasOnDirective,
+  hasOnDirectives,
   isHiddenFromScreenReader,
   isInteractiveElement,
   makeDocsURL
@@ -26,11 +27,6 @@ const isPresentationRole = (node) => {
   return role && ["presentation", "none"].includes(role);
 };
 
-const hasKeyEvent = (node) =>
-  hasOnDirective(node, "keydown") ||
-  hasOnDirective(node, "keyup") ||
-  hasOnDirective(node, "keypress");
-
 module.exports = {
   meta: {
     docs: {
@@ -46,7 +42,7 @@ module.exports = {
           !isHiddenFromScreenReader(node) &&
           !isPresentationRole(node) &&
           !isInteractiveElement(node) &&
-          !hasKeyEvent(node)
+          !hasOnDirectives(node, ["keydown", "keyup", "keypress"])
         ) {
           context.report({ node, message });
         }
