@@ -1,8 +1,11 @@
 module.exports = {
   rules: {
+    "accessible-emoji": require("./rules/accessible-emoji"),
     "anchor-has-content": require("./rules/anchor-has-content"),
     "aria-props": require("./rules/aria-props"),
     "aria-role": require("./rules/aria-role"),
+    "aria-unsupported-elements": require("./rules/aria-unsupported-elements"),
+    "click-events-have-key-events": require("./rules/click-events-have-key-events"),
     "heading-has-content": require("./rules/heading-has-content"),
     "iframe-has-title": require("./rules/iframe-has-title"),
     "no-access-key": require("./rules/no-access-key"),
@@ -23,9 +26,12 @@ module.exports = {
         }
       },
       rules: {
+        "vue-accessibility/accessible-emoji": "error",
         "vue-accessibility/anchor-has-content": "error",
         "vue-accessibility/aria-props": "error",
         "vue-accessibility/aria-role": "error",
+        "vue-accessibility/aria-unsupported-elements": "error",
+        "vue-accessibility/click-events-have-key-events": "error",
         "vue-accessibility/heading-has-content": "error",
         "vue-accessibility/iframe-has-title": "error",
         "vue-accessibility/no-access-key": "error",
