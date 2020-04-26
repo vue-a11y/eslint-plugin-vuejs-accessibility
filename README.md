@@ -61,7 +61,7 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 - [x] iframe-has-title
 - [ ] interactive-supports-focus
 - [ ] label-has-for
-- [ ] media-has-caption
+- [x] media-has-caption
 - [x] mouse-events-have-key-events
 - [x] no-access-key
 - [x] no-autofocus
