@@ -3,7 +3,8 @@ const {
   defineTemplateBodyVisitor,
   getElementAttributeValue,
   getElementType,
-  makeDocsURL
+  makeDocsURL,
+  matchesElementRole
 } = require("../utils");
 
 const exceptions = { nav: ["navigation"] };
@@ -11,43 +12,17 @@ const makeMessage = (type, role) => `\
 The element ${type} has an implicit role of ${role}. Defining this \
 explicitly is redundant and should be avoided.`;
 
-const hasRoleAttributes = (node, attributes) =>
-  attributes.every((attribute) => {
-    const value = getElementAttributeValue(node, attribute.name);
-
-    if (attribute.value) {
-      return value === attribute.value;
-    }
-
-    if (attribute.constraints) {
-      switch (attribute.constraints[0]) {
-        case "set":
-          return value;
-        case "undefined":
-          return !value;
-        default:
-          return null;
-      }
-    }
-
-    return value;
-  });
-
 const getImplicitRoleSet = (node) => {
-  const elementType = getElementType(node);
-
-  for (const [key, value] of elementRoles) {
-    if (key.name === elementType) {
-      if (!key.attributes || hasRoleAttributes(node, key.attributes)) {
-        return value;
-      }
+  for (const [elementRole, roleSet] of elementRoles) {
+    if (matchesElementRole(node, elementRole)) {
+      return roleSet;
     }
   }
+
   return null;
 };
 
 module.exports = {
-  getImplicitRoleSet,
   meta: {
     docs: {
       url: makeDocsURL("no-redundant-roles")

@@ -1,9 +1,4 @@
-const getElementAttributeValue = require("./getElementAttributeValue");
-
-const isHiddenFromScreenReader = (node) => {
-  const ariaHidden = getElementAttributeValue(node, "aria-hidden");
-  return ariaHidden && ariaHidden.toString() === "true";
-};
+const isHiddenFromScreenReader = require("./isHiddenFromScreenReader");
 
 const hasAccessibleChild = (node) =>
   node.children.some((child) => {

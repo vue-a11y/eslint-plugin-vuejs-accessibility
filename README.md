@@ -55,7 +55,7 @@ I'm currently working on getting parity between this project and `eslint-plugin-
 - [x] aria-props
 - [x] aria-role
 - [x] aria-unsupported-elements
-- [ ] click-events-have-key-events
+- [x] click-events-have-key-events
 - [ ] form-has-label
 - [x] heading-has-content
 - [x] iframe-has-title

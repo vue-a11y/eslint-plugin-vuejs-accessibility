@@ -1,20 +1,13 @@
 const {
   defineTemplateBodyVisitor,
-  makeDocsURL,
-  getElementType
+  getElementType,
+  hasOnDirective,
+  makeDocsURL
 } = require("../utils");
 
 const message = `@blur must be used instead of @change, unless absolutely \
 necessary and it causes no negative consequences for keyboard only or screen \
 reader users.`;
-
-const hasOnDirective = (node, name) =>
-  node.startTag.attributes.some(
-    (attribute) =>
-      attribute.directive &&
-      attribute.key.name.name === "on" &&
-      attribute.key.argument.name === name
-  );
 
 module.exports = {
   meta: {

@@ -3,9 +3,14 @@ const getAttributeName = require("./utils/getAttributeName");
 const getAttributeValue = require("./utils/getAttributeValue");
 const getElementAttribute = require("./utils/getElementAttribute");
 const getElementAttributeValue = require("./utils/getElementAttributeValue");
+const getElementType = require("./utils/getElementType");
 const hasContent = require("./utils/hasContent");
+const hasOnDirective = require("./utils/hasOnDirective");
 const isAttribute = require("./utils/isAttribute");
+const isHiddenFromScreenReader = require("./utils/isHiddenFromScreenReader");
+const isInteractiveElement = require("./utils/isInteractiveElement");
 const makeDocsURL = require("./utils/makeDocsURL");
+const matchesElementRole = require("./utils/matchesElementRole");
 
 const isPlainValue = (attribute) => !attribute.directive && attribute.value;
 const isBoundValue = (attribute) =>
@@ -34,9 +39,6 @@ const getLiteralAttributeValue = (node, name) => {
   return null;
 };
 
-const getElementType = (node) =>
-  getLiteralAttributeValue(node, "is") || node.rawName;
-
 const isAttributeWithValue = (node, name) => {
   const { key } = node;
 
@@ -55,7 +57,11 @@ module.exports = {
   getElementType,
   getLiteralAttributeValue,
   hasContent,
+  hasOnDirective,
   isAttribute,
   isAttributeWithValue,
-  makeDocsURL
+  isHiddenFromScreenReader,
+  isInteractiveElement,
+  makeDocsURL,
+  matchesElementRole
 };
