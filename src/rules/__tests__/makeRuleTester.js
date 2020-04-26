@@ -1,10 +1,11 @@
 const { RuleTester } = require("eslint");
 
 const filename = "test.vue";
+const makeTemplate = (code) => `<template>${code}</template>`;
 
 const makeValidExample = (example) => {
   if (typeof example === "string") {
-    return { filename, code: `<template>${example}</template>` };
+    return { filename, code: makeTemplate(example) };
   }
 
   return Object.assign(example, { filename });
@@ -12,12 +13,14 @@ const makeValidExample = (example) => {
 
 const makeInvalidExample = (rule) => (example) => {
   if (typeof example === "string") {
-    return Object.assign(makeValidExample(example), {
+    return {
+      filename,
+      code: makeTemplate(example),
       errors: [{ message: rule.message }]
-    });
+    };
   }
 
-  return Object.assign(example, { filename });
+  return Object.assign(example, { filename, code: makeTemplate(example.code) });
 };
 
 module.exports = (name, rule, config) => {

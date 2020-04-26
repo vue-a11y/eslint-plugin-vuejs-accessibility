@@ -9,19 +9,19 @@ makeRuleTester("mouse-events-have-key-events", rule, {
   ],
   invalid: [
     {
-      code: "<template><div @mouseover='void 0' /></template>",
+      code: "<div @mouseover='void 0' />",
       errors: [{ message: rule.mouseOverErrorMessage }]
     },
     {
-      code: "<template><div @mouseout='void 0' /></template>",
+      code: "<div @mouseout='void 0' />",
       errors: [{ message: rule.mouseOutErrorMessage }]
     },
     {
-      code: "<template><div @mouseover='void 0' @focus='null' /></template>",
+      code: "<div @mouseover='void 0' @focus='null' />",
       errors: [{ message: rule.mouseOverErrorMessage }]
     },
     {
-      code: "<template><div @mouseout='void 0' @blur='null' /></template>",
+      code: "<div @mouseout='void 0' @blur='null' />",
       errors: [{ message: rule.mouseOutErrorMessage }]
     }
   ]

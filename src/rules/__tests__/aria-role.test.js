@@ -7,7 +7,7 @@ makeRuleTester("aria-role", rule, {
     "<div :role='role' />",
     "<div />",
     {
-      code: "<template><Foo role='test' /></template>",
+      code: "<Foo role='test' />",
       options: [{ ignoreNonDOM: true }]
     }
   ],

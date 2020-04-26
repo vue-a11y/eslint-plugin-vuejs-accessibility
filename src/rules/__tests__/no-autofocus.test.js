@@ -5,7 +5,7 @@ makeRuleTester("no-autofocus", rule, {
   valid: [
     "<div />",
     {
-      code: "<template><Anchor autofocus='autofocus' /></template>",
+      code: "<Anchor autofocus='autofocus' />",
       options: [{ ignoreNonDOM: true }]
     }
   ],

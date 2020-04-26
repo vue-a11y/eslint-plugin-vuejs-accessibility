@@ -5,7 +5,7 @@ makeRuleTester("aria-props", rule, {
   valid: ["<input aria-labelledby='address' />"],
   invalid: [
     {
-      code: '<template><input aria-test="address"></template>',
+      code: "<input aria-test='address' />",
       errors: [{ message: rule.makeMessage("aria-test") }]
     }
   ]

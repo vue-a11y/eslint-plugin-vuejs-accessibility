@@ -5,11 +5,11 @@ makeRuleTester("no-distracting-elements", rule, {
   valid: ["<div />"],
   invalid: [
     {
-      code: "<template><blink /></template>",
+      code: "<blink />",
       errors: [{ message: rule.makeMessage("blink") }]
     },
     {
-      code: "<template><marquee /></template>",
+      code: "<marquee />",
       errors: [{ message: rule.makeMessage("marquee") }]
     }
   ]

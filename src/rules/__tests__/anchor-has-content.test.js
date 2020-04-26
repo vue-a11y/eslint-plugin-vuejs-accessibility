@@ -12,7 +12,7 @@ makeRuleTester("anchor-has-content", rule, {
   invalid: [
     "<a />",
     {
-      code: "<template><Anchor  /></template>",
+      code: "<Anchor  />",
       options: [{ components: ["Anchor"] }],
       errors: [{ message: rule.message }]
     }

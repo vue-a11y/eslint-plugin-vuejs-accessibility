@@ -23,43 +23,43 @@ makeRuleTester("media-has-caption", rule, {
     "<video muted='true' />",
     "<video muted />",
     {
-      code: "<template><Audio><track kind='captions' /></Audio></template>",
+      code: "<Audio><track kind='captions' /></Audio>",
       options
     },
     {
-      code: "<template><audio><Track kind='captions' /></audio></template>",
+      code: "<audio><Track kind='captions' /></audio>",
       options
     },
     {
-      code: "<template><Video><track kind='captions' /></Video></template>",
+      code: "<Video><track kind='captions' /></Video>",
       options
     },
     {
-      code: "<template><video><Track kind='captions' /></video></template>",
+      code: "<video><Track kind='captions' /></video>",
       options
     },
     {
-      code: "<template><Audio><Track kind='captions' /></Audio></template>",
+      code: "<Audio><Track kind='captions' /></Audio>",
       options
     },
     {
-      code: "<template><Video><Track kind='captions' /></Video></template>",
+      code: "<Video><Track kind='captions' /></Video>",
       options
     },
     {
-      code: "<template><Video muted /></template>",
+      code: "<Video muted />",
       options
     },
     {
-      code: "<template><Video muted='true' /></template>",
+      code: "<Video muted='true' />",
       options
     },
     {
-      code: "<template><Audio muted /></template>",
+      code: "<Audio muted />",
       options
     },
     {
-      code: "<template><Audio muted='true' /></template>",
+      code: "<Audio muted='true' />",
       options
     }
   ],
@@ -70,12 +70,12 @@ makeRuleTester("media-has-caption", rule, {
     "<video><track /></video>",
     "<video><track kind='subtitles' /></video>",
     {
-      code: "<template><Audio muted='false' /></template>",
+      code: "<Audio muted='false' />",
       options,
       errors: [{ message: rule.message }]
     },
     {
-      code: "<template><Video muted='false' /></template>",
+      code: "<Video muted='false' />",
       options,
       errors: [{ message: rule.message }]
     },
@@ -83,32 +83,32 @@ makeRuleTester("media-has-caption", rule, {
     "<audio>Foo</audio>",
     "<video>Foo</video>",
     {
-      code: "<template><Audio /></template>",
+      code: "<Audio />",
       options,
       errors: [{ message: rule.message }]
     },
     {
-      code: "<template><Video /></template>",
+      code: "<Video />",
       options,
       errors: [{ message: rule.message }]
     },
     {
-      code: "<template><audio><Track /></audio></template>",
+      code: "<audio><Track /></audio>",
       options,
       errors: [{ message: rule.message }]
     },
     {
-      code: "<template><video><Track /></video></template>",
+      code: "<video><Track /></video>",
       options,
       errors: [{ message: rule.message }]
     },
     {
-      code: "<template><Audio><Track kind='subtitles' /></Audio></template>",
+      code: "<Audio><Track kind='subtitles' /></Audio>",
       options,
       errors: [{ message: rule.message }]
     },
     {
-      code: "<template><Video><Track kind='subtitles' /></Video></template>",
+      code: "<Video><Track kind='subtitles' /></Video>",
       options,
       errors: [{ message: rule.message }]
     }
