@@ -11,6 +11,7 @@ module.exports = {
     "heading-has-content": require("./rules/heading-has-content"),
     "iframe-has-title": require("./rules/iframe-has-title"),
     "interactive-supports-focus": require("./rules/interactive-supports-focus"),
+    "label-has-for": require("./rules/label-has-for"),
     "media-has-caption": require("./rules/media-has-caption"),
     "mouse-events-have-key-events": require("./rules/mouse-events-have-key-events"),
     "no-access-key": require("./rules/no-access-key"),
@@ -55,6 +56,7 @@ module.exports = {
             ]
           }
         ],
+        "vue-accessibility/label-has-for": "error",
         "vue-accessibility/media-has-caption": "error",
         "vue-accessibility/mouse-events-have-key-events": "error",
         "vue-accessibility/no-access-key": "error",

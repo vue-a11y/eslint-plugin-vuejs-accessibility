@@ -45,32 +45,6 @@ To add a new rule, you need to take the following steps:
 - Add the corresponding test in `src/rules/__tests__`.
 - Add the corresponding documentation in `docs/rules`.
 
-### Status
-
-I'm currently working on getting parity between this project and `eslint-plugin-vue-a11y`. These are the rules I currently plan to support:
-
-- [x] accessible-emoji
-- [x] alt-text
-- [x] anchor-has-content
-- [x] aria-props
-- [x] aria-role
-- [x] aria-unsupported-elements
-- [x] click-events-have-key-events
-- [x] form-control-has-label
-- [x] heading-has-content
-- [x] iframe-has-title
-- [x] interactive-supports-focus
-- [ ] label-has-for
-- [x] media-has-caption
-- [x] mouse-events-have-key-events
-- [x] no-access-key
-- [x] no-autofocus
-- [x] no-distracting-elements
-- [x] no-onchange
-- [x] no-redundant-roles
-- [x] role-has-required-aria-props
-- [x] tabindex-no-positive
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/kddeisz/eslint-plugin-vue-accessibility.
