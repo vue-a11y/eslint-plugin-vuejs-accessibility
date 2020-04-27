@@ -1,6 +1,6 @@
 const {
   defineTemplateBodyVisitor,
-  isAttributeWithValue,
+  getElementAttributeValue,
   makeDocsURL
 } = require("../utils");
 
@@ -17,8 +17,8 @@ module.exports = {
   },
   create(context) {
     return defineTemplateBodyVisitor(context, {
-      VAttribute(node) {
-        if (isAttributeWithValue(node, "accesskey")) {
+      VElement(node) {
+        if (getElementAttributeValue(node, "accesskey")) {
           context.report({ node, message });
         }
       }
