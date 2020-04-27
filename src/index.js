@@ -26,17 +26,17 @@ module.exports = {
     recommended: {
       parser: require.resolve("vue-eslint-parser"),
       plugins: ["vue-accessibility"],
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true
-        }
-      },
       rules: {
         "vue-accessibility/accessible-emoji": "error",
         "vue-accessibility/alt-text": "error",
         "vue-accessibility/anchor-has-content": "error",
         "vue-accessibility/aria-props": "error",
-        "vue-accessibility/aria-role": "error",
+        "vue-accessibility/aria-role": [
+          "error",
+          {
+            ignoreNonDOM: true
+          }
+        ],
         "vue-accessibility/aria-unsupported-elements": "error",
         "vue-accessibility/click-events-have-key-events": "error",
         "vue-accessibility/form-control-has-label": "error",
@@ -60,7 +60,12 @@ module.exports = {
         "vue-accessibility/media-has-caption": "error",
         "vue-accessibility/mouse-events-have-key-events": "error",
         "vue-accessibility/no-access-key": "error",
-        "vue-accessibility/no-autofocus": "error",
+        "vue-accessibility/no-autofocus": [
+          "error",
+          {
+            ignoreNonDOM: true
+          }
+        ],
         "vue-accessibility/no-distracting-elements": "error",
         "vue-accessibility/no-onchange": "error",
         "vue-accessibility/no-redundant-roles": "error",

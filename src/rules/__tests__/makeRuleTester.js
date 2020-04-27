@@ -28,10 +28,7 @@ module.exports = (name, rule, config) => {
     parser: require.resolve("vue-eslint-parser"),
     parserOptions: {
       ecmaVersion: 2015,
-      sourceType: "module",
-      ecmaFeatures: {
-        jsx: true
-      }
+      sourceType: "module"
     }
   });
 
