@@ -1,6 +1,7 @@
 module.exports = {
   rules: {
     "accessible-emoji": require("./rules/accessible-emoji"),
+    "alt-text": require("./rules/alt-text"),
     "anchor-has-content": require("./rules/anchor-has-content"),
     "aria-props": require("./rules/aria-props"),
     "aria-role": require("./rules/aria-role"),
@@ -31,6 +32,7 @@ module.exports = {
       },
       rules: {
         "vue-accessibility/accessible-emoji": "error",
+        "vue-accessibility/alt-text": "error",
         "vue-accessibility/anchor-has-content": "error",
         "vue-accessibility/aria-props": "error",
         "vue-accessibility/aria-role": "error",

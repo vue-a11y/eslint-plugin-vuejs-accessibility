@@ -4,6 +4,7 @@ const getAttributeValue = require("./utils/getAttributeValue");
 const getElementAttribute = require("./utils/getElementAttribute");
 const getElementAttributeValue = require("./utils/getElementAttributeValue");
 const getElementType = require("./utils/getElementType");
+const hasAccessibleChild = require("./utils/hasAccessibleChild");
 const hasAriaLabel = require("./utils/hasAriaLabel");
 const hasContent = require("./utils/hasContent");
 const hasOnDirective = require("./utils/hasOnDirective");
@@ -59,6 +60,7 @@ module.exports = {
   getElementAttributeValue,
   getElementType,
   getLiteralAttributeValue,
+  hasAccessibleChild,
   hasAriaLabel,
   hasContent,
   hasOnDirective,
