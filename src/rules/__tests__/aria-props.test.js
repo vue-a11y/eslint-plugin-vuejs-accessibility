@@ -6,7 +6,7 @@ makeRuleTester("aria-props", rule, {
   invalid: [
     {
       code: "<input aria-test='address' />",
-      errors: [{ message: rule.makeMessage("aria-test") }]
+      errors: [{ messageId: "default", data: { name: "aria-test" } }]
     }
   ]
 });

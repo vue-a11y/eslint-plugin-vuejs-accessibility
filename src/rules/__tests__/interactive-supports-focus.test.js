@@ -67,14 +67,14 @@ makeRuleTester("interactive-supports-focus", rule, {
       rule.interactiveHandlers.map((handler) => ({
         code: `<div role='${role}' @${handler}='void 0' />`,
         options: [{ tabbable: rule.interactiveRoles }],
-        errors: [{ message: rule.makeTabbableErrorMessage(role) }]
+        errors: [{ messageId: "tabbable", data: { role } }]
       }))
     ),
     ...rule.interactiveRoles.flatMap((role) =>
       rule.interactiveHandlers.map((handler) => ({
         code: `<div role='${role}' @${handler}='void 0' />`,
         options: [{ tabbable: [] }],
-        errors: [{ message: rule.makeFocusableErrorMessage(role) }]
+        errors: [{ messageId: "focusable", data: { role } }]
       }))
     )
   ]

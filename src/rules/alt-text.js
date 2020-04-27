@@ -10,35 +10,21 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const messages = {
-  area:
-    "Each area of an image map must have a text alternative through the `alt`, `aria-label`, or `aria-labelledby` prop.",
-  imgMissingAlt:
-    "img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.",
-  imgInvalidAlt: `Invalid alt value for img. Use alt="" for presentational images.`,
-  imgPresentation:
-    'Prefer alt="" over a presentational role. First rule of aria is to not use aria if it can be achieved via native HTML.',
-  input:
-    '<input> elements with type="image" must have a text alternative through the `alt`, `aria-label`, or `aria-labelledby` prop.',
-  object:
-    "Embedded <object> elements must have alternative text by providing inner text, aria-label or aria-labelledby props."
-};
-
 const ruleByElement = {
   img(context, node) {
     const altAttribute = getElementAttribute(node, "alt");
 
     if (!altAttribute) {
       if (isPresentationRole(node)) {
-        context.report({ node, message: messages.imgPresentation });
+        context.report({ node, messageId: "imgPresentation" });
       } else {
-        context.report({ node, message: messages.imgMissingAlt });
+        context.report({ node, messageId: "imgMissingAlt" });
       }
     } else {
       const altValue = getAttributeValue(altAttribute);
 
       if (!altValue && altValue !== "") {
-        context.report({ node, message: messages.imgInvalidAlt });
+        context.report({ node, messageId: "imgInvalidAlt" });
       }
     }
   },
@@ -48,12 +34,12 @@ const ruleByElement = {
       !getElementAttributeValue(node, "title") &&
       !hasAccessibleChild(node)
     ) {
-      context.report({ node, message: messages.object });
+      context.report({ node, messageId: "object" });
     }
   },
   area(context, node) {
     if (!hasAriaLabel(node) && !getElementAttributeValue(node, "alt")) {
-      context.report({ node, message: messages.area });
+      context.report({ node, messageId: "area" });
     }
   },
   'input[type="image"]'(context, node) {
@@ -62,7 +48,7 @@ const ruleByElement = {
       !hasAriaLabel(node) &&
       !getElementAttributeValue(node, "alt")
     ) {
-      context.report({ node, message: messages.input });
+      context.report({ node, messageId: "input" });
     }
   }
 };
@@ -71,6 +57,17 @@ module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("alt-text")
+    },
+    messages: {
+      area:
+        "Each area of an image map must have a text alternative through the `alt`, `aria-label`, or `aria-labelledby` prop.",
+      imgMissingAlt:
+        "img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.",
+      imgInvalidAlt: `Invalid alt value for img. Use alt="" for presentational images.`,
+      imgPresentation: `Prefer alt="" over a presentational role. First rule of aria is to not use aria if it can be achieved via native HTML.`,
+      input: `<input> elements with type="image" must have a text alternative through the alt, aria-label, or aria-labelledby prop.`,
+      object:
+        "Embedded <object> elements must have alternative text by providing inner text, aria-label or aria-labelledby props."
     },
     schema: [
       {
@@ -126,6 +123,5 @@ module.exports = {
         ruleByElement[elementType](context, node);
       }
     });
-  },
-  messages
+  }
 };

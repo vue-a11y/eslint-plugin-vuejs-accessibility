@@ -6,7 +6,7 @@ makeRuleTester("aria-unsupported-elements", rule, {
   invalid: [
     {
       code: "<meta charset='UTF-8' aria-hidden='false' />",
-      errors: [{ message: rule.makeMessage("aria-hidden") }]
+      errors: [{ messageId: "default", data: { name: "aria-hidden" } }]
     }
   ]
 });

@@ -8,9 +8,6 @@ const {
 } = require("../utils");
 
 const exceptions = { nav: ["navigation"] };
-const makeMessage = (type, role) => `\
-The element ${type} has an implicit role of ${role}. Defining this \
-explicitly is redundant and should be avoided.`;
 
 const getImplicitRoleSet = (node) => {
   for (const [elementRole, roleSet] of elementRoles) {
@@ -26,6 +23,10 @@ module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("no-redundant-roles")
+    },
+    messages: {
+      default:
+        "The element {{type}} has an implicit role of {{role}}. Defining this explicitly is redundant and should be avoided."
     },
     schema: [
       {
@@ -61,10 +62,13 @@ module.exports = {
         }
 
         if (implicitRoleSet.has(explicitRole)) {
-          context.report({ node, message: makeMessage(type, explicitRole) });
+          context.report({
+            node,
+            messageId: "default",
+            data: { type, role: explicitRole }
+          });
         }
       }
     });
-  },
-  makeMessage
+  }
 };

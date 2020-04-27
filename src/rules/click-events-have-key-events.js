@@ -1,5 +1,4 @@
 const vueEslintParser = require("vue-eslint-parser");
-
 const {
   defineTemplateBodyVisitor,
   getElementAttribute,
@@ -11,9 +10,6 @@ const {
   makeDocsURL
 } = require("../utils");
 const htmlElements = require("../utils/htmlElements.json");
-
-const message = `Visible, non-interactive elements with click handlers must \
-have at least one keyboard listener.`;
 
 const isHtmlElementNode = (node) =>
   node.namespace === vueEslintParser.AST.NS.HTML;
@@ -31,6 +27,10 @@ module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("click-events-have-key-events")
+    },
+    messages: {
+      default:
+        "Visible, non-interactive elements with click handlers must have at least one keyboard listener."
     }
   },
   create(context) {
@@ -44,10 +44,9 @@ module.exports = {
           !isInteractiveElement(node) &&
           !hasOnDirectives(node, ["keydown", "keyup", "keypress"])
         ) {
-          context.report({ node, message });
+          context.report({ node, messageId: "default" });
         }
       }
     });
-  },
-  message
+  }
 };

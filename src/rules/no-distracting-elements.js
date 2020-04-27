@@ -5,14 +5,15 @@ const {
 } = require("../utils");
 
 const defaultElements = ["marquee", "blink"];
-const makeMessage = (element) => `\
-Do not use <${element}> elements as they can create visual accessibility \
-issues and are deprecated.`;
 
 module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("no-distracting-elements")
+    },
+    messages: {
+      default:
+        "Do not use <{{elementType}}> elements as they can create visual accessibility issues and are deprecated."
     },
     schema: [
       {
@@ -34,10 +35,9 @@ module.exports = {
         const elementType = getElementType(node);
 
         if (elements.includes(elementType)) {
-          context.report({ node, message: makeMessage(elementType) });
+          context.report({ node, messageId: "default", data: { elementType } });
         }
       }
     });
-  },
-  makeMessage
+  }
 };

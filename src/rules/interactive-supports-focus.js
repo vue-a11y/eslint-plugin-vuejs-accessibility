@@ -88,16 +88,14 @@ const hasTabIndex = (node) => {
   return value === null;
 };
 
-const makeTabbableErrorMessage = (role) =>
-  `Elements with the "${role}" interactive role must be tabbable.`;
-
-const makeFocusableErrorMessage = (role) =>
-  `Elements with the "${role}" interactive role must be focusable.`;
-
 module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("interactive-supports-focus")
+    },
+    messages: {
+      tabbable: `Elements with the "{{role}}" interactive role must be tabbable.`,
+      focusable: `Elements with the "{{role}" interactive role must be focusable.`
     },
     schema: [
       {
@@ -134,17 +132,15 @@ module.exports = {
 
           if (role && tabbable.includes(role)) {
             // Always tabbable, tabIndex = 0
-            context.report({ node, message: makeTabbableErrorMessage(role) });
+            context.report({ node, messageId: "tabbable", data: { role } });
           } else {
             // Focusable, tabIndex = -1 or 0
-            context.report({ node, message: makeFocusableErrorMessage(role) });
+            context.report({ node, messageId: "focusable", data: { role } });
           }
         }
       }
     });
   },
   interactiveHandlers,
-  interactiveRoles,
-  makeTabbableErrorMessage,
-  makeFocusableErrorMessage
+  interactiveRoles
 };

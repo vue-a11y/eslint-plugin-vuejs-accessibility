@@ -6,13 +6,13 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const makeMessage = (name) => `This element does not support ARIA roles, \
-states, and properties. Try removing the prop "${name}".`;
-
 module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("aria-unsupported-elements")
+    },
+    messages: {
+      default: `This element does not support ARIA roles, states, and properties. Try removing the "{{name}}" attribute.`
     }
   },
   create(context) {
@@ -26,11 +26,10 @@ module.exports = {
           const name = getAttributeName(attribute);
 
           if (aria.has(name) || name === "role") {
-            context.report({ node, message: makeMessage(name) });
+            context.report({ node, messageId: "default", data: { name } });
           }
         });
       }
     });
-  },
-  makeMessage
+  }
 };

@@ -6,14 +6,15 @@ const {
 } = require("../utils");
 
 const headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
-const message = `\
-Headings must have content and the content must be accessible by a screen \
-reader.`;
 
 module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("heading-has-content")
+    },
+    messages: {
+      default:
+        "Headings must have content and the content must be accessible by a screen reader."
     },
     schema: [
       {
@@ -36,10 +37,9 @@ module.exports = {
         const elementType = getElementType(node);
 
         if (elementTypes.includes(elementType) && !hasContent(node)) {
-          context.report({ node, message });
+          context.report({ node, messageId: "default" });
         }
       }
     });
-  },
-  message
+  }
 };

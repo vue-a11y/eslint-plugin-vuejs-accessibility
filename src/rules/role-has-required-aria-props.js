@@ -7,10 +7,6 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const makeMessage = (role, requiredProps) => `\
-Elements with the ARIA role "${role}" must have the following attributes \
-defined: ${requiredProps}`;
-
 const hasAttributes = (node, names) =>
   names.every((name) => getElementAttribute(node, name) !== null);
 
@@ -18,6 +14,9 @@ module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("role-has-required-aria-props")
+    },
+    messages: {
+      default: `Elements with the ARIA role "{{role}}" must have the following attributes defined: {{attributes}}`
     }
   },
   create(context) {
@@ -46,16 +45,17 @@ module.exports = {
             );
 
             if (!hasAttributes(node, requiredAttributes)) {
-              const message = makeMessage(
-                role.toLowerCase(),
-                requiredAttributes.join(", ").toLowerCase()
-              );
-
-              context.report({ node, message });
+              context.report({
+                node,
+                messageId: "default",
+                data: {
+                  role: role.toLowerCase(),
+                  attributes: requiredAttributes.join(", ").toLowerCase()
+                }
+              });
             }
           });
       }
     });
-  },
-  makeMessage
+  }
 };

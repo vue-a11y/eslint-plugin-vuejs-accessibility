@@ -6,8 +6,6 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const message = "Form label must have associated control";
-
 const validate = (node, rule, allowChildren) => {
   if (allowChildren === true) {
     return hasAccessibleChild(node);
@@ -36,6 +34,9 @@ module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("label-has-for")
+    },
+    messages: {
+      default: "Form label must have an associated control."
     },
     schema: [
       {
@@ -104,10 +105,9 @@ module.exports = {
           ["label"].concat(components).includes(getElementType(node)) &&
           !isValidLabel(node, required, allowChildren)
         ) {
-          context.report({ node, message });
+          context.report({ node, messageId: "default" });
         }
       }
     });
-  },
-  message
+  }
 };

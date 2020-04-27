@@ -4,12 +4,13 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const message = "<iframe> elements must have a unique title property.";
-
 module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("iframe-has-title")
+    },
+    messages: {
+      default: "<iframe> elements must have a unique title property."
     }
   },
   create(context) {
@@ -18,10 +19,9 @@ module.exports = {
         const title = getLiteralAttributeValue(node, "title");
 
         if (!["string", "object"].includes(typeof title)) {
-          context.report({ node, message });
+          context.report({ node, messageId: "default" });
         }
       }
     });
-  },
-  message
+  }
 };

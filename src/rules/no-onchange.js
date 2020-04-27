@@ -5,14 +5,14 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const message = `@blur must be used instead of @change, unless absolutely \
-necessary and it causes no negative consequences for keyboard only or screen \
-reader users.`;
-
 module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("no-onchange")
+    },
+    messages: {
+      default:
+        "@blur must be used instead of @change, unless absolutely necessary and it causes no negative consequences for keyboard only or screen reader users."
     }
   },
   create(context) {
@@ -23,10 +23,9 @@ module.exports = {
         }
 
         if (hasOnDirective(node, "change") && !hasOnDirective(node, "blur")) {
-          context.report({ node, message });
+          context.report({ node, messageId: "default" });
         }
       }
     });
-  },
-  message
+  }
 };

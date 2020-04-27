@@ -5,14 +5,14 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const message = `\
-Anchors must have content and the content must be accessible by a screen \
-reader.`;
-
 module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("anchor-has-content")
+    },
+    messages: {
+      default:
+        "Anchors must have content and the content must be accessible by a screen reader."
     },
     schema: [
       {
@@ -35,10 +35,9 @@ module.exports = {
         const elementType = getElementType(node);
 
         if (elementTypes.includes(elementType) && !hasContent(node)) {
-          context.report({ node, message });
+          context.report({ node, messageId: "default" });
         }
       }
     });
-  },
-  message
+  }
 };

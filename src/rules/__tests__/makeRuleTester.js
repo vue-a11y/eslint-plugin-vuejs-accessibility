@@ -11,12 +11,12 @@ const makeValidExample = (example) => {
   return Object.assign(example, { filename });
 };
 
-const makeInvalidExample = (rule) => (example) => {
+const makeInvalidExample = (example) => {
   if (typeof example === "string") {
     return {
       filename,
       code: makeTemplate(example),
-      errors: [{ message: rule.message }]
+      errors: [{ messageId: "default" }]
     };
   }
 
@@ -37,6 +37,6 @@ module.exports = (name, rule, config) => {
 
   ruleTester.run(name, rule, {
     valid: config.valid.map(makeValidExample),
-    invalid: config.invalid.map(makeInvalidExample(rule))
+    invalid: config.invalid.map(makeInvalidExample)
   });
 };

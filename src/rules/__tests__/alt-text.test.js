@@ -17,27 +17,27 @@ makeRuleTester("alt-text", rule, {
   invalid: [
     {
       code: "<img src='foo' />",
-      errors: [{ message: rule.messages.imgMissingAlt }]
+      errors: [{ messageId: "imgMissingAlt" }]
     },
     {
       code: "<img src='foo' alt />",
-      errors: [{ message: rule.messages.imgInvalidAlt }]
+      errors: [{ messageId: "imgInvalidAlt" }]
     },
     {
       code: "<img src='foo' role='presentation' />",
-      errors: [{ message: rule.messages.imgPresentation }]
+      errors: [{ messageId: "imgPresentation" }]
     },
     {
       code: "<object />",
-      errors: [{ message: rule.messages.object }]
+      errors: [{ messageId: "object" }]
     },
     {
       code: "<area />",
-      errors: [{ message: rule.messages.area }]
+      errors: [{ messageId: "area" }]
     },
     {
       code: "<input type='image' />",
-      errors: [{ message: rule.messages.input }]
+      errors: [{ messagId: "input" }]
     }
   ]
 });

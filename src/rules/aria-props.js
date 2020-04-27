@@ -5,13 +5,13 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const makeMessage = (name) =>
-  `${name}: This attribute is an invalid ARIA attribute.`;
-
 module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("aria-props")
+    },
+    messages: {
+      default: "{{name}} This attribute is an invalid ARIA attribute."
     }
   },
   create(context) {
@@ -21,10 +21,9 @@ module.exports = {
         const lowered = name.toLowerCase();
 
         if (lowered.startsWith("aria-") && !aria.has(lowered)) {
-          context.report({ node, message: makeMessage(name) });
+          context.report({ node, messageId: "default", data: { name } });
         }
       }
     });
-  },
-  makeMessage
+  }
 };

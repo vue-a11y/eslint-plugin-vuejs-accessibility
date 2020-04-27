@@ -20,7 +20,7 @@ makeRuleTester("label-has-for", rule, {
     {
       code: "<Label for='id' />",
       options: [{ components: ["Label"] }],
-      errors: [{ message: rule.message }]
+      errors: [{ messageId: "default" }]
     }
   ]
 });

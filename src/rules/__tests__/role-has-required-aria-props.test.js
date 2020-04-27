@@ -8,11 +8,21 @@ makeRuleTester("role-has-required-aria-props", rule, {
   invalid: [
     {
       code: "<span role='checkbox' aria-labelledby='test' tabindex='0' />",
-      errors: [{ message: rule.makeMessage("checkbox", "aria-checked") }]
+      errors: [
+        {
+          messageId: "default",
+          data: { role: "checkbox", attributes: "aria-checked" }
+        }
+      ]
     },
     {
       code: "<span role='radio' aria-labelledby='test' tabindex='0' />",
-      errors: [{ message: rule.makeMessage("radio", "aria-checked") }]
+      errors: [
+        {
+          messageId: "default",
+          data: { role: "radio", attributes: "aria-checked" }
+        }
+      ]
     }
   ]
 });

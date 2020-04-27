@@ -14,7 +14,7 @@ makeRuleTester("anchor-has-content", rule, {
     {
       code: "<Anchor  />",
       options: [{ components: ["Anchor"] }],
-      errors: [{ message: rule.message }]
+      errors: [{ messageId: "default" }]
     }
   ]
 });

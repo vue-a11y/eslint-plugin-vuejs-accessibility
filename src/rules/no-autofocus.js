@@ -6,14 +6,14 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const message = `\
-The autofocus prop should not be used, as it can reduce usability and \
-accessibility for users.`;
-
 module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("no-autofocus")
+    },
+    messages: {
+      default:
+        "The autofocus prop should not be used, as it can reduce usability and accessibility for users."
     },
     schema: [
       {
@@ -39,9 +39,8 @@ module.exports = {
           return;
         }
 
-        context.report({ node, message });
+        context.report({ node, messageId: "default" });
       }
     });
-  },
-  message
+  }
 };

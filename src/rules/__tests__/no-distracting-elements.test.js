@@ -6,11 +6,11 @@ makeRuleTester("no-distracting-elements", rule, {
   invalid: [
     {
       code: "<blink />",
-      errors: [{ message: rule.makeMessage("blink") }]
+      errors: [{ messageId: "default", data: { elementType: "blink" } }]
     },
     {
       code: "<marquee />",
-      errors: [{ message: rule.makeMessage("marquee") }]
+      errors: [{ messageId: "default", data: { elementType: "marquee" } }]
     }
   ]
 });

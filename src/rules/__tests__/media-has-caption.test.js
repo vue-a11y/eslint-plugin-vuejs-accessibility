@@ -72,12 +72,12 @@ makeRuleTester("media-has-caption", rule, {
     {
       code: "<Audio muted='false' />",
       options,
-      errors: [{ message: rule.message }]
+      errors: [{ messageId: "default" }]
     },
     {
       code: "<Video muted='false' />",
       options,
-      errors: [{ message: rule.message }]
+      errors: [{ messageId: "default" }]
     },
     "<video />",
     "<audio>Foo</audio>",
@@ -85,32 +85,32 @@ makeRuleTester("media-has-caption", rule, {
     {
       code: "<Audio />",
       options,
-      errors: [{ message: rule.message }]
+      errors: [{ messageId: "default" }]
     },
     {
       code: "<Video />",
       options,
-      errors: [{ message: rule.message }]
+      errors: [{ messageId: "default" }]
     },
     {
       code: "<audio><Track /></audio>",
       options,
-      errors: [{ message: rule.message }]
+      errors: [{ messageId: "default" }]
     },
     {
       code: "<video><Track /></video>",
       options,
-      errors: [{ message: rule.message }]
+      errors: [{ messageId: "default" }]
     },
     {
       code: "<Audio><Track kind='subtitles' /></Audio>",
       options,
-      errors: [{ message: rule.message }]
+      errors: [{ messageId: "default" }]
     },
     {
       code: "<Video><Track kind='subtitles' /></Video>",
       options,
-      errors: [{ message: rule.message }]
+      errors: [{ messageId: "default" }]
     }
   ]
 });

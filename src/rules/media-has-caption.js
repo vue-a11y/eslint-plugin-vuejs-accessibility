@@ -7,9 +7,6 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const message = `Media elements such as <audio> and <video> must have a \
-<track> for captions.`;
-
 const isCaptionsTrackElement = (node) => {
   const kind = getElementAttributeValue(node, "kind");
   return kind && kind.toLowerCase() === "captions";
@@ -19,6 +16,10 @@ module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("media-has-caption")
+    },
+    messages: {
+      default:
+        "Media elements such as <audio> and <video> must have a <track> for captions."
     },
     schema: [
       {
@@ -66,10 +67,9 @@ module.exports = {
           trackElements.length === 0 ||
           !trackElements.some(isCaptionsTrackElement)
         ) {
-          context.report({ node, message });
+          context.report({ node, messageId: "default" });
         }
       }
     });
-  },
-  message
+  }
 };

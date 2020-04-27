@@ -7,13 +7,14 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const message =
-  "Elements with ARIA roles must use a valid, non-abstract ARIA role.";
-
 module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("aria-role")
+    },
+    messages: {
+      default:
+        "Elements with ARIA roles must use a valid, non-abstract ARIA role."
     },
     schema: [
       {
@@ -50,10 +51,9 @@ module.exports = {
           .every((role) => roles.has(role) && !roles.get(role).abstract);
 
         if (!valid) {
-          context.report({ node, message });
+          context.report({ node, messageId: "default" });
         }
       }
     });
-  },
-  message
+  }
 };

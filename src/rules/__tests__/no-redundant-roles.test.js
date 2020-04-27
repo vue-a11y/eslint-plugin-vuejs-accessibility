@@ -6,15 +6,17 @@ makeRuleTester("no-redundant-roles", rule, {
   invalid: [
     {
       code: "<img role='img' src='foo.jpg' />",
-      errors: [{ message: rule.makeMessage("img", "img") }]
+      errors: [{ messageId: "default", data: { type: "img", role: "img" } }]
     },
     {
       code: "<a role='link' href='#' />",
-      errors: [{ message: rule.makeMessage("a", "link") }]
+      errors: [{ messageId: "default", data: { type: "a", role: "link" } }]
     },
     {
       code: "<button role='button' />",
-      errors: [{ message: rule.makeMessage("button", "button") }]
+      errors: [
+        { messageId: "default", data: { type: "button", role: "button" } }
+      ]
     }
   ]
 });

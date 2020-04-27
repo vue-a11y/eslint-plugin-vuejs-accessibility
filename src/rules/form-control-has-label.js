@@ -6,9 +6,6 @@ const {
   makeDocsURL
 } = require("../utils");
 
-const message = `Each form element must have a programmatically associated \
-label element.`;
-
 const isLabelElement = (node) =>
   node.type === "VElement" && getElementType(node) === "label";
 
@@ -21,6 +18,10 @@ module.exports = {
   meta: {
     docs: {
       url: makeDocsURL("form-has-label")
+    },
+    messages: {
+      default:
+        "Each form element must have a programmatically associated label element."
     }
   },
   create(context) {
@@ -43,10 +44,9 @@ module.exports = {
         }
 
         if (!hasAriaLabel(node) && !hasLabelElement(node)) {
-          context.report({ node, message });
+          context.report({ node, messageId: "default" });
         }
       }
     });
-  },
-  message
+  }
 };
