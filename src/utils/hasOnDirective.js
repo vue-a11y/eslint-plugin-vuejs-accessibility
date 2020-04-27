@@ -6,6 +6,8 @@ const hasOnDirective = (node, name) =>
       attribute.directive &&
       key.name.name === "on" &&
       key.argument.name === name &&
+      value &&
+      value.expression &&
       !!value.expression.body
     );
   });

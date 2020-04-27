@@ -18,9 +18,9 @@ module.exports = {
     return defineTemplateBodyVisitor(context, {
       VAttribute(node) {
         const name = getAttributeName(node);
-        const lowered = name.toLowerCase();
+        const lowered = name && name.toLowerCase();
 
-        if (lowered.startsWith("aria-") && !aria.has(lowered)) {
+        if (lowered && lowered.startsWith("aria-") && !aria.has(lowered)) {
           context.report({ node, messageId: "default", data: { name } });
         }
       }
