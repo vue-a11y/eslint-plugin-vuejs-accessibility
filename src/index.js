@@ -25,24 +25,24 @@ module.exports = {
   configs: {
     recommended: {
       parser: require.resolve("vue-eslint-parser"),
-      plugins: ["vuejs-a11y"],
+      plugins: ["vuejs-accessibility"],
       rules: {
-        "vuejs-a11y/accessible-emoji": "error",
-        "vuejs-a11y/alt-text": "error",
-        "vuejs-a11y/anchor-has-content": "error",
-        "vuejs-a11y/aria-props": "error",
-        "vuejs-a11y/aria-role": [
+        "vuejs-accessibility/accessible-emoji": "error",
+        "vuejs-accessibility/alt-text": "error",
+        "vuejs-accessibility/anchor-has-content": "error",
+        "vuejs-accessibility/aria-props": "error",
+        "vuejs-accessibility/aria-role": [
           "error",
           {
             ignoreNonDOM: true
           }
         ],
-        "vuejs-a11y/aria-unsupported-elements": "error",
-        "vuejs-a11y/click-events-have-key-events": "error",
-        "vuejs-a11y/form-control-has-label": "error",
-        "vuejs-a11y/heading-has-content": "error",
-        "vuejs-a11y/iframe-has-title": "error",
-        "vuejs-a11y/interactive-supports-focus": [
+        "vuejs-accessibility/aria-unsupported-elements": "error",
+        "vuejs-accessibility/click-events-have-key-events": "error",
+        "vuejs-accessibility/form-control-has-label": "error",
+        "vuejs-accessibility/heading-has-content": "error",
+        "vuejs-accessibility/iframe-has-title": "error",
+        "vuejs-accessibility/interactive-supports-focus": [
           "error",
           {
             tabbable: [
@@ -56,21 +56,21 @@ module.exports = {
             ]
           }
         ],
-        "vuejs-a11y/label-has-for": "error",
-        "vuejs-a11y/media-has-caption": "error",
-        "vuejs-a11y/mouse-events-have-key-events": "error",
-        "vuejs-a11y/no-access-key": "error",
-        "vuejs-a11y/no-autofocus": [
+        "vuejs-accessibility/label-has-for": "error",
+        "vuejs-accessibility/media-has-caption": "error",
+        "vuejs-accessibility/mouse-events-have-key-events": "error",
+        "vuejs-accessibility/no-access-key": "error",
+        "vuejs-accessibility/no-autofocus": [
           "error",
           {
             ignoreNonDOM: true
           }
         ],
-        "vuejs-a11y/no-distracting-elements": "error",
-        "vuejs-a11y/no-onchange": "error",
-        "vuejs-a11y/no-redundant-roles": "error",
-        "vuejs-a11y/role-has-required-aria-props": "error",
-        "vuejs-a11y/tabindex-no-positive": "error"
+        "vuejs-accessibility/no-distracting-elements": "error",
+        "vuejs-accessibility/no-onchange": "error",
+        "vuejs-accessibility/no-redundant-roles": "error",
+        "vuejs-accessibility/role-has-required-aria-props": "error",
+        "vuejs-accessibility/tabindex-no-positive": "error"
       }
     }
   }

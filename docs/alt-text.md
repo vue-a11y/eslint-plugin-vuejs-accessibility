@@ -45,7 +45,7 @@ This rule takes one optional object argument of type object:
 ```json
 {
   "rules": {
-    "vuejs-a11y/alt-text": [
+    "vuejs-accessibility/alt-text": [
       "error",
       {
         "elements": ["img", "object", "area", "input[type=\"image\"]"],

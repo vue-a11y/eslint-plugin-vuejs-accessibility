@@ -15,7 +15,7 @@ This rule takes one optional object argument of type object:
 ```json
 {
   "rules": {
-    "vuejs-a11y/aria-role": ["error", { "ignoreNonDOM": true }]
+    "vuejs-accessibility/aria-role": ["error", { "ignoreNonDOM": true }]
   }
 }
 ```

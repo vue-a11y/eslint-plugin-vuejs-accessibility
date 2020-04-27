@@ -12,7 +12,7 @@ The default options for this rule allow an implicit role of `navigation` to be a
 
 ```json
 {
-  "vuejs-a11y/no-redundant-roles": [
+  "vuejs-accessibility/no-redundant-roles": [
     "error",
     {
       "nav": ["navigation"]
