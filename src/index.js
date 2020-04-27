@@ -9,6 +9,7 @@ module.exports = {
     "form-control-has-label": require("./rules/form-control-has-label"),
     "heading-has-content": require("./rules/heading-has-content"),
     "iframe-has-title": require("./rules/iframe-has-title"),
+    "interactive-supports-focus": require("./rules/interactive-supports-focus"),
     "media-has-caption": require("./rules/media-has-caption"),
     "mouse-events-have-key-events": require("./rules/mouse-events-have-key-events"),
     "no-access-key": require("./rules/no-access-key"),
@@ -38,6 +39,20 @@ module.exports = {
         "vue-accessibility/form-control-has-label": "error",
         "vue-accessibility/heading-has-content": "error",
         "vue-accessibility/iframe-has-title": "error",
+        "vue-accessibility/interactive-supports-focus": [
+          "error",
+          {
+            tabbable: [
+              "button",
+              "checkbox",
+              "link",
+              "searchbox",
+              "spinbutton",
+              "switch",
+              "textbox"
+            ]
+          }
+        ],
         "vue-accessibility/media-has-caption": "error",
         "vue-accessibility/mouse-events-have-key-events": "error",
         "vue-accessibility/no-access-key": "error",

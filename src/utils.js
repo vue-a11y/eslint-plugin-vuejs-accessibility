@@ -11,6 +11,7 @@ const hasOnDirectives = require("./utils/hasOnDirectives");
 const isAttribute = require("./utils/isAttribute");
 const isHiddenFromScreenReader = require("./utils/isHiddenFromScreenReader");
 const isInteractiveElement = require("./utils/isInteractiveElement");
+const isPresentationRole = require("./utils/isPresentationRole");
 const makeDocsURL = require("./utils/makeDocsURL");
 const matchesElementRole = require("./utils/matchesElementRole");
 
@@ -66,6 +67,7 @@ module.exports = {
   isAttributeWithValue,
   isHiddenFromScreenReader,
   isInteractiveElement,
+  isPresentationRole,
   makeDocsURL,
   matchesElementRole
 };
