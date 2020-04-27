@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-vue-accessibility",
+  "name": "eslint-plugin-vuejs-a11y",
   "version": "0.1.0",
   "description": "An eslint plugin for checking Vue.js files for accessibility",
   "main": "src/index.js",

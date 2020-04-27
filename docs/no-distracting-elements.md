@@ -14,7 +14,7 @@ This rule takes one optional object argument of type object:
 ```json
 {
   "rules": {
-    "vue-accessibility/no-distracting-elements": [
+    "vuejs-a11y/no-distracting-elements": [
       "error",
       {
         "elements": ["marquee", "blink"]

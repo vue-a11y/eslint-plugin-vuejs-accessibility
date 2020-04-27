@@ -13,7 +13,7 @@ This rule takes one optional object argument of type object:
 ```json
 {
   "rules": {
-    "vue-accessibility/no-autofocus": ["error", { "ignoreNonDOM": true }]
+    "vuejs-a11y/no-autofocus": ["error", { "ignoreNonDOM": true }]
   }
 }
 ```

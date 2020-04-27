@@ -1,16 +1,16 @@
-# eslint-plugin-vue-accessibility
+# eslint-plugin-vuejs-a11y
 
-[![Build Status](https://github.com/kddeisz/eslint-plugin-vue-accessibility/workflows/Main/badge.svg)](https://github.com/kddeisz/eslint-plugin-vue-accessibility/actions)
+[![Build Status](https://github.com/kddeisz/eslint-plugin-vuejs-a11y/workflows/Main/badge.svg)](https://github.com/kddeisz/eslint-plugin-vuejs-a11y/actions)
 
 An `eslint` plugin for checking accessibility rules from within `.vue` files.
 
 ## Usage
 
-Add `vue-accessibility` to the plugins section of your `eslint` configuration. You can omit the `eslint-plugin-` prefix:
+Add `vuejs-a11y` to the plugins section of your `eslint` configuration. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
-  "plugins": ["vue-accessibility"]
+  "plugins": ["vuejs-a11y"]
 }
 ```
 
@@ -19,16 +19,16 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "vue-accessibility/rule-name": "error"
+    "vuejs-a11y/rule-name": "error"
   }
 }
 ```
 
-You can also enable all the recommended rules at once. Add `plugin:vue-accessibility/recommended` in extends:
+You can also enable all the recommended rules at once. Add `plugin:vuejs-a11y/recommended` in extends:
 
 ```json
 {
-  "extends": ["plugin:vue-accessibility/recommended"]
+  "extends": ["plugin:vuejs-a11y/recommended"]
 }
 ```
 
@@ -47,7 +47,7 @@ To add a new rule, you need to take the following steps:
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/kddeisz/eslint-plugin-vue-accessibility.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kddeisz/eslint-plugin-vuejs-a11y.
 
 ## License
 

@@ -16,7 +16,7 @@ This rule takes one optional object argument of type object:
 ```json
 {
   "rules": {
-    "vue-accessibility/media-has-caption": [
+    "vuejs-a11y/media-has-caption": [
       "error",
       {
         "audio": ["Audio"],

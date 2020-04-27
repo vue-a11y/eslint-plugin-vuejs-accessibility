@@ -14,7 +14,7 @@ This rule takes one optional object argument of type object:
 ```json
 {
   "rules": {
-    "vue-accessibility/label-has-for": [
+    "vuejs-a11y/label-has-for": [
       "error",
       {
         "components": ["Label"],

@@ -45,7 +45,7 @@ This rule takes an options object with the key `tabbable`. The value is an array
 
 ```json
 {
-  "vue-accessibility/interactive-supports-focus": ["error", {
+  "vuejs-a11y/interactive-supports-focus": ["error", {
     "tabbable": [
       "button",
       "checkbox",

@@ -13,7 +13,7 @@ This rule takes one optional object argument of type object:
 ```json
 {
   "rules": {
-    "vue-accessibility/anchor-has-content": [
+    "vuejs-a11y/anchor-has-content": [
       "error",
       {
         "components": ["Anchor"]
