@@ -1,6 +1,7 @@
 # eslint-plugin-vuejs-accessibility
 
 [![Build Status](https://github.com/kddeisz/eslint-plugin-vuejs-accessibility/workflows/Main/badge.svg)](https://github.com/kddeisz/eslint-plugin-vuejs-accessibility/actions)
+[![Package Version](https://img.shields.io/npm/v/eslint-plugin-vuejs-accessibility.svg)](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
 
 An `eslint` plugin for checking accessibility rules from within `.vue` files.
 
