@@ -52,3 +52,11 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/kddeis
 ## License
 
 The code is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Credit
+
+The work for this plugin was largely based on previous work done on [eslint-plugin-vue-a11y](https://github.com/maranran/eslint-plugin-vue-a11y), as well as various other tools, including:
+
+- [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
+- [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue)
+- [jsx-ast-utils](https://github.com/vuejs/eslint-plugin-vue)
