@@ -1,6 +1,6 @@
 # eslint-plugin-vuejs-accessibility
 
-[![Build Status](https://github.com/kddeisz/eslint-plugin-vuejs-accessibility/workflows/Main/badge.svg)](https://github.com/kddeisz/eslint-plugin-vuejs-accessibility/actions)
+[![Build Status](https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/workflows/Main/badge.svg)](https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/actions)
 [![Package Version](https://img.shields.io/npm/v/eslint-plugin-vuejs-accessibility.svg)](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
 
 An `eslint` plugin for checking accessibility rules from within `.vue` files.
@@ -48,7 +48,7 @@ To add a new rule, you need to take the following steps:
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/kddeisz/eslint-plugin-vuejs-accessibility.
+Bug reports and pull requests are welcome on GitHub at https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility.
 
 ## License
 
