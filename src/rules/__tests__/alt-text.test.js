@@ -37,7 +37,7 @@ makeRuleTester("alt-text", rule, {
     },
     {
       code: "<input type='image' />",
-      errors: [{ messagId: "input" }]
+      errors: [{ messageId: "input" }]
     }
   ]
 });
