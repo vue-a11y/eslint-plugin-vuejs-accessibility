@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
         with:
-          node-version: 11.x
+          node-version: 14.x
       - id: yarn-cache
         run: echo "::set-output name=directory::$(yarn cache dir)"
       - uses: actions/cache@v1
