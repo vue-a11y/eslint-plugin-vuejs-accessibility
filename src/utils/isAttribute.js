@@ -3,7 +3,10 @@ const isAttribute = (node, name) => {
 
   return (
     (!node.directive && key.name === name) ||
-    (node.directive && key.name.name === "bind" && key.argument.name === name)
+    (node.directive &&
+      key.name.name === "bind" &&
+      key.argument &&
+      key.argument.name === name)
   );
 };
 

@@ -6,7 +6,10 @@ const hasAccessibleChild = (node) =>
       case "VText":
         return child.value.trim().length > 0;
       case "VElement":
-        return !isHiddenFromScreenReader(child) && hasAccessibleChild(child);
+        return (
+          child.rawName === "slot" ||
+          (!isHiddenFromScreenReader(child) && hasAccessibleChild(child))
+        );
       case "VExpressionContainer":
         if (child.expression && child.expression.type === "Identifier") {
           return child.expression.name !== "undefined";

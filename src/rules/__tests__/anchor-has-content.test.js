@@ -7,6 +7,7 @@ makeRuleTester("anchor-has-content", rule, {
     "<a is='TextWrapper' />",
     "<a v-text='msg' />",
     "<a v-html='msg' />",
+    "<a><slot /></a>",
     "<Anchor  />"
   ],
   invalid: [
