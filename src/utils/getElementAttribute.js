@@ -6,6 +6,7 @@ const getElementAttribute = (node, name) => {
       (!attribute.directive && key.name === name) ||
       (attribute.directive &&
         key.name.name === "bind" &&
+        key.argument &&
         key.argument.name === name)
     ) {
       return attribute;

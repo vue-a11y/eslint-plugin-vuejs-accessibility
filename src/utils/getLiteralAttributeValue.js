@@ -9,6 +9,7 @@ const getLiteralAttributeValue = (node, name) => {
     if (
       attribute.directive &&
       key.name.name === "bind" &&
+      key.argument &&
       key.argument.name === name &&
       value &&
       value.expression &&
