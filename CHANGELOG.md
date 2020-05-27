@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+
+- Support deeply nested `input` controls for the `form-control-has-label` rule.
+
 ## [0.1.2] - 2020-05-11
 
 ### Changed

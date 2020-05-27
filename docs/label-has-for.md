@@ -40,7 +40,9 @@ The `required` option (defaults to `"required": { "every": ["nesting", "id"] }`)
 The `allowChildren` option (defaults to `false`) determines whether default slot content is allowed to be passed into a `label` element. For example, the following pattern, by default, is not allowed:
 
 ```vue
-<label>Foo</label>
+<label>
+  <slot />
+</label>
 ```
 
 However, if `allowChildren` is set to `true`, no error will be raised. If you want to pass in default slot content without raising an error because you cannot be sure what the default slot will render, then set `allowChildren` to `true`.
