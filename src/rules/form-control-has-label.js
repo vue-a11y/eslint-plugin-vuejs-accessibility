@@ -11,7 +11,11 @@ const isLabelElement = (node) =>
 
 const hasLabelElement = (node) => {
   const { parent } = node;
-  return [parent, ...parent.children].some(isLabelElement);
+
+  return (
+    [parent, ...parent.children].some(isLabelElement) ||
+    (parent && parent.type === "VElement" && hasLabelElement(parent))
+  );
 };
 
 module.exports = {
