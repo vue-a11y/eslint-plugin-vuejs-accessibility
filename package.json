@@ -4,6 +4,9 @@
   "description": "An eslint plugin for checking Vue.js files for accessibility",
   "main": "src/index.js",
   "scripts": {
+    "docs:dev": "./node_modules/.bin/vuepress dev docs --no-cache",
+    "docs:build": "./node_modules/.bin/vuepress build docs --no-cache && echo eslint-plugin.vue-a11y.com >> docs/.vuepress/dist/CNAME",
+    "docs:publish": "gh-pages -d docs/.vuepress/dist",
     "lint": "eslint --cache .",
     "test": "jest"
   },
@@ -20,10 +23,14 @@
   "devDependencies": {
     "eslint": "^7.0.0",
     "eslint-plugin-eslint-plugin": "^2.2.1",
+    "gh-pages": "^2.2.0",
     "husky": "^4.2.5",
     "jest": "^26.0.0",
     "prettier": "^2.0.5",
-    "pretty-quick": "^2.0.1"
+    "pretty-quick": "^2.0.1",
+    "vuepress": "^1.5.0",
+    "vuepress-theme-default-vue-a11y": "^0.1.10",
+    "watchpack": "^1.6.1"
   },
   "eslintConfig": {
     "env": {

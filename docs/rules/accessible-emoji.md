@@ -12,7 +12,7 @@ This rule takes no arguments.
 
 ### Succeed
 
-```
+```html
 <span role="img" aria-label="Snowman">&#9731;</span>
 <span role="img" aria-label="Panda">🐼</span>
 <span role="img" aria-labelledby="panda1">🐼</span>
@@ -20,7 +20,6 @@ This rule takes no arguments.
 
 ### Fail
 
-```
-<span>🐼</span>
-<i role="img" aria-label="Panda">🐼</i>
+```html
+<span>🐼</span> <i role="img" aria-label="Panda">🐼</i>
 ```

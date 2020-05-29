@@ -14,7 +14,7 @@ Replace the component with one that renders semantic html element like `<button>
 
 Add the `tabindex` property to your component. A value of zero indicates that this element can be tabbed to.
 
-```
+```vue
 <div role="button" @click="foo" tabindex="0" />
 ```
 
@@ -22,7 +22,7 @@ Add the `tabindex` property to your component. A value of zero indicates that th
 
 This element is part of a group of buttons, links, menu items, etc. Or this element is part of a composite widget. Composite widgets prescribe standard [keyboard interaction patterns](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_generalnav). Within a group of similar elements -- like a button bar -- or within a composite widget, elements that can be focused are given a tabindex of -1. This makes the element _focusable_ but not _tabbable_. Generally one item in a group should have a tabindex of zero so that a user can tab to the component. Once an element in the component has focus, your key management behaviors will control traversal within the component's pieces. As the UI author, you will need to implement the key handling behaviors such as listening for traversal key (up/down/left/right) presses and moving the page focus between the focusable elements in your widget.
 
-```
+```html
 <div role="menu">
   <div role="menuitem" tabindex="0">Open</div>
   <div role="menuitem" tabindex="-1">Save</div>

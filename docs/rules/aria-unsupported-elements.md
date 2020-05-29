@@ -12,12 +12,12 @@ This rule takes no arguments.
 
 ### Succeed
 
-```
+```html
 <meta charset="UTF-8" />
 ```
 
 ### Fail
 
-```
+```html
 <meta charset="UTF-8" aria-hidden="false" />
 ```

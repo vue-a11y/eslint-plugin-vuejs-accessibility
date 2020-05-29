@@ -10,7 +10,7 @@ _References:_
 
 ### Succeed
 
-```
+```html
 <label><input type="text" /></label>
 <input aria-label="test" type="text" />
 <input aria-labelledby="#id" type="text" />
@@ -20,7 +20,6 @@ _References:_
 
 ### Fail
 
-```
-<input value="1" type="text" />
-<textarea value="1"></textarea>
+```html
+<input value="1" type="text" /> <textarea value="1"></textarea>
 ```

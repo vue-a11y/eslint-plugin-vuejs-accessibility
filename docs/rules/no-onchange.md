@@ -13,7 +13,7 @@ This rule takes no arguments.
 
 ### Succeed
 
-```value
+```vue
 <select @blur="handleBlur">
   <option/>
 </select>
