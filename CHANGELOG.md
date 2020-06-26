@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.2.0] - 2020-06-26
+
+### Changed
+
+- Bump the dependency on `aria-query` to `4.2.2`.
+
 ## [0.1.3] - 2020-05-27
 
 ### Changed
@@ -32,7 +38,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Initial release 🎉.
 
-[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.1.3...HEAD
+[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/CultureHQ/components/compare/v0.1.3...v0.2.0
 [0.1.3]: https://github.com/CultureHQ/components/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/CultureHQ/components/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/CultureHQ/components/compare/v0.1.0...v0.1.1
