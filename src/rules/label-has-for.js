@@ -2,20 +2,38 @@ const {
   defineTemplateBodyVisitor,
   getElementAttributeValue,
   getElementType,
-  hasAccessibleChild,
+  isHiddenFromScreenReader,
   makeDocsURL
 } = require("../utils");
 
+const controlTypes = ["input", "meter", "progress", "select", "textarea"];
+
+const validateNesting = (node, allowChildren) =>
+  node.children.some((child) => {
+    if (child.rawName === "slot") {
+      return allowChildren;
+    }
+
+    if (child.type === "VElement") {
+      return (
+        !isHiddenFromScreenReader(child) &&
+        (controlTypes.includes(getElementType(child)) ||
+          validateNesting(child, allowChildren))
+      );
+    }
+
+    return false;
+  });
+
 const validate = (node, rule, allowChildren) => {
-  if (allowChildren === true) {
-    return hasAccessibleChild(node);
+  switch (rule) {
+    case "nesting":
+      return validateNesting(node, allowChildren);
+    case "id":
+      return getElementAttributeValue(node, "for");
+    default:
+      return false;
   }
-
-  if (rule === "nesting") {
-    return node.children.some((child) => child.type === "VElement");
-  }
-
-  return getElementAttributeValue(node, "for");
 };
 
 const isValidLabel = (node, required, allowChildren) => {

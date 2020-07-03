@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Changed
 
 - For the `anchor-has-content` rule, allow anchors with explicit aria labels to pass.
+- For the `label-has-for` rule when validating that there is correct nesting, ensure that we're actually checking for form controls and not just checking for VElement nodes.
 
 ## [0.2.0] - 2020-06-26
 
