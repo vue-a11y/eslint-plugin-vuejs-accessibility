@@ -1,6 +1,7 @@
 const {
   defineTemplateBodyVisitor,
   getElementType,
+  hasAriaLabel,
   hasContent,
   makeDocsURL
 } = require("../utils");
@@ -34,7 +35,11 @@ module.exports = {
         const elementTypes = ["a"].concat(components);
         const elementType = getElementType(node);
 
-        if (elementTypes.includes(elementType) && !hasContent(node)) {
+        if (
+          elementTypes.includes(elementType) &&
+          !hasContent(node) &&
+          !hasAriaLabel(node)
+        ) {
           context.report({ node, messageId: "default" });
         }
       }

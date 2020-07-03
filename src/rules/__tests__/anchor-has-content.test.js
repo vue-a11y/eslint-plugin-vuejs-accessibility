@@ -8,7 +8,8 @@ makeRuleTester("anchor-has-content", rule, {
     "<a v-text='msg' />",
     "<a v-html='msg' />",
     "<a><slot /></a>",
-    "<Anchor  />"
+    "<Anchor  />",
+    "<a aria-label='This is my label' />"
   ],
   invalid: [
     "<a />",

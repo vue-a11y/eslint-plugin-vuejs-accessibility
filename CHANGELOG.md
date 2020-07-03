@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+
+- For the `anchor-has-content` rule, allow anchors with explicit aria labels to pass.
+
 ## [0.2.0] - 2020-06-26
 
 ### Changed
