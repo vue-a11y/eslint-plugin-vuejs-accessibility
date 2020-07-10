@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+
+- When emojis are hidden from the a11y tree, don't warn with the `accessible-emoji` rule.
+
 ## [0.3.0] - 2020-07-03
 
 ### Changed

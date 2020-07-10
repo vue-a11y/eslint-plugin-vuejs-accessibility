@@ -4,8 +4,17 @@ const {
   getElementAttributeValue,
   getElementType,
   hasAriaLabel,
+  isHiddenFromScreenReader,
   makeDocsURL
 } = require("../utils");
+
+const isAriaHidden = (node) => {
+  if (!node || node.type !== "VElement") {
+    return false;
+  }
+
+  return isHiddenFromScreenReader(node) || isAriaHidden(node.parent);
+};
 
 module.exports = {
   meta: {
@@ -25,9 +34,10 @@ module.exports = {
           const element = node.parent;
 
           if (
-            !hasAriaLabel(element) ||
-            getElementType(element) !== "span" ||
-            getElementAttributeValue(element, "role") !== "img"
+            !isAriaHidden(element) &&
+            (!hasAriaLabel(element) ||
+              getElementType(element) !== "span" ||
+              getElementAttributeValue(element, "role") !== "img")
           ) {
             context.report({ node, messageId: "default" });
           }
