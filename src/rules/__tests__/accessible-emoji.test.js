@@ -6,7 +6,9 @@ makeRuleTester("accessible-emoji", rule, {
     "<div />",
     "<span />",
     "<span role='img' aria-label='Panda face'>😰</span>",
-    "<span role='img' aria-label='Snowman'>&#9731;</span>"
+    "<span role='img' aria-label='Snowman'>&#9731;</span>",
+    "<span aria-hidden>😰</span>",
+    "<div aria-hidden><span>😰</span></div>"
   ],
   invalid: [
     "<span>😰</span>",
