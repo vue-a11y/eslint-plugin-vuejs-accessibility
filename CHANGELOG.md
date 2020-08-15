@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.4.0] - 2020-08-15
+
 ### Added
 
 - The `controlComponents` option for the `label-has-for` rule, which allows you to configure the rule to allow additional control components.
@@ -55,7 +57,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Initial release 🎉.
 
-[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.3.1...HEAD
+[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.1.3...v0.2.0
