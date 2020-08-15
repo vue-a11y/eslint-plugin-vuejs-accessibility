@@ -17,7 +17,8 @@ This rule takes one optional object argument of type object:
     "vuejs-accessibility/label-has-for": [
       "error",
       {
-        "components": ["Label"],
+        "components": ["VLabel"],
+        "controlComponents": ["VInput"],
         "required": {
           "every": ["nesting", "id"]
         },
@@ -28,7 +29,9 @@ This rule takes one optional object argument of type object:
 }
 ```
 
-For the `components` option, these strings determine which JSX elements (**always including** `<label>`) should be checked for having the `for` prop. This is a good use case when you have a wrapper component that simply renders a `label` element.
+For the `components` option, these strings determine which elements (**always including** `<label>`) should be checked for having the `for` prop. This is a good use case when you have a wrapper component that simply renders a `label` element.
+
+For the `controlComponents` option, these strings determine which elements should be counted as form control elements. By default, this includes `input`, `meter`, `progress`, `select`, and `textarea`. This is a good use case when you have a wrapper component that simplify renders a `input` element.
 
 The `required` option (defaults to `"required": { "every": ["nesting", "id"] }`) determines which checks are activated. You're allowed to pass in one of the following types:
 

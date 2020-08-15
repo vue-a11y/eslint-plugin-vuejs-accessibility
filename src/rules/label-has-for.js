@@ -8,7 +8,7 @@ const {
 
 const controlTypes = ["input", "meter", "progress", "select", "textarea"];
 
-const validateNesting = (node, allowChildren) =>
+const validateNesting = (node, allowChildren, controlComponents) =>
   node.children.some((child) => {
     if (child.rawName === "slot") {
       return allowChildren;
@@ -17,7 +17,9 @@ const validateNesting = (node, allowChildren) =>
     if (child.type === "VElement") {
       return (
         !isHiddenFromScreenReader(child) &&
-        (controlTypes.includes(getElementType(child)) ||
+        (controlTypes
+          .concat(controlComponents)
+          .includes(getElementType(child)) ||
           validateNesting(child, allowChildren))
       );
     }
@@ -25,10 +27,10 @@ const validateNesting = (node, allowChildren) =>
     return false;
   });
 
-const validate = (node, rule, allowChildren) => {
+const validate = (node, rule, allowChildren, controlComponents) => {
   switch (rule) {
     case "nesting":
-      return validateNesting(node, allowChildren);
+      return validateNesting(node, allowChildren, controlComponents);
     case "id":
       return getElementAttributeValue(node, "for");
     default:
@@ -36,16 +38,20 @@ const validate = (node, rule, allowChildren) => {
   }
 };
 
-const isValidLabel = (node, required, allowChildren) => {
+const isValidLabel = (node, required, allowChildren, controlComponents) => {
   if (Array.isArray(required.some)) {
-    return required.some.some((rule) => validate(node, rule, allowChildren));
+    return required.some.some((rule) =>
+      validate(node, rule, allowChildren, controlComponents)
+    );
   }
 
   if (Array.isArray(required.every)) {
-    return required.every.every((rule) => validate(node, rule, allowChildren));
+    return required.every.every((rule) =>
+      validate(node, rule, allowChildren, controlComponents)
+    );
   }
 
-  return validate(node, required, allowChildren);
+  return validate(node, required, allowChildren, controlComponents);
 };
 
 module.exports = {
@@ -61,6 +67,13 @@ module.exports = {
         type: "object",
         properties: {
           components: {
+            type: "array",
+            items: {
+              type: "string"
+            },
+            uniqueItems: true
+          },
+          controlComponents: {
             type: "array",
             items: {
               type: "string"
@@ -116,12 +129,13 @@ module.exports = {
         const {
           allowChildren = false,
           components = [],
+          controlComponents = [],
           required = { every: ["nesting", "id"] }
         } = context.options[0] || {};
 
         if (
           ["label"].concat(components).includes(getElementType(node)) &&
-          !isValidLabel(node, required, allowChildren)
+          !isValidLabel(node, required, allowChildren, controlComponents)
         ) {
           context.report({ node, messageId: "default" });
         }
