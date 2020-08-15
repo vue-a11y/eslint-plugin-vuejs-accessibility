@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Added
+
+- The `controlComponents` option for the `label-has-for` rule, which allows you to configure the rule to allow additional control components.
+
 ## [0.3.1] - 2020-07-10
 
 ### Changed

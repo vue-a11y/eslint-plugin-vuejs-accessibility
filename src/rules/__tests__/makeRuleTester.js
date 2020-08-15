@@ -8,7 +8,7 @@ const makeValidExample = (example) => {
     return { filename, code: makeTemplate(example) };
   }
 
-  return Object.assign(example, { filename });
+  return Object.assign(example, { filename, code: makeTemplate(example.code) });
 };
 
 const makeInvalidExample = (example) => {

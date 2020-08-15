@@ -13,6 +13,10 @@ makeRuleTester("label-has-for", rule, {
     {
       code: "<label for='id'><slot /></label>",
       options: [{ allowChildren: true }]
+    },
+    {
+      code: "<label for='id'><VInput /></label>",
+      options: [{ controlComponents: ["VInput"] }]
     }
   ],
   invalid: [
@@ -21,8 +25,8 @@ makeRuleTester("label-has-for", rule, {
     "<label for='id'><slot /></label>",
     "<label for='id'><div /></label>",
     {
-      code: "<Label for='id' />",
-      options: [{ components: ["Label"] }],
+      code: "<VLabel for='id' />",
+      options: [{ components: ["VLabel"] }],
       errors: [{ messageId: "default" }]
     }
   ]
