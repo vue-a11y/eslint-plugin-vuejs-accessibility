@@ -8,9 +8,9 @@ An `eslint` plugin for checking accessibility rules from within `.vue` files.
 ## Installation
 
 ```sh
-npm install eslint-plugin-vuejs-accessibility
+npm install --save-dev eslint-plugin-vuejs-accessibility
 # or
-yarn add eslint-plugin-vuejs-accessibility
+yarn add --dev eslint-plugin-vuejs-accessibility
 ```
 
 ## Usage
