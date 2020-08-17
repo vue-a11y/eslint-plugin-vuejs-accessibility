@@ -8,8 +8,10 @@ const {
 
 const controlTypes = ["input", "meter", "progress", "select", "textarea"];
 
-const validateNesting = (node, allowChildren, controlComponents) =>
+const validateNesting = (node, options) =>
   node.children.some((child) => {
+    const { allowChildren, controlComponents } = options;
+
     if (child.rawName === "slot") {
       return allowChildren;
     }
@@ -20,17 +22,17 @@ const validateNesting = (node, allowChildren, controlComponents) =>
         (controlTypes
           .concat(controlComponents)
           .includes(getElementType(child)) ||
-          validateNesting(child, allowChildren, controlComponents))
+          validateNesting(child, options))
       );
     }
 
     return false;
   });
 
-const validate = (node, rule, allowChildren, controlComponents) => {
+const validate = (node, rule, options) => {
   switch (rule) {
     case "nesting":
-      return validateNesting(node, allowChildren, controlComponents);
+      return validateNesting(node, options);
     case "id":
       return getElementAttributeValue(node, "for");
     default:
@@ -38,20 +40,16 @@ const validate = (node, rule, allowChildren, controlComponents) => {
   }
 };
 
-const isValidLabel = (node, required, allowChildren, controlComponents) => {
+const isValidLabel = (node, required, options) => {
   if (Array.isArray(required.some)) {
-    return required.some.some((rule) =>
-      validate(node, rule, allowChildren, controlComponents)
-    );
+    return required.some.some((rule) => validate(node, rule, options));
   }
 
   if (Array.isArray(required.every)) {
-    return required.every.every((rule) =>
-      validate(node, rule, allowChildren, controlComponents)
-    );
+    return required.every.every((rule) => validate(node, rule, options));
   }
 
-  return validate(node, required, allowChildren, controlComponents);
+  return validate(node, required, options);
 };
 
 module.exports = {
@@ -135,7 +133,7 @@ module.exports = {
 
         if (
           ["label"].concat(components).includes(getElementType(node)) &&
-          !isValidLabel(node, required, allowChildren, controlComponents)
+          !isValidLabel(node, required, { allowChildren, controlComponents })
         ) {
           context.report({ node, messageId: "default" });
         }
