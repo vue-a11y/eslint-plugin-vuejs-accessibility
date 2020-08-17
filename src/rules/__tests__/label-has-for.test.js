@@ -28,6 +28,8 @@ makeRuleTester("label-has-for", rule, {
     "<label><input type='text' /></label>",
     "<label for='id'><slot /></label>",
     "<label for='id'><div /></label>",
+    "<label for='id'><VInput /></label>",
+    "<label for='id'><div><VInput /></div></label>",
     {
       code: "<VLabel for='id' />",
       options: [{ components: ["VLabel"] }],
