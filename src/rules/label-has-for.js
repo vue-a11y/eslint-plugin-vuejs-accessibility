@@ -20,7 +20,7 @@ const validateNesting = (node, allowChildren, controlComponents) =>
         (controlTypes
           .concat(controlComponents)
           .includes(getElementType(child)) ||
-          validateNesting(child, allowChildren))
+          validateNesting(child, allowChildren, controlComponents))
       );
     }
 

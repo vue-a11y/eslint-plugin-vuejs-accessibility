@@ -15,6 +15,10 @@ makeRuleTester("label-has-for", rule, {
       options: [{ allowChildren: true }]
     },
     {
+      code: "<label for='id'><span><VInput /><span></label>",
+      options: [{ controlComponents: ["VInput"] }]
+    },
+    {
       code: "<label for='id'><VInput /></label>",
       options: [{ controlComponents: ["VInput"] }]
     }
