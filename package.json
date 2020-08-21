@@ -23,7 +23,7 @@
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
-    "pretty-quick": "^2.0.1"
+    "pretty-quick": "^3.0.0"
   },
   "eslintConfig": {
     "env": {
