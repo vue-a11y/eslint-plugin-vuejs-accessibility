@@ -14,6 +14,11 @@ makeRuleTester("heading-has-content", rule, {
     "<h1 />",
     "<h1><span /></h1>",
     "<h1><span aria-hidden='true'>test</span></h1>",
-    "<h1>   </h1>"
+    "<h1>   </h1>",
+    {
+      code: "<v-heading />",
+      options: [{ components: ["VHeading"] }],
+      errors: [{ messageId: "default" }]
+    }
   ]
 });

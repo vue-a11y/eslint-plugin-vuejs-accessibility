@@ -2,7 +2,8 @@ const {
   defineTemplateBodyVisitor,
   getElementType,
   hasContent,
-  makeDocsURL
+  makeDocsURL,
+  makeKebabCase
 } = require("../utils");
 
 const headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
@@ -33,7 +34,7 @@ module.exports = {
       VElement(node) {
         const { components = [] } = context.options[0] || {};
 
-        const elementTypes = headings.concat(components);
+        const elementTypes = headings.concat(components.map(makeKebabCase));
         const elementType = getElementType(node);
 
         if (elementTypes.includes(elementType) && !hasContent(node)) {
