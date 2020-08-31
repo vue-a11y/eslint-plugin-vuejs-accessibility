@@ -132,13 +132,14 @@ module.exports = {
           required = { every: ["nesting", "id"] }
         } = context.options[0] || {};
 
+        const labelComponents = components.map(makeKebabCase).concat("label");
         const options = {
           allowChildren,
           controlComponents: controlComponents.map(makeKebabCase)
         };
 
         if (
-          ["label"].concat(components).includes(getElementType(node)) &&
+          labelComponents.includes(getElementType(node)) &&
           !isValidLabel(node, required, options)
         ) {
           context.report({ node, messageId: "default" });
