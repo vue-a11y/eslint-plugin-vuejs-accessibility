@@ -11,6 +11,11 @@ makeRuleTester("no-distracting-elements", rule, {
     {
       code: "<marquee />",
       errors: [{ messageId: "default", data: { elementType: "marquee" } }]
+    },
+    {
+      code: "<v-distract />",
+      options: [{ elements: ["VDistract"] }],
+      errors: [{ messageId: "default", data: { elementType: "v-distract" } }]
     }
   ]
 });

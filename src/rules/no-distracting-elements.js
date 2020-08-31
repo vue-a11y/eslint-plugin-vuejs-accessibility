@@ -1,7 +1,8 @@
 const {
   defineTemplateBodyVisitor,
   getElementType,
-  makeDocsURL
+  makeDocsURL,
+  makeKebabCase
 } = require("../utils");
 
 const defaultElements = ["marquee", "blink"];
@@ -34,7 +35,7 @@ module.exports = {
         const { elements = defaultElements } = context.options[0] || {};
         const elementType = getElementType(node);
 
-        if (elements.includes(elementType)) {
+        if (elements.map(makeKebabCase).includes(elementType)) {
           context.report({ node, messageId: "default", data: { elementType } });
         }
       }
