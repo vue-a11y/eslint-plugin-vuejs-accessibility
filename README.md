@@ -7,10 +7,16 @@ An `eslint` plugin for checking accessibility rules from within `.vue` files.
 
 ## Installation
 
-```sh
-npm install --save-dev eslint-plugin-vuejs-accessibility
-# or
+If you're using `yarn`:
+
+```bash
 yarn add --dev eslint-plugin-vuejs-accessibility
+```
+
+or if you're using `npm`:
+
+```bash
+npm install --save-dev eslint-plugin-vuejs-accessibility
 ```
 
 ## Usage
