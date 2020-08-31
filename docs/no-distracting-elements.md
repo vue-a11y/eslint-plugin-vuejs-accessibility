@@ -35,5 +35,6 @@ For the `elements` option, these strings determine which elements should be chec
 ### Fail
 
 ```vue
-<marquee /> <blink />
+<marquee />
+<blink />
 ```

@@ -62,5 +62,6 @@ However, if `allowChildren` is set to `true`, no error will be raised. If you wa
 ### Fail
 
 ```vue
-<input type="text" id="name" /> <label>First Name</label>
+<input type="text" id="name" />
+<label>First Name</label>
 ```

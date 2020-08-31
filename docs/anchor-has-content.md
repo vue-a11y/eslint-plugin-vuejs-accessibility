@@ -39,5 +39,6 @@ For the `components` option, these strings determine which elements (**always in
 ### Fail
 
 ```vue
-<a /> <a><TextWrapper aria-hidden /></a>
+<a />
+<a><TextWrapper aria-hidden /></a>
 ```

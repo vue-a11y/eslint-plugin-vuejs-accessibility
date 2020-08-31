@@ -33,5 +33,6 @@ The default options for this rule allow an implicit role of `navigation` to be a
 <!-- eslint-ignore -->
 
 ```vue
-<button role="button" /> <img role="img" src="foo.jpg" />
+<button role="button" />
+<img role="img" src="foo.jpg" />
 ```

@@ -85,7 +85,8 @@ The `elements` option is a whitelist for DOM elements to check for alternative t
 ### Fail
 
 ```vue
-<img src="foo" /> <img alt />
+<img src="foo" />
+<img alt />
 <!-- Has no value -->
 <img src="foo" role="presentation" />
 <!-- Avoid ARIA if it can be achieved without -->

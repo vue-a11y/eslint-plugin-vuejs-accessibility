@@ -41,5 +41,6 @@ For the `audio`, `video`, and `track` options, these strings determine which ele
 ### Fail
 
 ```vue
-<audio /> <video />
+<audio />
+<video />
 ```
