@@ -3,9 +3,9 @@ const makeRuleTester = require("./makeRuleTester");
 
 const options = [
   {
-    audio: ["Audio"],
-    video: ["Video"],
-    track: ["Track"]
+    audio: ["VAudio"],
+    video: ["VVideo"],
+    track: ["VTrack"]
   }
 ];
 
@@ -23,43 +23,43 @@ makeRuleTester("media-has-caption", rule, {
     "<video muted='true' />",
     "<video muted />",
     {
-      code: "<Audio><track kind='captions' /></Audio>",
+      code: "<VAudio><track kind='captions' /></VAudio>",
       options
     },
     {
-      code: "<audio><Track kind='captions' /></audio>",
+      code: "<audio><VTrack kind='captions' /></audio>",
       options
     },
     {
-      code: "<Video><track kind='captions' /></Video>",
+      code: "<VVideo><track kind='captions' /></VVideo>",
       options
     },
     {
-      code: "<video><Track kind='captions' /></video>",
+      code: "<video><VTrack kind='captions' /></video>",
       options
     },
     {
-      code: "<Audio><Track kind='captions' /></Audio>",
+      code: "<VAudio><VTrack kind='captions' /></VAudio>",
       options
     },
     {
-      code: "<Video><Track kind='captions' /></Video>",
+      code: "<VVideo><VTrack kind='captions' /></VVideo>",
       options
     },
     {
-      code: "<Video muted />",
+      code: "<VVideo muted />",
       options
     },
     {
-      code: "<Video muted='true' />",
+      code: "<VVideo muted='true' />",
       options
     },
     {
-      code: "<Audio muted />",
+      code: "<VAudio muted />",
       options
     },
     {
-      code: "<Audio muted='true' />",
+      code: "<VAudio muted='true' />",
       options
     }
   ],
@@ -70,12 +70,12 @@ makeRuleTester("media-has-caption", rule, {
     "<video><track /></video>",
     "<video><track kind='subtitles' /></video>",
     {
-      code: "<Audio muted='false' />",
+      code: "<VAudio muted='false' />",
       options,
       errors: [{ messageId: "default" }]
     },
     {
-      code: "<Video muted='false' />",
+      code: "<VVideo muted='false' />",
       options,
       errors: [{ messageId: "default" }]
     },
@@ -83,32 +83,37 @@ makeRuleTester("media-has-caption", rule, {
     "<audio>Foo</audio>",
     "<video>Foo</video>",
     {
-      code: "<Audio />",
+      code: "<VAudio />",
       options,
       errors: [{ messageId: "default" }]
     },
     {
-      code: "<Video />",
+      code: "<VVideo />",
       options,
       errors: [{ messageId: "default" }]
     },
     {
-      code: "<audio><Track /></audio>",
+      code: "<audio><VTrack /></audio>",
       options,
       errors: [{ messageId: "default" }]
     },
     {
-      code: "<video><Track /></video>",
+      code: "<video><VTrack /></video>",
       options,
       errors: [{ messageId: "default" }]
     },
     {
-      code: "<Audio><Track kind='subtitles' /></Audio>",
+      code: "<VAudio><VTrack kind='subtitles' /></VAudio>",
       options,
       errors: [{ messageId: "default" }]
     },
     {
-      code: "<Video><Track kind='subtitles' /></Video>",
+      code: "<VVideo><VTrack kind='subtitles' /></VVideo>",
+      options,
+      errors: [{ messageId: "default" }]
+    },
+    {
+      code: "<v-video><v-track kind='subtitles' /></v-video>",
       options,
       errors: [{ messageId: "default" }]
     }
