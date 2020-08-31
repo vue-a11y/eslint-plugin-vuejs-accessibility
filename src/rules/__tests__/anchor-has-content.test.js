@@ -8,14 +8,14 @@ makeRuleTester("anchor-has-content", rule, {
     "<a v-text='msg' />",
     "<a v-html='msg' />",
     "<a><slot /></a>",
-    "<Anchor  />",
+    "<VAnchor  />",
     "<a aria-label='This is my label' />"
   ],
   invalid: [
     "<a />",
     {
-      code: "<Anchor  />",
-      options: [{ components: ["Anchor"] }],
+      code: "<v-anchor  />",
+      options: [{ components: ["VAnchor"] }],
       errors: [{ messageId: "default" }]
     }
   ]

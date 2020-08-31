@@ -4,7 +4,8 @@ const {
   getElementAttribute,
   getElementAttributeValue,
   getElementType,
-  makeDocsURL
+  makeDocsURL,
+  makeKebabCase
 } = require("../utils");
 
 const isCaptionsTrackElement = (node) => {
@@ -46,7 +47,10 @@ module.exports = {
       VElement(node) {
         const { audio = [], track = [], video = [] } = context.options[0] || {};
 
-        const mediaElementTypes = audio.concat(video).concat("audio", "video");
+        const mediaElementTypes = audio
+          .concat(video)
+          .map(makeKebabCase)
+          .concat("audio", "video");
         if (!mediaElementTypes.includes(getElementType(node))) {
           return;
         }
@@ -56,7 +60,7 @@ module.exports = {
           return;
         }
 
-        const trackElementTypes = track.concat("track");
+        const trackElementTypes = track.map(makeKebabCase).concat("track");
         const trackElements = node.children.filter(
           (child) =>
             child.type === "VElement" &&

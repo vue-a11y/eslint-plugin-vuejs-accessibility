@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+
+- Ensure all rules that allow configuring extra components that should match certain conditions support both forms of casing (`VFoo` and `v-foo`).
+
 ## [0.4.0] - 2020-08-15
 
 ### Added
