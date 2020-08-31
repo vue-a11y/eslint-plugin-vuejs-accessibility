@@ -16,5 +16,6 @@ module.exports = {
   isInteractiveElement: require("./utils/isInteractiveElement"),
   isPresentationRole: require("./utils/isPresentationRole"),
   makeDocsURL: require("./utils/makeDocsURL"),
+  makeKebabCase: require("./utils/makeKebabCase"),
   matchesElementRole: require("./utils/matchesElementRole")
 };

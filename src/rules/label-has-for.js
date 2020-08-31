@@ -3,7 +3,8 @@ const {
   getElementAttributeValue,
   getElementType,
   isHiddenFromScreenReader,
-  makeDocsURL
+  makeDocsURL,
+  makeKebabCase
 } = require("../utils");
 
 const controlTypes = ["input", "meter", "progress", "select", "textarea"];
@@ -131,9 +132,14 @@ module.exports = {
           required = { every: ["nesting", "id"] }
         } = context.options[0] || {};
 
+        const options = {
+          allowChildren,
+          controlComponents: controlComponents.map(makeKebabCase)
+        };
+
         if (
           ["label"].concat(components).includes(getElementType(node)) &&
-          !isValidLabel(node, required, { allowChildren, controlComponents })
+          !isValidLabel(node, required, options)
         ) {
           context.report({ node, messageId: "default" });
         }

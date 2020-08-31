@@ -19,7 +19,7 @@ makeRuleTester("label-has-for", rule, {
       options: [{ controlComponents: ["VInput"] }]
     },
     {
-      code: "<label for='id'><VInput /></label>",
+      code: "<label for='id'><v-input /></label>",
       options: [{ controlComponents: ["VInput"] }]
     }
   ],
