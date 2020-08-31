@@ -3,7 +3,8 @@ const {
   getElementType,
   hasAriaLabel,
   hasContent,
-  makeDocsURL
+  makeDocsURL,
+  makeKebabCase
 } = require("../utils");
 
 module.exports = {
@@ -32,7 +33,7 @@ module.exports = {
       VElement(node) {
         const { components = [] } = context.options[0] || {};
 
-        const elementTypes = ["a"].concat(components);
+        const elementTypes = ["a"].concat(components.map(makeKebabCase));
         const elementType = getElementType(node);
 
         if (
