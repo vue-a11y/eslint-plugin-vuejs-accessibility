@@ -1,5 +1,5 @@
 name: Main
-on: push
+on: [push, pull_request]
 jobs:
   ci:
     name: CI
@@ -8,7 +8,7 @@ jobs:
       CI: true
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2-beta
         with:
           node-version: 14.x
       - id: yarn-cache
@@ -19,7 +19,10 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      - run: yarn install --frozen-lockfile
-      - run: yarn prettier --check '**/*'
-      - run: yarn lint
-      - run: yarn test
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Lint and test
+        run: |
+          yarn prettier --check '**/*'
+          yarn lint
+          yarn test
