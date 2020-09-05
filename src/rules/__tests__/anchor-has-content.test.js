@@ -9,7 +9,8 @@ makeRuleTester("anchor-has-content", rule, {
     "<a v-html='msg' />",
     "<a><slot /></a>",
     "<VAnchor  />",
-    "<a aria-label='This is my label' />"
+    "<a aria-label='This is my label' />",
+    "<a><img alt='foo' /></a>"
   ],
   invalid: [
     "<a />",
@@ -17,6 +18,7 @@ makeRuleTester("anchor-has-content", rule, {
       code: "<v-anchor  />",
       options: [{ components: ["VAnchor"] }],
       errors: [{ messageId: "default" }]
-    }
+    },
+    "<a><img aria-hidden alt='foo' /></a>"
   ]
 });
