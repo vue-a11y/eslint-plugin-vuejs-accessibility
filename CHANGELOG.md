@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.5.1] - 2020-09-08
+
 ### Changed
 
 - When you pass a conditional expression into an `:is`, then `getElementType` would not be able to handle it. It doesn't truly handle it now, as it just ends up returning `null` for the value of the `:is` expression, but at least now it doesn't break.
@@ -68,7 +70,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Initial release 🎉.
 
-[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.5.0...HEAD
+[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.5.1...HEAD
+[0.5.1]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.3.0...v0.3.1
