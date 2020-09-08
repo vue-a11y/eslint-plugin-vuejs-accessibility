@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+
+- When you pass a conditional expression into an `:is`, then `getElementType` would not be able to handle it. It doesn't truly handle it now, as it just ends up returning `null` for the value of the `:is` expression, but at least now it doesn't break.
+
 ## [0.5.0] - 2020-09-05
 
 ### Changed

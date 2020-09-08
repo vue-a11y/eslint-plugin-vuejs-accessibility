@@ -60,7 +60,8 @@ makeRuleTester("interactive-supports-focus", rule, {
     "<div role='textbox' tabindex='0' @click='void 0' />",
     "<div role='textbox' aria-disabled='true' @click='void 0' />",
     "<Foo.Bar @click='void 0' aria-hidden='false' />",
-    "<Input @click='void 0' type='hidden' />"
+    "<Input @click='void 0' type='hidden' />",
+    `<component role="button" :is="foo ? 'a' : 'button'" />`
   ],
   invalid: [
     ...rule.interactiveRoles.flatMap((role) =>
