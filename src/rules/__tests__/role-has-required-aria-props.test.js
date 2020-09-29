@@ -3,7 +3,9 @@ const makeRuleTester = require("./makeRuleTester");
 
 makeRuleTester("role-has-required-aria-props", rule, {
   valid: [
-    "<span role='checkbox' aria-checked='false' aria-labelledby='test' tabindex='0' />"
+    "<span role='checkbox' aria-checked='false' aria-labelledby='test' tabindex='0' />",
+    "<span :role='varHere' aria-checked='false' aria-labelledby='test' tabindex='0' />",
+    "<span :role='varHere' />"
   ],
   invalid: [
     {

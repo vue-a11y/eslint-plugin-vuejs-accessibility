@@ -32,29 +32,37 @@ module.exports = {
           return;
         }
 
-        roleValue
-          .toLowerCase()
-          .split(" ")
-          .forEach((role) => {
-            if (!roles.has(role)) {
-              return;
-            }
+        const isValid = (value) =>
+          value
+            .toLowerCase()
+            .split(" ")
+            .forEach((role) => {
+              if (!roles.has(role)) {
+                return;
+              }
 
-            const requiredAttributes = Object.keys(
-              roles.get(role).requiredProps
-            );
+              const requiredAttributes = Object.keys(
+                roles.get(role).requiredProps
+              );
 
-            if (!hasAttributes(node, requiredAttributes)) {
-              context.report({
-                node,
-                messageId: "default",
-                data: {
-                  role: role.toLowerCase(),
-                  attributes: requiredAttributes.join(", ").toLowerCase()
-                }
-              });
-            }
-          });
+              if (!hasAttributes(node, requiredAttributes)) {
+                context.report({
+                  node,
+                  messageId: "default",
+                  data: {
+                    role: role.toLowerCase(),
+                    attributes: requiredAttributes.join(", ").toLowerCase()
+                  }
+                });
+              }
+            });
+
+        if (typeof roleValue !== "string") {
+          // when it's a dynamic value ignore
+          return;
+        }
+
+        isValid(roleValue);
       }
     });
   }
