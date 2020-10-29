@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [0.6.0] - 2020-10-29
+
 ### Added
 
 - For the `heading-has-content` and the `anchor-has-content` rules, add an `accessibleChildren` option that always marks certain children as being accessible.
@@ -78,7 +80,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Initial release 🎉.
 
-[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.5.1...HEAD
+[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.3.1...v0.4.0
