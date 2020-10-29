@@ -16,7 +16,8 @@ This rule takes one optional object argument of type object:
     "vuejs-accessibility/anchor-has-content": [
       "error",
       {
-        "components": ["Anchor"]
+        "components": ["Anchor"],
+        "accessibleChildren": ["MyAccessibleText"]
       }
     ]
   }
@@ -24,6 +25,8 @@ This rule takes one optional object argument of type object:
 ```
 
 For the `components` option, these strings determine which elements (**always including** `<a>`) should be checked for having content. This is a good use case when you have a wrapper component that simply renders an `a` element.
+
+For the `accessibleChildren` option, these strings determine which elements should be marked as acceptably accessible child elements. For example if you have something like a `<trans tag="hello-world" />` child that you know will translate into accessible text, then you should put the `Trans` component into this array.
 
 ### Succeed
 
@@ -34,6 +37,8 @@ For the `components` option, these strings determine which elements (**always in
 <a is="TextWrapper" />
 <a v-text="msg" />
 <a v-html="msg" />
+<Anchor>Anchor content</!Anchor>
+<a><my-accessible-text /></a>
 ```
 
 ### Fail
@@ -41,4 +46,5 @@ For the `components` option, these strings determine which elements (**always in
 ```vue
 <a />
 <a><TextWrapper aria-hidden /></a>
+<Anchor></Anchor>
 ```

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Added
+
+- For the `heading-has-content` and the `anchor-has-content` rules, add an `accessibleChildren` option that always marks certain children as being accessible.
+
 ### Changed
 
 - Handle non string literal role values and `role-has-required-aria-props` and non string literal value for `kind` attribute in `media-has-caption`.

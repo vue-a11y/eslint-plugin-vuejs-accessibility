@@ -8,7 +8,11 @@ makeRuleTester("heading-has-content", rule, {
     "<h1 v-text='msg'></h1>",
     "<h1 v-html='msg'></h1>",
     "<h1>{{ test }}</h1>",
-    "<h1><slot /></h1>"
+    "<h1><slot /></h1>",
+    {
+      code: "<h1><accessible-child /></h1>",
+      options: [{ accessibleChildren: ["AccessibleChild"] }]
+    }
   ],
   invalid: [
     "<h1 />",
