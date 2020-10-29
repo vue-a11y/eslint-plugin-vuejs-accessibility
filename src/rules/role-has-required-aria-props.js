@@ -28,7 +28,7 @@ module.exports = {
         }
 
         const roleValue = getElementAttributeValue(node, "role");
-        if (!roleValue) {
+        if (!roleValue || typeof roleValue !== "string") {
           return;
         }
 

@@ -10,7 +10,7 @@ const {
 
 const isCaptionsTrackElement = (node) => {
   const kind = getElementAttributeValue(node, "kind");
-  return kind && kind.toLowerCase() === "captions";
+  return kind && typeof kind === "string" && kind.toLowerCase() === "captions";
 };
 
 module.exports = {

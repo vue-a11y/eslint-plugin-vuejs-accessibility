@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+
+- Handle non string literal role values and `role-has-required-aria-props` and non string literal value for `kind` attribute in `media-has-caption`.
+
 ## [0.5.1] - 2020-09-08
 
 ### Changed
