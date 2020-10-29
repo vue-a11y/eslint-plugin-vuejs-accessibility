@@ -24,6 +24,10 @@ module.exports = {
           components: {
             type: "array",
             items: { type: "string" }
+          },
+          accessibleChildren: {
+            type: "array",
+            items: { type: "string" }
           }
         }
       }
@@ -32,12 +36,18 @@ module.exports = {
   create(context) {
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
-        const { components = [] } = context.options[0] || {};
+        const { components = [], accessibleChildren = [] } =
+          context.options[0] || {};
 
         const elementTypes = headings.concat(components.map(makeKebabCase));
+        const accessibleChildTypes = accessibleChildren.map(makeKebabCase);
+
         const elementType = getElementType(node);
 
-        if (elementTypes.includes(elementType) && !hasContent(node)) {
+        if (
+          elementTypes.includes(elementType) &&
+          !hasContent(node, accessibleChildTypes)
+        ) {
           context.report({ node, messageId: "default" });
         }
       }

@@ -22,8 +22,8 @@ const hasChildImageWithAlt = (node) =>
     }
   });
 
-const hasContent = (node) =>
-  hasAccessibleChild(node) ||
+const hasContent = (node, accessibleChildTypes) =>
+  hasAccessibleChild(node, accessibleChildTypes) ||
   hasDirective(node, "text") ||
   hasDirective(node, "html") ||
   hasChildImageWithAlt(node);

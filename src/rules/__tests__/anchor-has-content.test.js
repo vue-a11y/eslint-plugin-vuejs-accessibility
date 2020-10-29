@@ -10,7 +10,11 @@ makeRuleTester("anchor-has-content", rule, {
     "<a><slot /></a>",
     "<VAnchor  />",
     "<a aria-label='This is my label' />",
-    "<a><img alt='foo' /></a>"
+    "<a><img alt='foo' /></a>",
+    {
+      code: "<a><accessible-child /></a>",
+      options: [{ accessibleChildren: ["AccessibleChild"] }]
+    }
   ],
   invalid: [
     "<a />",
