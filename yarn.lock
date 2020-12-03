@@ -3979,9 +3979,9 @@ verror@1.10.0:
     extsprintf "^1.2.0"
 
 vue-eslint-parser@^7.0.0:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.1.1.tgz#c43c1c715ff50778b9a7e9a4e16921185f3425d3"
-  integrity sha512-8FdXi0gieEwh1IprIBafpiJWcApwrU+l2FEj8c1HtHFdNXMd0+2jUSjBVmcQYohf/E72irwAXEXLga6TQcB3FA==
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.2.0.tgz#1e17ae94ca71e617025e05143c8ac5593aacb6ef"
+  integrity sha512-uVcQqe8sUNzdHGcRHMd2Z/hl6qEaWrAmglTKP92Fnq9TYU9un8xsyFgEdFJaXh/1rd7h8Aic1GaiQow5nVneow==
   dependencies:
     debug "^4.1.1"
     eslint-scope "^5.0.0"
