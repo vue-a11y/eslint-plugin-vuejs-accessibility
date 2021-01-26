@@ -9,6 +9,19 @@
   },
   "author": "Kevin Deisz",
   "license": "MIT",
+  "repository": "github:vue-a11y/eslint-plugin-vuejs-accessibility",
+  "bugs": {
+    "url": "https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/issues"
+  },
+  "homepage": "https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility#readme",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "a11y",
+    "accessibility",
+    "vue",
+    "vuejs"
+  ],
   "peerDependencies": {
     "eslint": "^5.0.0 || ^6.0.0 || ^7.0.0"
   },
@@ -55,5 +68,8 @@
   },
   "prettier": {
     "trailingComma": "none"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }
