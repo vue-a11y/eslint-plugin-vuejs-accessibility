@@ -7,6 +7,10 @@ An `eslint` plugin for checking accessibility rules from within `.vue` files.
 
 ## Installation
 
+**Prerequisite**
+
+You need to install `eslint-plugin-vue` first to this plugin work correctly!
+
 If you're using `yarn`:
 
 ```bash
