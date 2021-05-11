@@ -31,12 +31,15 @@
     "vue-eslint-parser": "^7.0.0"
   },
   "devDependencies": {
+    "@types/eslint-scope": "^3.7.0",
+    "@types/eslint-visitor-keys": "^1.0.0",
     "eslint": "^7.3.1",
     "eslint-plugin-eslint-plugin": "^3.0.0",
     "husky": "^6.0.0",
     "jest": "^27.0.1",
     "prettier": "^2.1.1",
-    "pretty-quick": "^3.0.0"
+    "pretty-quick": "^3.0.0",
+    "typescript": "^4.2.4"
   },
   "eslintConfig": {
     "env": {
