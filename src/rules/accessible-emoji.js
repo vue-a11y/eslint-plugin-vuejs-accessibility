@@ -4,17 +4,9 @@ const {
   getElementAttributeValue,
   getElementType,
   hasAriaLabel,
-  isHiddenFromScreenReader,
+  isAriaHidden,
   makeDocsURL
 } = require("../utils");
-
-const isAriaHidden = (node) => {
-  if (!node || node.type !== "VElement") {
-    return false;
-  }
-
-  return isHiddenFromScreenReader(node) || isAriaHidden(node.parent);
-};
 
 module.exports = {
   meta: {

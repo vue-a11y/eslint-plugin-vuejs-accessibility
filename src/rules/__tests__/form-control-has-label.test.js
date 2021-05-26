@@ -16,6 +16,11 @@ makeRuleTester("form-control-has-label", rule, {
           <slot />
         </div>
       </label>
+    `,
+    `
+      <div aria-hidden="true">
+        <input value="1" type="text" />
+      </div>
     `
   ],
   invalid: ["<input type='text' />", "<textarea type='text'></textarea>"]

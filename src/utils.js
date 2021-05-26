@@ -11,6 +11,7 @@ module.exports = {
   hasContent: require("./utils/hasContent"),
   hasOnDirective: require("./utils/hasOnDirective"),
   hasOnDirectives: require("./utils/hasOnDirectives"),
+  isAriaHidden: require("./utils/isAriaHidden"),
   isAttribute: require("./utils/isAttribute"),
   isHiddenFromScreenReader: require("./utils/isHiddenFromScreenReader"),
   isInteractiveElement: require("./utils/isInteractiveElement"),

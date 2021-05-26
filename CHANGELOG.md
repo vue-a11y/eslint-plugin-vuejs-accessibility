@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Changed
 
 - Fix `iframe-has-title` such that if the attribute is ommitted completely that it fires correctly.
+- Fix `form-control-has-label` to ignore form controls nested inside `aria-hidden` elements.
 
 ## [0.6.1] - 2021-01-21
 
