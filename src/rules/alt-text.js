@@ -59,8 +59,7 @@ module.exports = {
       url: makeDocsURL("alt-text")
     },
     messages: {
-      area:
-        "Each area of an image map must have a text alternative through the `alt`, `aria-label`, or `aria-labelledby` prop.",
+      area: "Each area of an image map must have a text alternative through the `alt`, `aria-label`, or `aria-labelledby` prop.",
       imgMissingAlt:
         "img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.",
       imgInvalidAlt: `Invalid alt value for img. Use alt="" for presentational images.`,
