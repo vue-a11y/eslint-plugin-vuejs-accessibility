@@ -3,6 +3,7 @@ const {
   getElementAttributeValue,
   getElementType,
   hasAriaLabel,
+  isAriaHidden,
   makeDocsURL
 } = require("../utils");
 
@@ -47,7 +48,11 @@ module.exports = {
           }
         }
 
-        if (!hasAriaLabel(node) && !hasLabelElement(node)) {
+        if (
+          !isAriaHidden(node) &&
+          !hasAriaLabel(node) &&
+          !hasLabelElement(node)
+        ) {
           context.report({ node, messageId: "default" });
         }
       }
