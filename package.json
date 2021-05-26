@@ -1,13 +1,13 @@
 {
   "name": "eslint-plugin-vuejs-accessibility",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "An eslint plugin for checking Vue.js files for accessibility",
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint --cache .",
     "test": "jest"
   },
-  "author": "Kevin Deisz",
+  "author": "Kevin Newton",
   "license": "MIT",
   "repository": "github:vue-a11y/eslint-plugin-vuejs-accessibility",
   "bugs": {
