@@ -1,6 +1,6 @@
 const {
   defineTemplateBodyVisitor,
-  getLiteralAttributeValue,
+  getElementAttributeValue,
   makeDocsURL
 } = require("../utils");
 
@@ -16,9 +16,9 @@ module.exports = {
   create(context) {
     return defineTemplateBodyVisitor(context, {
       "VElement[name='iframe']"(node) {
-        const title = getLiteralAttributeValue(node, "title");
+        const title = getElementAttributeValue(node, "title");
 
-        if (!["string", "object"].includes(typeof title)) {
+        if (title === null || !["string", "object"].includes(typeof title)) {
           context.report({ node, messageId: "default" });
         }
       }
