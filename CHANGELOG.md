@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+
+- Ensure directives that have identifiers for values are counted as present in the element.
+
 ## [0.6.2] - 2021-05-26
 
 ### Changed

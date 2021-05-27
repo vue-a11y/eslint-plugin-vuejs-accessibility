@@ -27,6 +27,7 @@ makeRuleTester("click-events-have-key-events", rule, {
     "<Button @click='void 0' />"
   ],
   invalid: [
+    "<div @click='toggle'>",
     "<div @click='void 0' />",
     "<div @click='void 0' role='undefined' />",
     "<section @click='void 0' />",

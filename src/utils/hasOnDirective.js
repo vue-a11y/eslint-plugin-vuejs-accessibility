@@ -9,7 +9,7 @@ const hasOnDirective = (node, name) =>
       key.argument.name === name &&
       value &&
       value.expression &&
-      !!value.expression.body
+      (value.expression.type === "Identifier" || !!value.expression.body)
     );
   });
 
