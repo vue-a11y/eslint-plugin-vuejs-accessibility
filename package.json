@@ -69,7 +69,7 @@
   "jest": {
     "preset": "ts-jest",
     "setupFilesAfterEnv": [
-      "./jest.setup.js"
+      "./jest.setup.ts"
     ],
     "testRegex": ".test.ts$"
   },
