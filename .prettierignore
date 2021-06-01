@@ -4,3 +4,4 @@
 .prettierignore
 LICENSE
 yarn.lock
+dist

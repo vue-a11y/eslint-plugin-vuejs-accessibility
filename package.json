@@ -2,9 +2,10 @@
   "name": "eslint-plugin-vuejs-accessibility",
   "version": "0.6.2",
   "description": "An eslint plugin for checking Vue.js files for accessibility",
-  "main": "src/index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "lint": "eslint --cache .",
+    "prepublishOnly": "tsc -p tsconfig.build.json",
     "test": "jest"
   },
   "author": "Kevin Newton",
@@ -31,12 +32,20 @@
     "vue-eslint-parser": "^7.0.0"
   },
   "devDependencies": {
+    "@types/aria-query": "^4.2.1",
+    "@types/eslint-scope": "^3.7.0",
+    "@types/eslint-visitor-keys": "^1.0.0",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
     "eslint": "^7.3.1",
     "eslint-plugin-eslint-plugin": "^3.0.0",
     "husky": "^6.0.0",
     "jest": "^27.0.1",
     "prettier": "^2.1.1",
-    "pretty-quick": "^3.0.0"
+    "pretty-quick": "^3.0.0",
+    "ts-jest": "^27.0.1",
+    "typescript": "^4.2.4"
   },
   "eslintConfig": {
     "env": {
@@ -46,25 +55,33 @@
     },
     "extends": [
       "eslint:recommended",
-      "plugin:eslint-plugin/recommended"
+      "plugin:eslint-plugin/recommended",
+      "plugin:@typescript-eslint/recommended"
     ],
-    "parserOptions": {
-      "ecmaVersion": 2015
-    },
+    "parser": "@typescript-eslint/parser",
     "plugins": [
-      "eslint-plugin"
-    ]
+      "eslint-plugin",
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-explicit-any": "off"
+    }
   },
+  "eslintIgnore": [
+    "dist"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
   },
   "jest": {
+    "preset": "ts-jest",
     "setupFilesAfterEnv": [
-      "./jest.setup.js"
+      "./jest.setup.ts"
     ],
-    "testRegex": ".test.js$"
+    "testRegex": ".test.ts$"
   },
   "prettier": {
     "trailingComma": "none"

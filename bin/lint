@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const { CLIEngine } = require("eslint");
-const a11yPlugin = require("../src");
+const { ESLint } = require("eslint");
+const a11yPlugin = require("../dist");
 
 (async function () {
-  const cli = new CLIEngine({ baseConfig: a11yPlugin.configs.recommended });
+  const cli = new ESLint({ baseConfig: a11yPlugin.configs.recommended });
   cli.addPlugin("eslint-plugin-vuejs-accessibility", a11yPlugin);
 
   const report = cli.executeOnFiles(process.argv.slice(2));
