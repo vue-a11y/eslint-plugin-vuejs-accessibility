@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Changed
 
 - Ensure directives that have identifiers for values are counted as present in the element.
+- Convert over to using TypeScript for development.
 
 ## [0.6.2] - 2021-05-26
 
