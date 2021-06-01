@@ -55,7 +55,7 @@ Ensure you have `node` and `yarn` installed on your system. Then run `yarn` in t
 
 To add a new rule, you need to take the following steps:
 
-- Add the configuration and require to `src/index.js`.
+- Add the configuration and require to `src/index.ts`.
 - Add the rule itself into `src/rules`.
 - Add the corresponding test in `src/rules/__tests__`.
 - Add the corresponding documentation in `docs/rules`.
