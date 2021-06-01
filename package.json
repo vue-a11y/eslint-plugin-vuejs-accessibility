@@ -31,14 +31,17 @@
     "vue-eslint-parser": "^7.0.0"
   },
   "devDependencies": {
+    "@types/aria-query": "^4.2.1",
     "@types/eslint-scope": "^3.7.0",
     "@types/eslint-visitor-keys": "^1.0.0",
+    "@types/jest": "^26.0.23",
     "eslint": "^7.3.1",
     "eslint-plugin-eslint-plugin": "^3.0.0",
     "husky": "^6.0.0",
     "jest": "^27.0.1",
     "prettier": "^2.1.1",
     "pretty-quick": "^3.0.0",
+    "ts-jest": "^27.0.1",
     "typescript": "^4.2.4"
   },
   "eslintConfig": {
@@ -64,10 +67,11 @@
     }
   },
   "jest": {
+    "preset": "ts-jest",
     "setupFilesAfterEnv": [
       "./jest.setup.js"
     ],
-    "testRegex": ".test.js$"
+    "testRegex": ".test.ts$"
   },
   "prettier": {
     "trailingComma": "none"
