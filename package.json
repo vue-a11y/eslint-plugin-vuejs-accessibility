@@ -36,6 +36,8 @@
     "@types/eslint-scope": "^3.7.0",
     "@types/eslint-visitor-keys": "^1.0.0",
     "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
     "eslint": "^7.3.1",
     "eslint-plugin-eslint-plugin": "^3.0.0",
     "husky": "^6.0.0",
@@ -53,15 +55,22 @@
     },
     "extends": [
       "eslint:recommended",
-      "plugin:eslint-plugin/recommended"
+      "plugin:eslint-plugin/recommended",
+      "plugin:@typescript-eslint/recommended"
     ],
-    "parserOptions": {
-      "ecmaVersion": 2015
-    },
+    "parser": "@typescript-eslint/parser",
     "plugins": [
-      "eslint-plugin"
-    ]
+      "eslint-plugin",
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-explicit-any": "off"
+    }
   },
+  "eslintIgnore": [
+    "dist"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"

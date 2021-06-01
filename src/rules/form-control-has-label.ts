@@ -10,7 +10,13 @@ import {
   makeDocsURL
 } from "../utils";
 
-function isLabelElement(node: AST.VElement | AST.VDocumentFragment | AST.VText | AST.VExpressionContainer) {
+function isLabelElement(
+  node:
+    | AST.VElement
+    | AST.VDocumentFragment
+    | AST.VText
+    | AST.VExpressionContainer
+) {
   return node.type === "VElement" && getElementType(node) === "label";
 }
 
@@ -21,7 +27,7 @@ function hasLabelElement(node: AST.VElement): boolean {
     [parent, ...parent.children].some(isLabelElement) ||
     (parent && parent.type === "VElement" && hasLabelElement(parent))
   );
-};
+}
 
 const rule: Rule.RuleModule = {
   meta: {
@@ -46,7 +52,9 @@ const rule: Rule.RuleModule = {
 
           if (
             !type ||
-            ["hidden", "button", "image", "submit", "reset"].includes(type as any)
+            ["hidden", "button", "image", "submit", "reset"].includes(
+              type as any
+            )
           ) {
             return;
           }

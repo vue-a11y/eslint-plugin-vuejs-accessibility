@@ -14,6 +14,7 @@ import {
 } from "../utils";
 
 // Why can I not import this like normal? Unclear.
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const vueEslintParser = require("vue-eslint-parser");
 
 function isHtmlElementNode(node: AST.VElement) {

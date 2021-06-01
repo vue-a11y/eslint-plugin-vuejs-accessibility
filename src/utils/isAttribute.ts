@@ -8,7 +8,8 @@ function isAttribute(node: AST.VAttribute | AST.VDirective, name: string) {
   return (
     node.key.name.name === "bind" &&
     node.key.argument &&
-    (node.key.argument.type === "VIdentifier" && node.key.argument.name === name)
+    node.key.argument.type === "VIdentifier" &&
+    node.key.argument.name === name
   );
 }
 

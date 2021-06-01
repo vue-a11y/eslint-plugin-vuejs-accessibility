@@ -11,8 +11,11 @@ import {
   makeKebabCase
 } from "../utils";
 
-function isCaptionsTrackElement(node: AST.VElement | AST.VExpressionContainer | AST.VText) {
-  const kind = node.type === "VElement" && getElementAttributeValue(node, "kind");
+function isCaptionsTrackElement(
+  node: AST.VElement | AST.VExpressionContainer | AST.VText
+) {
+  const kind =
+    node.type === "VElement" && getElementAttributeValue(node, "kind");
 
   return kind && typeof kind === "string" && kind.toLowerCase() === "captions";
 }

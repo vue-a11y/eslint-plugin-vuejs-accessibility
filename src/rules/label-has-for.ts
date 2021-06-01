@@ -11,13 +11,12 @@ import {
 } from "../utils";
 
 type Association = "nesting" | "id";
-type Required = (
+type Required =
   | Association
-  | { some: Association[], every: undefined }
-  | { some: undefined, every: Association[] }
-);
+  | { some: Association[]; every: undefined }
+  | { some: undefined; every: Association[] };
 
-type Options = { allowChildren: boolean, controlComponents: string[] };
+type Options = { allowChildren: boolean; controlComponents: string[] };
 
 const controlTypes = ["input", "meter", "progress", "select", "textarea"];
 
@@ -54,7 +53,11 @@ function validate(node: AST.VElement, rule: Association, options: Options) {
   }
 }
 
-function isValidLabel(node: AST.VElement, required: Required, options: Options) {
+function isValidLabel(
+  node: AST.VElement,
+  required: Required,
+  options: Options
+) {
   if (typeof required === "string") {
     return validate(node, required, options);
   }

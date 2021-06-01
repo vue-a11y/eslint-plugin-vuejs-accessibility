@@ -3,7 +3,10 @@ import type { AST } from "vue-eslint-parser";
 import getElementType from "./getElementType";
 import isHiddenFromScreenReader from "./isHiddenFromScreenReader";
 
-function hasAccessibleChild(node: AST.VElement, accessibleChildTypes: string[] = []): boolean {
+function hasAccessibleChild(
+  node: AST.VElement,
+  accessibleChildTypes: string[] = []
+): boolean {
   return node.children.some((child) => {
     switch (child.type) {
       case "VText":

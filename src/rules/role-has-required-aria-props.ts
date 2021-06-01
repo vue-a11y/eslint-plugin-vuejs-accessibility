@@ -14,6 +14,10 @@ function hasAttributes(node: AST.VElement, names: string[]) {
   return names.every((name) => getElementAttribute(node, name) !== null);
 }
 
+function isAriaRoleDefinitionKey(role: any): role is ARIARoleDefintionKey {
+  return roles.has(role);
+}
+
 const rule: Rule.RuleModule = {
   meta: {
     docs: {
@@ -40,23 +44,20 @@ const rule: Rule.RuleModule = {
           .toLowerCase()
           .split(" ")
           .forEach((role) => {
-            if (!roles.has(role as any)) {
-              return;
-            }
+            if (isAriaRoleDefinitionKey(role)) {
+              const roleDefinition = roles.get(role) as any;
+              const requiredProps = Object.keys(roleDefinition.requiredProps);
 
-            const requiredAttributes = Object.keys(
-              roles.get(role as ARIARoleDefintionKey)!.requiredProps
-            );
-
-            if (!hasAttributes(node, requiredAttributes)) {
-              context.report({
-                node: node as any,
-                messageId: "default",
-                data: {
-                  role: role.toLowerCase(),
-                  attributes: requiredAttributes.join(", ").toLowerCase()
-                }
-              });
+              if (requiredProps && !hasAttributes(node, requiredProps)) {
+                context.report({
+                  node: node as any,
+                  messageId: "default",
+                  data: {
+                    role: role.toLowerCase(),
+                    attributes: requiredProps.join(", ").toLowerCase()
+                  }
+                });
+              }
             }
           });
       }

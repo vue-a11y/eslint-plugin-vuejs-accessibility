@@ -54,9 +54,10 @@ const interactiveHandlers = [
 function isDisabledElement(node: AST.VElement) {
   return (
     getElementAttributeValue(node, "disabled") ||
-    (getElementAttributeValue(node, "aria-disabled") || "").toString() === "true"
+    (getElementAttributeValue(node, "aria-disabled") || "").toString() ===
+      "true"
   );
-};
+}
 
 function isInteractiveRole(value: any): value is string {
   if (typeof value !== "string") {
@@ -66,7 +67,9 @@ function isInteractiveRole(value: any): value is string {
   return value
     .toLowerCase()
     .split(" ")
-    .some((role) => roles.has(role as any) && interactiveRoles.includes(role as any));
+    .some(
+      (role) => roles.has(role as any) && interactiveRoles.includes(role as any)
+    );
 }
 
 function hasTabIndex(node: AST.VElement) {
@@ -142,10 +145,18 @@ const rule: InteractiveSupportsFocus = {
 
           if (tabbable.includes(role)) {
             // Always tabbable, tabIndex = 0
-            context.report({ node: node as any, messageId: "tabbable", data: { role } });
+            context.report({
+              node: node as any,
+              messageId: "tabbable",
+              data: { role }
+            });
           } else {
             // Focusable, tabIndex = -1 or 0
-            context.report({ node: node as any, messageId: "focusable", data: { role } });
+            context.report({
+              node: node as any,
+              messageId: "focusable",
+              data: { role }
+            });
           }
         }
       }

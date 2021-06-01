@@ -2,7 +2,11 @@ import type { AST } from "vue-eslint-parser";
 
 function getLiteralAttributeValue(node: AST.VElement, name: string) {
   for (const attribute of node.startTag.attributes) {
-    if (!attribute.directive && attribute.key.name === name && attribute.value) {
+    if (
+      !attribute.directive &&
+      attribute.key.name === name &&
+      attribute.value
+    ) {
       return attribute.value.value;
     }
 

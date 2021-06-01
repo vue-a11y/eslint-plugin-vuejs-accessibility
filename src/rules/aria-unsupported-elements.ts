@@ -28,7 +28,11 @@ const rule: Rule.RuleModule = {
           const name = getAttributeName(attribute);
 
           if (name && (aria.has(name as any) || name === "role")) {
-            context.report({ node: node as any, messageId: "default", data: { name } });
+            context.report({
+              node: node as any,
+              messageId: "default",
+              data: { name }
+            });
           }
         });
       }

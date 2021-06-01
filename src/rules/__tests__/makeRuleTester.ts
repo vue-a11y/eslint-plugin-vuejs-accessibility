@@ -1,9 +1,9 @@
 import type { Rule } from "eslint";
 import { RuleTester } from "eslint";
 
-type ValidCase = string | { code: string, options?: any[] };
-type InvalidCase = string | { code: string, options?: any[], errors: any[] };
-type Config = { valid: ValidCase[], invalid: InvalidCase[] };
+type ValidCase = string | { code: string; options?: any[] };
+type InvalidCase = string | { code: string; options?: any[]; errors: any[] };
+type Config = { valid: ValidCase[]; invalid: InvalidCase[] };
 
 const filename = "test.vue";
 const makeTemplate = (code: string) => `<template>${code}</template>`;

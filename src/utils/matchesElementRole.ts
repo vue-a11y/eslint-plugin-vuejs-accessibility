@@ -4,7 +4,10 @@ import type { ARIARoleRelationConcept } from "aria-query";
 import getElementType from "./getElementType";
 import getElementAttributeValue from "./getElementAttributeValue";
 
-function matchesElementRole(node: AST.VElement, elementRole: ARIARoleRelationConcept) {
+function matchesElementRole(
+  node: AST.VElement,
+  elementRole: ARIARoleRelationConcept
+) {
   const { name, attributes } = elementRole;
   if (name !== getElementType(node)) {
     return false;

@@ -10,10 +10,8 @@ function hasOnDirective(node: AST.VElement, name: string) {
       attribute.key.argument.name === name &&
       attribute.value &&
       attribute.value.expression &&
-      (
-        attribute.value.expression.type === "Identifier" ||
-        !!(attribute.value.expression as any).body
-      )
+      (attribute.value.expression.type === "Identifier" ||
+        !!(attribute.value.expression as any).body)
     );
   });
 }

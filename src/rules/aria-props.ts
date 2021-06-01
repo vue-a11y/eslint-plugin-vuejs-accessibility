@@ -22,7 +22,11 @@ const rule: Rule.RuleModule = {
         const name = getAttributeName(node);
         const lowered = name && name.toLowerCase();
 
-        if (lowered && lowered.startsWith("aria-") && !aria.has(lowered as any)) {
+        if (
+          lowered &&
+          lowered.startsWith("aria-") &&
+          !aria.has(lowered as any)
+        ) {
           context.report({
             node: node as any,
             messageId: "default",

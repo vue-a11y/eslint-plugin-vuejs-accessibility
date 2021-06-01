@@ -13,7 +13,10 @@ import {
   makeDocsURL
 } from "../utils";
 
-const ruleByElement: { [key: string]: ((context: Rule.RuleContext, node: AST.VElement) => void) } = {
+type ElementRule = (context: Rule.RuleContext, node: AST.VElement) => void;
+type RuleByElement = { [key: string]: ElementRule };
+
+const ruleByElement: RuleByElement = {
   img(context, node) {
     const altAttribute = getElementAttribute(node, "alt");
 

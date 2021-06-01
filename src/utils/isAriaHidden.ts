@@ -8,6 +8,6 @@ function isAriaHidden(node: AST.VDocumentFragment | AST.VElement): boolean {
   }
 
   return isHiddenFromScreenReader(node) || isAriaHidden(node.parent);
-};
+}
 
 export default isAriaHidden;

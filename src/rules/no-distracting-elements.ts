@@ -38,7 +38,11 @@ const rule: Rule.RuleModule = {
         const elementType = getElementType(node);
 
         if (elements.map(makeKebabCase).includes(elementType)) {
-          context.report({ node: node as any, messageId: "default", data: { elementType } });
+          context.report({
+            node: node as any,
+            messageId: "default",
+            data: { elementType }
+          });
         }
       }
     });

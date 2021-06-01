@@ -6,7 +6,11 @@ function getAttributeName(node: AST.VAttribute | AST.VDirective) {
   }
 
   const { key } = node;
-  if (key.name.name === "bind" && key.argument && key.argument.type === "VIdentifier") {
+  if (
+    key.name.name === "bind" &&
+    key.argument &&
+    key.argument.type === "VIdentifier"
+  ) {
     return key.argument.name;
   }
 
