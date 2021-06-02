@@ -1,3 +1,5 @@
+import recommended from "./configs/recommended";
+
 import accessibleEmoji from "./rules/accessible-emoji";
 import altText from "./rules/alt-text";
 import anchorHasContent from "./rules/anchor-has-content";
@@ -20,7 +22,10 @@ import noRedundantRoles from "./rules/no-redundant-roles";
 import roleHasRequiredAriaProps from "./rules/role-has-required-aria-props";
 import tabindexNoPositive from "./rules/tabindex-no-positive";
 
-export default {
+const plugin = {
+  configs: {
+    recommended
+  },
   rules: {
     "accessible-emoji": accessibleEmoji,
     "alt-text": altText,
@@ -43,42 +48,7 @@ export default {
     "no-redundant-roles": noRedundantRoles,
     "role-has-required-aria-props": roleHasRequiredAriaProps,
     "tabindex-no-positive": tabindexNoPositive
-  },
-  configs: {
-    recommended: {
-      parser: require.resolve("vue-eslint-parser"),
-      parserOptions: {
-        ecmaVersion: 2020 as const,
-        sourceType: "module" as const
-      },
-      env: {
-        browser: true,
-        es6: true
-      },
-      plugins: ["vuejs-accessibility"],
-      rules: {
-        "vuejs-accessibility/accessible-emoji": "error" as const,
-        "vuejs-accessibility/alt-text": "error" as const,
-        "vuejs-accessibility/anchor-has-content": "error" as const,
-        "vuejs-accessibility/aria-props": "error" as const,
-        "vuejs-accessibility/aria-role": "error" as const,
-        "vuejs-accessibility/aria-unsupported-elements": "error" as const,
-        "vuejs-accessibility/click-events-have-key-events": "error" as const,
-        "vuejs-accessibility/form-control-has-label": "error" as const,
-        "vuejs-accessibility/heading-has-content": "error" as const,
-        "vuejs-accessibility/iframe-has-title": "error" as const,
-        "vuejs-accessibility/interactive-supports-focus": "error" as const,
-        "vuejs-accessibility/label-has-for": "error" as const,
-        "vuejs-accessibility/media-has-caption": "error" as const,
-        "vuejs-accessibility/mouse-events-have-key-events": "error" as const,
-        "vuejs-accessibility/no-access-key": "error" as const,
-        "vuejs-accessibility/no-autofocus": "error" as const,
-        "vuejs-accessibility/no-distracting-elements": "error" as const,
-        "vuejs-accessibility/no-onchange": "error" as const,
-        "vuejs-accessibility/no-redundant-roles": "error" as const,
-        "vuejs-accessibility/role-has-required-aria-props": "error" as const,
-        "vuejs-accessibility/tabindex-no-positive": "error" as const
-      }
-    }
   }
 };
+
+export default plugin;
