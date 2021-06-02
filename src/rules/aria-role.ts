@@ -28,7 +28,8 @@ const rule: Rule.RuleModule = {
         type: "object",
         properties: {
           ignoreNonDOM: {
-            type: "boolean"
+            type: "boolean",
+            default: true
           }
         },
         additionalProperties: false

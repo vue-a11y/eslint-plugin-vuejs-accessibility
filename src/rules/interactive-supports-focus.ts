@@ -117,7 +117,16 @@ const rule: InteractiveSupportsFocus = {
             type: "array",
             items: {
               type: "string",
-              enum: interactiveRoles
+              enum: interactiveRoles,
+              default: [
+                "button",
+                "checkbox",
+                "link",
+                "searchbox",
+                "spinbutton",
+                "switch",
+                "textbox"
+              ]
             },
             uniqueItems: true,
             additionalItems: false
