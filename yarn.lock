@@ -1386,9 +1386,9 @@ escodegen@^2.0.0:
     source-map "~0.6.1"
 
 eslint-plugin-eslint-plugin@^3.0.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-plugin/-/eslint-plugin-eslint-plugin-3.2.0.tgz#ac2b75e5d9aadf3689cd0b92f027a61aba37ab7b"
-  integrity sha512-gasrNyiqJPbGBI8zMOTX18SC4nmiSqYBqTvAz5W6hI4RGxshv7E7oTLhehE25m/H78KdsHBWDzKi6TKcs6XLdg==
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-plugin/-/eslint-plugin-eslint-plugin-3.3.0.tgz#2509fb6643a177f740bac4b521f418671e07d78e"
+  integrity sha512-ucEH4w2YQuf4qNO162sTL2jH+CgMc9RCGPR8FFeEl6e5fGlKmlVSKlSSl6+bYpIlL6yeZPBysxSyo3OYbOFm7g==
   dependencies:
     eslint-utils "^2.1.0"
 
