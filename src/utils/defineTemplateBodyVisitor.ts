@@ -1,3 +1,4 @@
+import path from "path";
 import type { Rule } from "eslint";
 import type { AST } from "vue-eslint-parser";
 
@@ -13,12 +14,15 @@ function defineTemplateBodyVisitor(
   templateVisitor: TemplateListener,
   scriptVisitor?: Rule.RuleListener
 ) {
-  if (context.parserServices.defineTemplateBodyVisitor === null) {
-    context.report({
-      loc: { line: 1, column: 0 },
-      message:
-        "Use the latest vue-eslint-parser. See also https://eslint.vuejs.org/user-guide/#what-is-the-use-the-latest-vue-eslint-parser-error"
-    });
+  if (context.parserServices.defineTemplateBodyVisitor == null) {
+    const filename = context.getFilename();
+    if (path.extname(filename) === ".vue") {
+      context.report({
+        loc: { line: 1, column: 0 },
+        message:
+          "Use the latest vue-eslint-parser. See also https://eslint.vuejs.org/user-guide/#what-is-the-use-the-latest-vue-eslint-parser-error."
+      });
+    }
 
     return {};
   }
