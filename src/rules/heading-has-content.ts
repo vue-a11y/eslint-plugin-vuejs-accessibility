@@ -30,6 +30,10 @@ const rule: Rule.RuleModule = {
           accessibleChildren: {
             type: "array",
             items: { type: "string" }
+          },
+          accessibleDirectives: {
+            type: "array",
+            items: { type: "string" }
           }
         }
       }
@@ -38,7 +42,7 @@ const rule: Rule.RuleModule = {
   create(context) {
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
-        const { components = [], accessibleChildren = [] } =
+        const { components = [], accessibleChildren = [], accessibleDirectives = [] } =
           context.options[0] || {};
 
         const elementTypes = headings.concat(components.map(makeKebabCase));
@@ -48,7 +52,7 @@ const rule: Rule.RuleModule = {
 
         if (
           elementTypes.includes(elementType) &&
-          !hasContent(node, accessibleChildTypes)
+          !hasContent(node, accessibleChildTypes, accessibleDirectives)
         ) {
           context.report({ node: node as any, messageId: "default" });
         }
