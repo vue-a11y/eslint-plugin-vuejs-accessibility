@@ -14,9 +14,8 @@ function defineTemplateBodyVisitor(
   templateVisitor: TemplateListener,
   scriptVisitor?: Rule.RuleListener
 ) {
-  if (context.parserServices.defineTemplateBodyVisitor == null) {
-    const filename = context.getFilename();
-    if (path.extname(filename) === ".vue") {
+  if (!context.parserServices.defineTemplateBodyVisitor) {
+    if (path.extname(context.getFilename()) === ".vue") {
       context.report({
         loc: { line: 1, column: 0 },
         message:
