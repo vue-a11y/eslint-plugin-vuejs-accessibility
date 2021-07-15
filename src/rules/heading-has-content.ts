@@ -42,8 +42,11 @@ const rule: Rule.RuleModule = {
   create(context) {
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
-        const { components = [], accessibleChildren = [], accessibleDirectives = [] } =
-          context.options[0] || {};
+        const {
+          components = [],
+          accessibleChildren = [],
+          accessibleDirectives = []
+        } = context.options[0] || {};
 
         const elementTypes = headings.concat(components.map(makeKebabCase));
         const accessibleChildTypes = accessibleChildren.map(makeKebabCase);

@@ -10,24 +10,18 @@ jobs:
       CI: true
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      - id: yarn-cache
-        run: echo "::set-output name=directory::$(yarn cache dir)"
-      - uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.directory }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+          cache: yarn
       - name: Lint and test
         run: |
-          yarn prettier --check '**/*'
+          yarn install --frozen-lockfile
+          yarn prepublishOnly
           yarn lint
+          yarn prettier --check '**/*'
           yarn test
+
   automerge:
     name: AutoMerge
     needs: ci

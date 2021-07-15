@@ -31,7 +31,6 @@ For the `accessibleChildren` option, these strings determine which elements shou
 
 For the `accessibleDirectives` option, these strings declare an element should be marked as acceptably accessible if a directive is present. For example something like `<h1 v-bb="myBBCode" />` may provide content in the same way `v-html` would. You would add `bb` into this array. _Notice these strings should not include the `v-` prefix._
 
-
 ### Succeed
 
 ```vue

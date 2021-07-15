@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Added
+
+- The `accessibleDirectives` option to both `heading-has-content` and `anchor-has-content`.
+
 ### Changed
 
 - Ensure directives that have identifiers for values are counted as present in the element.
