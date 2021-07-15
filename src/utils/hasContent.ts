@@ -7,7 +7,7 @@ import isHiddenFromScreenReader from "./isHiddenFromScreenReader";
 
 function hasDirective(node: AST.VElement, name: string) {
   return node.startTag.attributes.some(
-    (attribute) => attribute.directive && attribute.key.name.name === name
+    (attribute) => attribute.directive && attribute.key.name.name === name.toLowerCase()
   );
 }
 
@@ -26,9 +26,16 @@ function hasChildImageWithAlt(node: AST.VElement): boolean {
   });
 }
 
-function hasContent(node: AST.VElement, accessibleChildTypes: string[]) {
+function hasAccessibleDirective(node: AST.VElement, accessibleDirectives: string[]): boolean {
+  return accessibleDirectives.some((directive) => {
+    return hasDirective(node, directive)
+  });
+}
+
+function hasContent(node: AST.VElement, accessibleChildTypes: string[], accessibleDirectives: string[]) {
   return (
     hasAccessibleChild(node, accessibleChildTypes) ||
+    hasAccessibleDirective(node, accessibleDirectives) ||
     hasDirective(node, "text") ||
     hasDirective(node, "html") ||
     hasChildImageWithAlt(node)

@@ -17,7 +17,8 @@ This rule takes one optional object argument of type object:
       "error",
       {
         "components": ["Anchor"],
-        "accessibleChildren": ["MyAccessibleText"]
+        "accessibleChildren": ["MyAccessibleText"],
+        "accessibleDirectives": ["myAccessibleDirective"]
       }
     ]
   }
@@ -28,6 +29,8 @@ For the `components` option, these strings determine which elements (**always in
 
 For the `accessibleChildren` option, these strings determine which elements should be marked as acceptably accessible child elements. For example if you have something like a `<trans tag="hello-world" />` child that you know will translate into accessible text, then you should put the `Trans` component into this array.
 
+For the `accessibleDirectives` option, these strings declare an element should be marked as acceptably accessible if a directive is present. For example something like `<a href="#" v-bb="myBBCode" />` may provide content in the same way `v-html` would. You would add `bb` into this array. _Notice these strings should not include the `v-` prefix._
+
 ### Succeed
 
 <!-- prettier-ignore -->
@@ -37,6 +40,7 @@ For the `accessibleChildren` option, these strings determine which elements shou
 <a is="TextWrapper" />
 <a v-text="msg" />
 <a v-html="msg" />
+<a v-myAccessibleDirective="msg" />
 <Anchor>Anchor content</!Anchor>
 <a><my-accessible-text /></a>
 ```

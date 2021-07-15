@@ -10,6 +10,10 @@ makeRuleTester("heading-has-content", rule, {
     "<h1>{{ test }}</h1>",
     "<h1><slot /></h1>",
     {
+      code: "<h1 v-accessibleDirective='msg'></h1>",
+      options: [{ accessibleDirectives: ["accessibleDirective"] }]
+    },
+    {
       code: "<h1><accessible-child /></h1>",
       options: [{ accessibleChildren: ["AccessibleChild"] }]
     }
