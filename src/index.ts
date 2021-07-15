@@ -51,4 +51,4 @@ const plugin = {
   }
 };
 
-export default plugin;
+export = plugin;
