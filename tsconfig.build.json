@@ -1,4 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "exclude": ["bin", "src/rules/__tests__", "jest.setup.ts"]
+  "exclude": ["bin", "src/**/__tests__", "jest.setup.ts"]
 }
