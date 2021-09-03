@@ -107,7 +107,7 @@ const rule: InteractiveSupportsFocus = {
     },
     messages: {
       tabbable: `Elements with the "{{role}}" interactive role must be tabbable.`,
-      focusable: `Elements with the "{{role}" interactive role must be focusable.`
+      focusable: `Elements with the "{{role}}" interactive role must be focusable.`
     },
     schema: [
       {
