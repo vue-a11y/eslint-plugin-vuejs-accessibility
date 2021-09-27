@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "aria-query": "^4.2.2",
-    "emoji-regex": "^9.0.0",
+    "emoji-regex": "^10.0.0",
     "vue-eslint-parser": "^7.0.0"
   },
   "devDependencies": {
