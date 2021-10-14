@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.1.0] - 2021-10-14
+
+### Added
+
+- Change the peer dependency to allow ESLint 8 without a warning.
+
 ## [1.0.0] - 2021-10-14
 
 ### Changed
@@ -116,7 +122,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Initial release 🎉.
 
-[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.7.1...v1.0.0
 [0.7.1]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.6.2...v0.7.0
