@@ -8,7 +8,7 @@ import matchesElementRole from "./matchesElementRole";
 // aria-activedescendant, thus in practice we treat it as a widget.
 const interactiveRoles = new Set(["toolbar"]);
 
-for (const [name, definition] of roles) {
+for (const [name, definition] of roles.entries()) {
   if (
     !definition.abstract &&
     definition.superClass.some((classes) => classes.includes("widget"))
@@ -21,7 +21,7 @@ for (const [name, definition] of roles) {
 // don't have an explicit role.
 const interactiveElements = [{ name: "input" }];
 
-for (const [element, names] of elementRoles) {
+for (const [element, names] of elementRoles.entries()) {
   if ([...names].some((name) => interactiveRoles.has(name))) {
     interactiveElements.push(element);
   }

@@ -12,10 +12,11 @@ import {
 
 const exceptions: { [type: string]: string[] } = { nav: ["navigation"] };
 
-function getImplicitRoleSet(node: AST.VElement) {
-  for (const [elementRole, roleSet] of elementRoles) {
+function getImplicitRoleSet(node: AST.VElement): any[] | null {
+  for (const [elementRole, roleSet] of elementRoles.entries()) {
     if (matchesElementRole(node, elementRole)) {
-      return roleSet;
+      // The types for this are wrong, it's actually a string[]
+      return roleSet as unknown as any[];
     }
   }
 
@@ -64,7 +65,7 @@ const rule: Rule.RuleModule = {
           return;
         }
 
-        if (implicitRoleSet.has(explicitRole as any)) {
+        if (implicitRoleSet.includes(explicitRole)) {
           context.report({
             node: node as any,
             messageId: "default",

@@ -1,6 +1,7 @@
 .eslintcache
 .gitignore
 .husky
+.npmignore
 .prettierignore
 LICENSE
 yarn.lock

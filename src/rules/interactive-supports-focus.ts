@@ -17,7 +17,7 @@ import {
 
 const interactiveRoles: ARIARoleDefintionKey[] = [];
 
-for (const [role, definition] of roles) {
+for (const [role, definition] of roles.entries()) {
   if (
     !definition.abstract &&
     definition.superClass.some((classes) => classes.includes("widget"))
