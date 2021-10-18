@@ -588,10 +588,10 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.2.tgz#423c77877d0569db20e1fc80885ac4118314010e"
   integrity sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==
 
-"@types/aria-query@^4.2.1":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@types/aria-query/-/aria-query-4.2.2.tgz#ed4e0ad92306a704f9fb132a0cfcf77486dbe2bc"
-  integrity sha512-HnYpAE1Y6kRyKM/XkEuiRQhTHvkzMBurTHnpFLYLBGPIylZNPs9jJcuOOYWxPLJCSEtmZT0Y8rHDokKN7rRTig==
+"@types/aria-query@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@types/aria-query/-/aria-query-5.0.0.tgz#df2d64b5cc73cca0d75e2a7793d6b5c199c2f7b2"
+  integrity sha512-P+dkdFu0n08PDIvw+9nT9ByQnd+Udc8DaWPb9HKfaPwCvWvQpC5XaMRx2xLWECm9x1VKNps6vEAlirjA6+uNrQ==
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.14":
   version "7.1.16"
