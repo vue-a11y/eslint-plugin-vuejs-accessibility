@@ -29,7 +29,7 @@
   "dependencies": {
     "aria-query": "^5.0.0",
     "emoji-regex": "^10.0.0",
-    "vue-eslint-parser": "^7.0.0"
+    "vue-eslint-parser": "^8.0.0"
   },
   "devDependencies": {
     "@types/aria-query": "^5.0.0",
