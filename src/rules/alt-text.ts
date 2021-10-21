@@ -10,7 +10,8 @@ import {
   hasAccessibleChild,
   hasAriaLabel,
   isPresentationRole,
-  makeDocsURL
+  makeDocsURL,
+  makeKebabCase
 } from "../utils";
 
 type ElementRule = (context: Rule.RuleContext, node: AST.VElement) => void;
@@ -97,34 +98,22 @@ const rule: Rule.RuleModule = {
     const options = context.options[0] || {};
     const elements: string[] = options.elements || Object.keys(ruleByElement);
 
-    const elementTypes: Set<string> = new Set(
-      elements.reduce(
-        (accum: string[], element: string) => [
-          ...accum,
-          element === 'input[type="image"]' ? "input" : element,
-          ...(options[element] || [])
-        ],
-        []
-      )
-    );
+    // Here we're building up a list of element types and their corresponding
+    // check function.
+    const elementTypes: Record<string, keyof typeof ruleByElement> = {};
+
+    elements.forEach((element) => {
+      const elementKey = element === 'input[type="image"]' ? "input" : element;
+      elementTypes[elementKey] = element;
+
+      (options[element] || []).forEach((matchedElement: string) => {
+        elementTypes[makeKebabCase(matchedElement)] = elementKey;
+      });
+    });
 
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
-        let elementType: string | undefined = getElementType(node);
-        if (!elementTypes.has(elementType)) {
-          return;
-        }
-
-        if (elementType === "input") {
-          elementType = 'input[type="image"]';
-        }
-
-        if (!elements.includes(elementType)) {
-          elementType = elements.find((element) =>
-            (options[element] || []).includes(elementType)
-          );
-        }
-
+        const elementType = elementTypes[getElementType(node)];
         elementType && ruleByElement[elementType](context, node);
       }
     });
