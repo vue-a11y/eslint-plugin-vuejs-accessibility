@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Deprecate the accessible-emoji rule. See https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/627 for details.
 - Fix the `alt-text` handling of different element case names.
+- Fix the `anchor-has-content` handling for content directives (v-html, v-text) on child elements.
 
 ## [1.1.0] - 2021-10-14
 
