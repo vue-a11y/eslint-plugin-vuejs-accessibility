@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Changed
 
 - Deprecate the accessible-emoji rule. See https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/627 for details.
+- Fix the `alt-text` handling of different element case names.
 
 ## [1.1.0] - 2021-10-14
 

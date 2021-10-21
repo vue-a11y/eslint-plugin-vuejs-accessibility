@@ -38,6 +38,16 @@ makeRuleTester("alt-text", rule, {
     {
       code: "<input type='image' />",
       errors: [{ messageId: "input" }]
+    },
+    {
+      code: "<custom-image />",
+      options: [{ img: ["CustomImage"] }],
+      errors: [{ messageId: "imgMissingAlt" }]
+    },
+    {
+      code: "<CustomImage />",
+      options: [{ img: ["custom-image"] }],
+      errors: [{ messageId: "imgMissingAlt" }]
     }
   ]
 });
