@@ -11,6 +11,8 @@ makeRuleTester("anchor-has-content", rule, {
     "<VAnchor  />",
     "<a aria-label='This is my label' />",
     "<a><img alt='foo' /></a>",
+    "<a><span v-html='msg' /></a>",
+    "<a><span v-text='msg' /></a>",
     {
       code: "<a v-accessibleDirective='msg' />",
       options: [{ accessibleDirectives: ["accessibleDirective"] }]
