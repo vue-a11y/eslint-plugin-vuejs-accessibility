@@ -13,15 +13,11 @@ function hasDirective(node: AST.VElement, name: string) {
 }
 
 function hasChildWithDirective(node: AST.VElement, name: string): boolean {
-  return node.children.some((child) => {
-    if (child.type !== "VElement") return false;
-
-    if (hasDirective(child, name)) {
-      return true;
-    }
-
-    return hasChildWithDirective(child, name)
-  });
+  return node.children.some(
+    (child) =>
+      child.type === "VElement" &&
+      (hasDirective(child, name) || hasChildWithDirective(child, name))
+  );
 }
 
 function hasChildImageWithAlt(node: AST.VElement): boolean {
