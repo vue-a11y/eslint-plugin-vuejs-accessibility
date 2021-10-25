@@ -12,7 +12,6 @@ const recommended: Linter.BaseConfig = {
   },
   plugins: ["vuejs-accessibility"],
   rules: {
-    "vuejs-accessibility/accessible-emoji": "error",
     "vuejs-accessibility/alt-text": "error",
     "vuejs-accessibility/anchor-has-content": "error",
     "vuejs-accessibility/aria-props": "error",
