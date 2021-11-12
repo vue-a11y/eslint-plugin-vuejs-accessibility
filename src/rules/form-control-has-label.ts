@@ -1,13 +1,18 @@
 import type { Rule } from "eslint";
 import type { AST } from "vue-eslint-parser";
 
+interface FormControlHasLabelOptions {
+  labelComponents: string[];
+}
+
 import {
   defineTemplateBodyVisitor,
   getElementAttributeValue,
   getElementType,
   hasAriaLabel,
   isAriaHidden,
-  makeDocsURL
+  makeDocsURL,
+  makeKebabCase,
 } from "../utils";
 
 function isLabelElement(
@@ -15,17 +20,19 @@ function isLabelElement(
     | AST.VElement
     | AST.VDocumentFragment
     | AST.VText
-    | AST.VExpressionContainer
+    | AST.VExpressionContainer,
+  options: FormControlHasLabelOptions
 ) {
-  return node.type === "VElement" && getElementType(node) === "label";
+  const labelComponents = (options.labelComponents || []).map(makeKebabCase).concat("label");
+  return node.type === "VElement" && labelComponents.includes(getElementType(node));
 }
 
-function hasLabelElement(node: AST.VElement): boolean {
+function hasLabelElement(node: AST.VElement, options: FormControlHasLabelOptions): boolean {
   const { parent } = node;
 
   return (
-    [parent, ...parent.children].some(isLabelElement) ||
-    (parent && parent.type === "VElement" && hasLabelElement(parent))
+    [parent, ...parent.children].some((node) => isLabelElement(node, options)) ||
+    (parent && parent.type === "VElement" && hasLabelElement(parent, options))
   );
 }
 
@@ -42,8 +49,10 @@ const rule: Rule.RuleModule = {
   create(context) {
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
+        const options = context.options[0] || {};
         const elementType = getElementType(node);
-        if (!["input", "textarea"].includes(elementType)) {
+
+        if (!["input", "textarea", "select"].includes(elementType)) {
           return;
         }
 
@@ -63,7 +72,7 @@ const rule: Rule.RuleModule = {
         if (
           !isAriaHidden(node) &&
           !hasAriaLabel(node) &&
-          !hasLabelElement(node)
+          !hasLabelElement(node, options)
         ) {
           context.report({ node: node as any, messageId: "default" });
         }

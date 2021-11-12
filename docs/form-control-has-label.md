@@ -8,6 +8,23 @@ _References:_
 
 ## Rule details
 
+This rule takes one optional object argument of type object:
+
+```json
+{
+  "rules": {
+    "vuejs-accessibility/form-control-has-label": [
+      "error",
+      {
+        "labelComponents": ["CustomLabel"],
+      }
+    ]
+  }
+}
+```
+
+For the `labelComponents` option, these strings determine which elements (**always including** `<label>`) should be checked for having the `for` prop. This is a good use case when you have a wrapper component that simply renders a `label` element.
+
 ### Succeed
 
 ```
