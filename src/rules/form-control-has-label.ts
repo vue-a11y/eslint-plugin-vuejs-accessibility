@@ -21,10 +21,10 @@ function isLabelElement(
     | AST.VDocumentFragment
     | AST.VText
     | AST.VExpressionContainer,
-  options: FormControlHasLabelOptions
+  { labelComponents = [] }: FormControlHasLabelOptions
 ) {
-  const labelComponents = (options.labelComponents || []).map(makeKebabCase).concat("label");
-  return node.type === "VElement" && labelComponents.includes(getElementType(node));
+  const allLabelComponents = labelComponents.map(makeKebabCase).concat("label");
+  return node.type === "VElement" && allLabelComponents.includes(getElementType(node));
 }
 
 function hasLabelElement(node: AST.VElement, options: FormControlHasLabelOptions): boolean {
