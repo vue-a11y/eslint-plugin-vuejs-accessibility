@@ -44,7 +44,21 @@ const rule: Rule.RuleModule = {
     messages: {
       default:
         "Each form element must have a programmatically associated label element."
-    }
+    },
+    schema: [
+      {
+        type: "object",
+        properties: {
+          labelComponents: {
+            type: "array",
+            items: {
+              type: "string"
+            },
+            uniqueItems: true
+          }
+        }
+      }
+    ]
   },
   create(context) {
     return defineTemplateBodyVisitor(context, {
