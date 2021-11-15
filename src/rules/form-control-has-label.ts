@@ -11,8 +11,8 @@ import {
   getElementType,
   hasAriaLabel,
   isAriaHidden,
+  isMatchingElement,
   makeDocsURL,
-  makeKebabCase,
 } from "../utils";
 
 function isLabelElement(
@@ -23,8 +23,8 @@ function isLabelElement(
     | AST.VExpressionContainer,
   { labelComponents = [] }: FormControlHasLabelOptions
 ) {
-  const allLabelComponents = labelComponents.map(makeKebabCase).concat("label");
-  return node.type === "VElement" && allLabelComponents.includes(getElementType(node));
+  const allLabelComponents = labelComponents.concat("label");
+  return isMatchingElement(node, allLabelComponents);
 }
 
 function hasLabelElement(node: AST.VElement, options: FormControlHasLabelOptions): boolean {
