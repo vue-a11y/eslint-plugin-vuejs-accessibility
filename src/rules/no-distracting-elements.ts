@@ -11,6 +11,7 @@ const defaultElements = ["marquee", "blink"];
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("no-distracting-elements")
     },

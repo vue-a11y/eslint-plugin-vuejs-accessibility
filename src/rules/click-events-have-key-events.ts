@@ -30,13 +30,15 @@ function isCustomComponent(node: AST.VElement) {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("click-events-have-key-events")
     },
     messages: {
       default:
         "Visible, non-interactive elements with click handlers must have at least one keyboard listener."
-    }
+    },
+    schema: []
   },
   create(context) {
     return defineTemplateBodyVisitor(context, {

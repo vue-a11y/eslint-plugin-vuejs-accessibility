@@ -102,6 +102,7 @@ interface InteractiveSupportsFocus extends Rule.RuleModule {
 
 const rule: InteractiveSupportsFocus = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("interactive-supports-focus")
     },

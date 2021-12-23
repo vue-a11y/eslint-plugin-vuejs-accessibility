@@ -10,12 +10,14 @@ import {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("aria-unsupported-elements")
     },
     messages: {
       default: `This element does not support ARIA roles, states, and properties. Try removing the "{{name}}" attribute.`
-    }
+    },
+    schema: []
   },
   create(context) {
     return defineTemplateBodyVisitor(context, {

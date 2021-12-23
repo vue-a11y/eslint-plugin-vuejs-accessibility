@@ -25,6 +25,7 @@ function getImplicitRoleSet(node: AST.VElement): any[] | null {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("no-redundant-roles")
     },

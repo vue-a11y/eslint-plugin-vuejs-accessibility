@@ -73,6 +73,7 @@ function isValidLabel(
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("label-has-for")
     },

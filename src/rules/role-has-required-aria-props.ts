@@ -20,12 +20,14 @@ function isAriaRoleDefinitionKey(role: any): role is ARIARoleDefintionKey {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("role-has-required-aria-props")
     },
     messages: {
       default: `Elements with the ARIA role "{{role}}" must have the following attributes defined: {{attributes}}`
-    }
+    },
+    schema: []
   },
   create(context) {
     return defineTemplateBodyVisitor(context, {

@@ -8,12 +8,14 @@ import {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("tabindex-no-positive")
     },
     messages: {
       default: "Avoid positive integer values for tabindex."
-    }
+    },
+    schema: []
   },
   create(context) {
     return defineTemplateBodyVisitor(context, {

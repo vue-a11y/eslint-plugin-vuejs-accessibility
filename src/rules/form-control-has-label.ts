@@ -31,13 +31,15 @@ function hasLabelElement(node: AST.VElement): boolean {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("form-has-label")
     },
     messages: {
       default:
         "Each form element must have a programmatically associated label element."
-    }
+    },
+    schema: []
   },
   create(context) {
     return defineTemplateBodyVisitor(context, {

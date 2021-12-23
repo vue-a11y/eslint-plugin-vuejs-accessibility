@@ -10,12 +10,14 @@ import {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("iframe-has-title")
     },
     messages: {
       default: "<iframe> elements must have a unique title property."
-    }
+    },
+    schema: []
   },
   create(context) {
     return defineTemplateBodyVisitor(context, {
