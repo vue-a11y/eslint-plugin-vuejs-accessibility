@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.1.1] - 2021-12-23
+
 ### Changed
 
 - Deprecate the accessible-emoji rule. See https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/627 for details.
@@ -128,7 +130,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Initial release 🎉.
 
-[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.1.0...HEAD
+[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.7.1...v1.0.0
 [0.7.1]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.7.0...v0.7.1
