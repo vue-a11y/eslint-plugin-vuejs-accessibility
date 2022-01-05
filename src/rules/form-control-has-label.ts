@@ -33,7 +33,7 @@ const rule: Rule.RuleModule = {
   meta: {
     type: "problem",
     docs: {
-      url: makeDocsURL("form-has-label")
+      url: makeDocsURL("form-control-has-label")
     },
     messages: {
       default:
