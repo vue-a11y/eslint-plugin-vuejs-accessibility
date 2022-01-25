@@ -39,13 +39,31 @@ const rule: Rule.RuleModule = {
       default:
         "Each form element must have a programmatically associated label element."
     },
-    schema: []
+    schema: [
+      {
+        type: "object",
+        properties: {
+          controlComponents: {
+            type: "array",
+            items: {
+              type: "string"
+            },
+            uniqueItems: true
+          }
+        }
+      }
+    ]
   },
   create(context) {
+    const { controlComponents: customControlComponents = [] } =
+      context.options[0] || {};
+
+    const controlComponents = ["input", "textarea", ...customControlComponents];
+
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
         const elementType = getElementType(node);
-        if (!["input", "textarea"].includes(elementType)) {
+        if (!controlComponents.includes(elementType)) {
           return;
         }
 

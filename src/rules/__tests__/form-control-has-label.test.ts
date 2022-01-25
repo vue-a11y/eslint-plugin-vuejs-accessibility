@@ -21,7 +21,16 @@ makeRuleTester("form-control-has-label", rule, {
       <div aria-hidden="true">
         <input value="1" type="text" />
       </div>
-    `
+    `,
+    "<b-form-input />"
   ],
-  invalid: ["<input type='text' />", "<textarea type='text'></textarea>"]
+  invalid: [
+    "<input type='text' />",
+    "<textarea type='text'></textarea>",
+    {
+      code: "<div><b-form-input /></div>",
+      options: [{ controlComponents: ["b-form-input"] }],
+      errors: [{ messageId: "default" }]
+    }
+  ]
 });
