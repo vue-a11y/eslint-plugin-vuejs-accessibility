@@ -22,7 +22,10 @@ const rule: Rule.RuleModule = {
       VElement(node) {
         const tabIndex = getLiteralAttributeValue(node, "tabindex");
 
-        if (tabIndex && +tabIndex > 0) {
+        if (
+          (typeof tabIndex === "string" || typeof tabIndex === "number") &&
+          +tabIndex > 0
+        ) {
           context.report({ node: node as any, messageId: "default" });
         }
       }
