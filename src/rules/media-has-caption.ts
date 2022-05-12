@@ -22,6 +22,7 @@ function isCaptionsTrackElement(
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("media-has-caption")
     },

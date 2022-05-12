@@ -8,6 +8,7 @@ import {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("mouse-events-have-key-events")
     },
@@ -16,7 +17,8 @@ const rule: Rule.RuleModule = {
         "@mouseover, @mouseenter, or @hover must be accompanied by @focusin or @focus for accessibility.",
       mouseOut:
         "@mouseout or @mouseleave must be accompanied by @focusout or @blur for accessibility."
-    }
+    },
+    schema: []
   },
   create(context) {
     return defineTemplateBodyVisitor(context, {

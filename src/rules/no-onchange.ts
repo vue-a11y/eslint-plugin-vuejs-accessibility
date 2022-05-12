@@ -9,13 +9,15 @@ import {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("no-onchange")
     },
     messages: {
       default:
         "@blur must be used instead of @change, unless absolutely necessary and it causes no negative consequences for keyboard only or screen reader users."
-    }
+    },
+    schema: []
   },
   create(context) {
     return defineTemplateBodyVisitor(context, {

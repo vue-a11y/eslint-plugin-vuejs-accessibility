@@ -62,6 +62,7 @@ const ruleByElement: RuleByElement = {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("alt-text")
     },

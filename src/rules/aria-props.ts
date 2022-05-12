@@ -9,12 +9,14 @@ import {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("aria-props")
     },
     messages: {
       default: "{{name}} This attribute is an invalid ARIA attribute."
-    }
+    },
+    schema: []
   },
   create(context) {
     return defineTemplateBodyVisitor(context, {

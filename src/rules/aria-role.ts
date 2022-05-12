@@ -16,6 +16,7 @@ function isValidRole(value: any) {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("aria-role")
     },

@@ -12,13 +12,15 @@ import {
 
 const rule: Rule.RuleModule = {
   meta: {
+    type: "problem",
     docs: {
       url: makeDocsURL("accessible-emoji")
     },
     deprecated: true,
     messages: {
       default: `Emojis should be wrapped in <span>, have role="img", and have an accessible description with aria-label or aria-labelledby.`
-    }
+    },
+    schema: []
   },
   create(context) {
     return defineTemplateBodyVisitor(context, {
