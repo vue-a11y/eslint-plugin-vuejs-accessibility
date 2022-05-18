@@ -25,10 +25,10 @@ makeRuleTester("form-control-has-label", rule, {
     {
       code: "<custom-label for='input'>text</custom-label><input type='text' id='input' />",
       options: [{ labelComponents: ["CustomLabel"] }]
-    },
+    }
   ],
   invalid: [
-    "<input type='text' />", 
+    "<input type='text' />",
     "<textarea type='text'></textarea>",
     "<custom-label for='input'>text</custom-label><input type='text' id='input' />"
   ]

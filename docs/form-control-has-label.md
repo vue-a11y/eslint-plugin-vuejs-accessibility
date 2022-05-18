@@ -16,7 +16,7 @@ This rule takes one optional object argument of type object:
     "vuejs-accessibility/form-control-has-label": [
       "error",
       {
-        "labelComponents": ["CustomLabel"],
+        "labelComponents": ["CustomLabel"]
       }
     ]
   }

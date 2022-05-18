@@ -5,16 +5,16 @@ import makeKebabCase from "./makeKebabCase";
 
 function isMatchingElement(
   node:
-  | AST.VElement
-  | AST.VDocumentFragment
-  | AST.VText
-  | AST.VExpressionContainer, 
+    | AST.VElement
+    | AST.VDocumentFragment
+    | AST.VText
+    | AST.VExpressionContainer,
   searchArray: string[]
 ) {
   if (!(node.type === "VElement")) return false;
 
   const elementType = getElementType(node);
-  
+
   return searchArray.some((item: string) => {
     return makeKebabCase(item) === elementType;
   });

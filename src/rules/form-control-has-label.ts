@@ -12,7 +12,7 @@ import {
   hasAriaLabel,
   isAriaHidden,
   isMatchingElement,
-  makeDocsURL,
+  makeDocsURL
 } from "../utils";
 
 function isLabelElement(
@@ -27,11 +27,16 @@ function isLabelElement(
   return isMatchingElement(node, allLabelComponents);
 }
 
-function hasLabelElement(node: AST.VElement, options: FormControlHasLabelOptions): boolean {
+function hasLabelElement(
+  node: AST.VElement,
+  options: FormControlHasLabelOptions
+): boolean {
   const { parent } = node;
 
   return (
-    [parent, ...parent.children].some((node) => isLabelElement(node, options)) ||
+    [parent, ...parent.children].some((node) =>
+      isLabelElement(node, options)
+    ) ||
     (parent && parent.type === "VElement" && hasLabelElement(parent, options))
   );
 }
