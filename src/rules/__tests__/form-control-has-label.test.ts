@@ -21,7 +21,15 @@ makeRuleTester("form-control-has-label", rule, {
       <div aria-hidden="true">
         <input value="1" type="text" />
       </div>
-    `
+    `,
+    {
+      code: "<custom-label for='input'>text</custom-label><input type='text' id='input' />",
+      options: [{ labelComponents: ["CustomLabel"] }]
+    },
   ],
-  invalid: ["<input type='text' />", "<textarea type='text'></textarea>"]
+  invalid: [
+    "<input type='text' />", 
+    "<textarea type='text'></textarea>",
+    "<custom-label for='input'>text</custom-label><input type='text' id='input' />"
+  ]
 });

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Added
+
+- `labelComponents` options to add custom label components in `form-control-has-label`
+
 ## [1.1.1] - 2021-12-23
 
 ### Changed

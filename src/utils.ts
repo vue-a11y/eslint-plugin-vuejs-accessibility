@@ -14,6 +14,7 @@ export { default as isAriaHidden } from "./utils/isAriaHidden";
 export { default as isAttribute } from "./utils/isAttribute";
 export { default as isHiddenFromScreenReader } from "./utils/isHiddenFromScreenReader";
 export { default as isInteractiveElement } from "./utils/isInteractiveElement";
+export { default as isMatchingElement } from "./utils/isMatchingElement";
 export { default as isPresentationRole } from "./utils/isPresentationRole";
 export { default as makeDocsURL } from "./utils/makeDocsURL";
 export { default as makeKebabCase } from "./utils/makeKebabCase";
