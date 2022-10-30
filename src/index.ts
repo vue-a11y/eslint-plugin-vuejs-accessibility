@@ -1,6 +1,5 @@
 import recommended from "./configs/recommended";
 
-import accessibleEmoji from "./rules/accessible-emoji";
 import altText from "./rules/alt-text";
 import anchorHasContent from "./rules/anchor-has-content";
 import ariaProps from "./rules/aria-props";
@@ -27,7 +26,6 @@ const plugin = {
     recommended
   },
   rules: {
-    "accessible-emoji": accessibleEmoji,
     "alt-text": altText,
     "anchor-has-content": anchorHasContent,
     "aria-props": ariaProps,
