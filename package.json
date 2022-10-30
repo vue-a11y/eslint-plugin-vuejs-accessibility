@@ -34,18 +34,17 @@
   "devDependencies": {
     "@types/aria-query": "^5.0.0",
     "@types/eslint-scope": "^3.7.2",
-    "@types/eslint-visitor-keys": "^3.3.0",
-    "@types/jest": "^27.0.0",
+    "@types/jest": "^29.2.0",
     "@types/node": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
     "eslint": "^8.8.0",
     "eslint-plugin-eslint-plugin": "^5.0.0",
     "husky": "^8.0.1",
-    "jest": "^27.4.5",
+    "jest": "^29.2.2",
     "prettier": "^2.1.1",
     "pretty-quick": "^3.1.3",
-    "ts-jest": "^27.1.2",
+    "ts-jest": "^29.0.3",
     "ts-node": "^10.3.0",
     "typescript": "^4.5.4"
   },
@@ -79,9 +78,6 @@
     }
   },
   "jest": {
-    "moduleNameMapper": {
-      "@eslint/eslintrc/universal": "@eslint/eslintrc/dist/eslintrc-universal.cjs"
-    },
     "preset": "ts-jest",
     "setupFilesAfterEnv": [
       "./jest.setup.ts"
