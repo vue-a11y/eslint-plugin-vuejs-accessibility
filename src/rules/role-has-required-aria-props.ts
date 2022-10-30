@@ -1,6 +1,6 @@
 import type { Rule } from "eslint";
 import type { AST } from "vue-eslint-parser";
-import { ARIARoleDefintionKey, dom, roles } from "aria-query";
+import { ARIARoleDefinitionKey, dom, roles } from "aria-query";
 
 import {
   defineTemplateBodyVisitor,
@@ -14,7 +14,7 @@ function hasAttributes(node: AST.VElement, names: string[]) {
   return names.every((name) => getElementAttribute(node, name) !== null);
 }
 
-function isAriaRoleDefinitionKey(role: any): role is ARIARoleDefintionKey {
+function isAriaRoleDefinitionKey(role: any): role is ARIARoleDefinitionKey {
   return roles.has(role);
 }
 

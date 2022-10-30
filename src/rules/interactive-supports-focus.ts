@@ -1,6 +1,6 @@
 import type { Rule } from "eslint";
 import type { AST } from "vue-eslint-parser";
-import { ARIARoleDefintionKey, dom, roles } from "aria-query";
+import { ARIARoleDefinitionKey, dom, roles } from "aria-query";
 
 import {
   defineTemplateBodyVisitor,
@@ -15,7 +15,7 @@ import {
   makeDocsURL
 } from "../utils";
 
-const interactiveRoles: ARIARoleDefintionKey[] = [];
+const interactiveRoles: ARIARoleDefinitionKey[] = [];
 
 for (const [role, definition] of roles.entries()) {
   if (
@@ -97,7 +97,7 @@ function hasTabIndex(node: AST.VElement) {
 
 interface InteractiveSupportsFocus extends Rule.RuleModule {
   interactiveHandlers: string[];
-  interactiveRoles: ARIARoleDefintionKey[];
+  interactiveRoles: ARIARoleDefinitionKey[];
 }
 
 const rule: InteractiveSupportsFocus = {
