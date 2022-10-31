@@ -6,9 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [2.0.0] - 2022-10-30
+
 ### Added
 
-- `labelComponents` options to add custom label components in `form-control-has-label`
+- `labelComponents` options to add custom label components in `form-control-has-label`.
+- `controlComponents` options to add custom control components in `form-control-has-label`.
+
+### Changed
+
+- Require `aria-query` version 5.0.0 or higher. This is a breaking change for this dependency, meaning it's a breaking change for this package.
 
 ## [1.1.1] - 2021-12-23
 
@@ -134,7 +141,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Initial release 🎉.
 
-[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.1.1...HEAD
+[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.1.1...v2.0.0
 [1.1.1]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v0.7.1...v1.0.0
