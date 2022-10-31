@@ -61,6 +61,13 @@ const rule: Rule.RuleModule = {
               type: "string"
             },
             uniqueItems: true
+          },
+          controlComponents: {
+            type: "array",
+            items: {
+              type: "string"
+            },
+            uniqueItems: true
           }
         }
       }
@@ -70,21 +77,23 @@ const rule: Rule.RuleModule = {
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
         const options = context.options[0] || {};
-        const elementType = getElementType(node);
+        const controlComponents = [
+          "input",
+          "textarea",
+          "select",
+          ...(options.controlComponents || [])
+        ];
 
-        if (!["input", "textarea", "select"].includes(elementType)) {
+        const elementType = getElementType(node);
+        if (!controlComponents.includes(elementType)) {
           return;
         }
 
         if (elementType === "input") {
           const type = getElementAttributeValue(node, "type");
+          const types = ["hidden", "button", "image", "submit", "reset"];
 
-          if (
-            !type ||
-            ["hidden", "button", "image", "submit", "reset"].includes(
-              type as any
-            )
-          ) {
+          if (!type || types.includes(type as any)) {
             return;
           }
         }
