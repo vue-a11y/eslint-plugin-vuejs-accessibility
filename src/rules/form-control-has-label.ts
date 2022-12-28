@@ -3,6 +3,7 @@ import type { AST } from "vue-eslint-parser";
 
 interface FormControlHasLabelOptions {
   labelComponents: string[];
+  labelComponentsWithLabel: string[];
 }
 
 import {
@@ -21,10 +22,17 @@ function isLabelElement(
     | AST.VDocumentFragment
     | AST.VText
     | AST.VExpressionContainer,
-  { labelComponents = [] }: FormControlHasLabelOptions
+  { labelComponents = [], labelComponentsWithLabel = [] }: FormControlHasLabelOptions
 ) {
+  if (!(node.type === "VElement")) return false;
   const allLabelComponents = labelComponents.concat("label");
-  return isMatchingElement(node, allLabelComponents);
+  return (
+    isMatchingElement(node, allLabelComponents)
+    || (
+      isMatchingElement(node, labelComponentsWithLabel)
+      && (hasAriaLabel(node) || getElementAttributeValue(node, "label"))
+    )
+  );
 }
 
 function hasLabelElement(
