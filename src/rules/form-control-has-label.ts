@@ -22,16 +22,19 @@ function isLabelElement(
     | AST.VDocumentFragment
     | AST.VText
     | AST.VExpressionContainer,
-  { labelComponents = [], labelComponentsWithLabel = [] }: FormControlHasLabelOptions
+  { labelComponents = [] }: FormControlHasLabelOptions
 ) {
-  if (!(node.type === "VElement")) return false;
   const allLabelComponents = labelComponents.concat("label");
-  return (
-    isMatchingElement(node, allLabelComponents)
-    || (
-      isMatchingElement(node, labelComponentsWithLabel)
-      && (hasAriaLabel(node) || getElementAttributeValue(node, "label"))
-    )
+  return isMatchingElement(node, allLabelComponents);
+}
+
+function isElementWithLabel(
+  node: | AST.VElement,
+  { labelComponentsWithLabel = [] }: FormControlHasLabelOptions
+) {
+  return Boolean(
+    isMatchingElement(node, labelComponentsWithLabel)
+    && (hasAriaLabel(node) || getElementAttributeValue(node, "label"))
   );
 }
 
@@ -45,7 +48,7 @@ function hasLabelElement(
     [parent, ...parent.children].some((node) =>
       isLabelElement(node, options)
     ) ||
-    (parent && parent.type === "VElement" && hasLabelElement(parent, options))
+    (parent && parent.type === "VElement" && (isElementWithLabel(parent, options) || hasLabelElement(parent, options)))
   );
 }
 

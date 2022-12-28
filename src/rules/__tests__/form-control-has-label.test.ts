@@ -27,7 +27,7 @@ makeRuleTester("form-control-has-label", rule, {
       options: [{ labelComponents: ["CustomLabel"] }]
     },
     {
-      code: "<custom-label label='input'>text</custom-label><input type='text' id='input' />",
+      code: "<custom-label label='text'><input type='text' id='input' /></custom-label>",
       options: [{ labelComponentsWithLabel: ["CustomLabel"] }]
     },
     "<b-form-input />"
@@ -42,12 +42,17 @@ makeRuleTester("form-control-has-label", rule, {
       errors: [{ messageId: "default" }]
     },
     {
-      code: "<div aria-label='text'><b-form-input /></div>",
+      code: "<div label='text'><b-form-input /></div>",
       options: [{ controlComponents: ["b-form-input"] }],
       errors: [{ messageId: "default" }]
     },
     {
-      code: "<custom-label>text</custom-label><input type='text' id='input' />",
+      code: "<custom-label><input type='text' id='input' /></custom-label>",
+      options: [{ labelComponentsWithLabel: ["CustomLabel"] }],
+      errors: [{ messageId: "default" }]
+    },
+    {
+      code: "<custom-label label='text'>label next to input</custom-label><input type='text' id='input' />",
       options: [{ labelComponentsWithLabel: ["CustomLabel"] }],
       errors: [{ messageId: "default" }]
     },
