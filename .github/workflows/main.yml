@@ -1,7 +1,9 @@
 name: Main
+
 on:
   - push
-  - pull_request_target
+  - pull_request
+
 jobs:
   ci:
     name: CI
@@ -21,18 +23,3 @@ jobs:
           yarn lint
           yarn prettier --check '**/*'
           yarn test
-
-  automerge:
-    name: AutoMerge
-    needs: ci
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]'
-    steps:
-      - uses: actions/github-script@v3
-        with:
-          script: |
-            github.pulls.merge({
-              owner: context.payload.repository.owner.login,
-              repo: context.payload.repository.name,
-              pull_number: context.payload.pull_request.number
-            })
