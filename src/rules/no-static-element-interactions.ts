@@ -9,6 +9,7 @@ import {
   isInteractiveRole,
   isPresentationRole, makeDocsURL
 } from "../utils";
+import { dom } from "aria-query";
 
 const rule: Rule.RuleModule = {
   meta: {
@@ -26,6 +27,12 @@ const rule: Rule.RuleModule = {
     return defineTemplateBodyVisitor(context, {
       VElement (node) {
         const role = getElementAttributeValue(node, "role");
+
+        const domElements = [...dom.keys()];
+
+        if(!domElements.includes(node.name)) {
+          return;
+        }
 
         if(isHiddenFromScreenReader(node) || isPresentationRole(node)) {
           return;

@@ -10,6 +10,10 @@ makeRuleTester("no-static-element-interactions", rule, {
     "<div class='foo' />",
     "<form @submit='void 0' />",
 
+    // Custom components
+    "<Button @click='void 0' />",
+    "<v2-button @click='void 0' />",
+
     // Contains relevant directives
     "<div @click='void 0' role='button' />",
     "<div @contextmenu='void 0' role='button' />",
