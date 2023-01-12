@@ -1,4 +1,5 @@
 /.eslintcache
 /.husky/
+/.idea/
 /dist/
 /node_modules/

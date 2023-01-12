@@ -18,6 +18,7 @@ import noAutofocus from "./rules/no-autofocus";
 import noDistractingElements from "./rules/no-distracting-elements";
 import noOnchange from "./rules/no-onchange";
 import noRedundantRoles from "./rules/no-redundant-roles";
+import noStaticElementInteractions from "./rules/no-static-element-interactions";
 import roleHasRequiredAriaProps from "./rules/role-has-required-aria-props";
 import tabindexNoPositive from "./rules/tabindex-no-positive";
 
@@ -44,6 +45,7 @@ const plugin = {
     "no-distracting-elements": noDistractingElements,
     "no-onchange": noOnchange,
     "no-redundant-roles": noRedundantRoles,
+    "no-static-element-interactions": noStaticElementInteractions,
     "role-has-required-aria-props": roleHasRequiredAriaProps,
     "tabindex-no-positive": tabindexNoPositive
   }
