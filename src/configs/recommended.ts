@@ -30,6 +30,7 @@ const recommended: Linter.BaseConfig = {
     "vuejs-accessibility/no-distracting-elements": "error",
     "vuejs-accessibility/no-onchange": "error",
     "vuejs-accessibility/no-redundant-roles": "error",
+    "vuejs-accessibility/no-static-element-interactions": "error",
     "vuejs-accessibility/role-has-required-aria-props": "error",
     "vuejs-accessibility/tabindex-no-positive": "error"
   }
