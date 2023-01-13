@@ -4,10 +4,12 @@ import {
   getElementAttributeValue,
   hasOnDirectives,
   interactiveHandlers,
+  isCustomComponent,
   isHiddenFromScreenReader,
   isInteractiveElement,
   isInteractiveRole,
-  isPresentationRole, makeDocsURL
+  isPresentationRole,
+  makeDocsURL
 } from "../utils";
 import { dom } from "aria-query";
 
@@ -28,13 +30,9 @@ const rule: Rule.RuleModule = {
       VElement (node) {
         const role = getElementAttributeValue(node, "role");
 
-        const domElements = [...dom.keys()];
-
-        if(!domElements.includes(node.name)) {
-          return;
-        }
-
-        if(isHiddenFromScreenReader(node) || isPresentationRole(node)) {
+        if(isCustomComponent(node) ||
+          isHiddenFromScreenReader(node) ||
+          isPresentationRole(node)) {
           return;
         }
 
@@ -45,7 +43,6 @@ const rule: Rule.RuleModule = {
         ) {
           context.report({ node: node as any, messageId: "default" });
         }
-
       }
     });
   },

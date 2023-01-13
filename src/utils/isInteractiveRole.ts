@@ -10,7 +10,7 @@ function isInteractiveRole(value: any): value is string {
     .toLowerCase()
     .split(" ")
     .some(
-      (role) => roles.has(role as any) && getInteractiveRoles().includes(role as any)
+      (role: any) => roles.has(role) && getInteractiveRoles().includes(role)
     );
 }
 

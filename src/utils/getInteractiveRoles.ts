@@ -1,8 +1,9 @@
 import { ARIARoleDefinitionKey, roles } from "aria-query";
 
-const interactiveRoles: ARIARoleDefinitionKey[] = [];
 
 function getInteractiveRoles() {
+  const interactiveRoles: ARIARoleDefinitionKey[] = [];
+
   for (const [role, definition] of roles.entries()) {
     if (
       !definition.abstract &&
@@ -12,7 +13,7 @@ function getInteractiveRoles() {
     }
   }
 
-  return interactiveRoles
+  return interactiveRoles;
 }
 
-export default getInteractiveRoles
+export default getInteractiveRoles;

@@ -30,8 +30,7 @@ for (const [role, definition] of roles.entries()) {
 function isDisabledElement(node: AST.VElement) {
   return (
     getElementAttributeValue(node, "disabled") ||
-    (getElementAttributeValue(node, "aria-disabled") || "").toString() ===
-    "true"
+    (getElementAttributeValue(node, "aria-disabled") || "").toString() === "true"
   );
 }
 

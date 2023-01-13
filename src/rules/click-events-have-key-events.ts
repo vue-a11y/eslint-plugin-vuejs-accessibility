@@ -1,32 +1,15 @@
 import type { Rule } from "eslint";
-import type { AST } from "vue-eslint-parser";
 
-import htmlElements from "../utils/htmlElements.json";
 import {
   defineTemplateBodyVisitor,
-  getElementAttribute,
   hasOnDirective,
   hasOnDirectives,
+  isCustomComponent,
   isHiddenFromScreenReader,
   isInteractiveElement,
   isPresentationRole,
   makeDocsURL
 } from "../utils";
-
-// Why can I not import this like normal? Unclear.
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const vueEslintParser = require("vue-eslint-parser");
-
-function isHtmlElementNode(node: AST.VElement) {
-  return node.namespace === vueEslintParser.AST.NS.HTML;
-}
-
-function isCustomComponent(node: AST.VElement) {
-  return (
-    (isHtmlElementNode(node) && !htmlElements.includes(node.rawName)) ||
-    !!getElementAttribute(node, "is")
-  );
-}
 
 const rule: Rule.RuleModule = {
   meta: {
