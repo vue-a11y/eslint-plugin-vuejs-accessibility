@@ -9,6 +9,7 @@ import {
   getElementAttributeValue,
   getElementType,
   hasOnDirectives,
+  interactiveHandlers,
   isHiddenFromScreenReader,
   isInteractiveElement,
   isPresentationRole,
@@ -25,31 +26,6 @@ for (const [role, definition] of roles.entries()) {
     interactiveRoles.push(role);
   }
 }
-
-const interactiveHandlers = [
-  "click",
-  "contextmenu",
-  "dblclick",
-  "doubleclick",
-  "drag",
-  "dragend",
-  "dragenter",
-  "dragexit",
-  "dragleave",
-  "dragover",
-  "dragstart",
-  "drop",
-  "keydown",
-  "keypress",
-  "keyup",
-  "mousedown",
-  "mouseenter",
-  "mouseleave",
-  "mousemove",
-  "mouseout",
-  "mouseover",
-  "mouseup"
-];
 
 function isDisabledElement(node: AST.VElement) {
   return (
