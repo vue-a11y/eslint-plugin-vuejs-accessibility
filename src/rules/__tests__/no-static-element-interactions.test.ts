@@ -46,7 +46,7 @@ makeRuleTester("no-static-element-interactions", rule, {
     "<div @click='void 0' aria-hidden='true'/>",
 
     // Exception: `role='presentation'`
-    "<div @click='void 0' role='presentation'/>",
+    "<div @click='void 0' role='presentation'/>"
   ],
   invalid: [
     // Contains relevant directives but no `role='button'`
@@ -79,6 +79,6 @@ makeRuleTester("no-static-element-interactions", rule, {
     "<span @click='void 0' />",
     "<span @mousedown='void 0' />",
     "<section @click='void 0' />",
-    "<section @mousedown='void 0' />",
+    "<section @mousedown='void 0' />"
   ]
 });

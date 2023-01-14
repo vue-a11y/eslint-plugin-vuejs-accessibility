@@ -11,7 +11,6 @@ import {
   isPresentationRole,
   makeDocsURL
 } from "../utils";
-import { dom } from "aria-query";
 
 const rule: Rule.RuleModule = {
   meta: {
@@ -20,23 +19,25 @@ const rule: Rule.RuleModule = {
       url: makeDocsURL("no-static-element-interactions")
     },
     messages: {
-      default: "Visible, non-interactive elements should not have an interactive handler."
+      default:
+        "Visible, non-interactive elements should not have an interactive handler."
     },
     schema: []
-
   },
-  create (context: Rule.RuleContext): Rule.RuleListener {
+  create(context: Rule.RuleContext): Rule.RuleListener {
     return defineTemplateBodyVisitor(context, {
-      VElement (node) {
+      VElement(node) {
         const role = getElementAttributeValue(node, "role");
 
-        if(isCustomComponent(node) ||
+        if (
+          isCustomComponent(node) ||
           isHiddenFromScreenReader(node) ||
-          isPresentationRole(node)) {
+          isPresentationRole(node)
+        ) {
           return;
         }
 
-        if(
+        if (
           hasOnDirectives(node, interactiveHandlers) &&
           !isInteractiveElement(node) &&
           !isInteractiveRole(role)
@@ -45,7 +46,7 @@ const rule: Rule.RuleModule = {
         }
       }
     });
-  },
+  }
 };
 
 export default rule;

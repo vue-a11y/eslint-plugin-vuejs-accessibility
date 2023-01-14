@@ -1,6 +1,5 @@
 import { ARIARoleDefinitionKey, roles } from "aria-query";
 
-
 function getInteractiveRoles() {
   const interactiveRoles: ARIARoleDefinitionKey[] = [];
 

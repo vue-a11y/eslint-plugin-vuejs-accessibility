@@ -16,4 +16,4 @@ function isCustomComponent(node: AST.VElement) {
   );
 }
 
-export default isCustomComponent
+export default isCustomComponent;

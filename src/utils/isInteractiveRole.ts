@@ -14,4 +14,4 @@ function isInteractiveRole(value: any): value is string {
     );
 }
 
-export default isInteractiveRole
+export default isInteractiveRole;

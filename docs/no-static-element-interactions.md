@@ -17,7 +17,8 @@ Indicate the element's role with the `role` attribute:
   @click="onClickHandler"
   @keypress="onKeyPressHandler"
   role="button"
-  tabIndex="0">
+  tabIndex="0"
+>
   Save
 </div>
 ```
