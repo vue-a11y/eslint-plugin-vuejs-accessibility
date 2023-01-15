@@ -1,9 +1,14 @@
 import type { Rule } from "eslint";
 import type { AST } from "vue-eslint-parser";
 
+interface LabelComponentsRequiredAttributes {
+  name: string;
+  requiredAttributes: string[];
+}
+
 interface FormControlHasLabelOptions {
   labelComponents: string[];
-  labelComponentsWithLabel: string[];
+  labelComponentsWithRequiredAttributes: LabelComponentsRequiredAttributes[];
 }
 
 import {
@@ -24,18 +29,20 @@ function isLabelElement(
     | AST.VExpressionContainer,
   { labelComponents = [] }: FormControlHasLabelOptions
 ) {
-  const allLabelComponents = labelComponents.concat("label");
+  const allLabelComponents: string[] = labelComponents.concat("label");
   return isMatchingElement(node, allLabelComponents);
 }
 
-function isElementWithLabel(
+function isLabelElementWithRequiredAttributes(
   node: | AST.VElement,
-  { labelComponentsWithLabel = [] }: FormControlHasLabelOptions
+  { labelComponentsWithRequiredAttributes = [] }: FormControlHasLabelOptions
 ) {
-  return Boolean(
-    isMatchingElement(node, labelComponentsWithLabel)
-    && (hasAriaLabel(node) || getElementAttributeValue(node, "label"))
-  );
+  return labelComponentsWithRequiredAttributes.some((component) => (
+    isMatchingElement(node, [component.name]) &&
+    component.requiredAttributes.some(
+      (attr) => getElementAttributeValue(node, attr)
+    )
+  ));
 }
 
 function hasLabelElement(
@@ -48,7 +55,13 @@ function hasLabelElement(
     [parent, ...parent.children].some((node) =>
       isLabelElement(node, options)
     ) ||
-    (parent && parent.type === "VElement" && (isElementWithLabel(parent, options) || hasLabelElement(parent, options)))
+    (
+      parent && parent.type === "VElement" &&
+      (
+        isLabelElementWithRequiredAttributes(parent, options) ||
+        hasLabelElement(parent, options)
+      )
+    )
   );
 }
 
@@ -70,6 +83,22 @@ const rule: Rule.RuleModule = {
             type: "array",
             items: {
               type: "string"
+            },
+            uniqueItems: true
+          },
+          labelComponentsWithRequiredAttributes: {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                name: {
+                  type: "string",
+                },
+                requiredAttributes: {
+                  type: "array",
+                  items: { type: "string" }
+                },
+              }
             },
             uniqueItems: true
           },

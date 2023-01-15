@@ -16,8 +16,12 @@ This rule takes one optional object argument of type object:
     "vuejs-accessibility/form-control-has-label": [
       "error",
       {
-        "labelComponentsWithLabel": ["CustomComponentWithLabelAttribute"],
-        "labelComponents": ["CustomLabel"],
+        "labelComponents": [
+          "CustomLabel",
+        ],
+        "labelComponentsWithRequiredAttributes": [
+          { "name": "CustomComponentWithRequiredAttribute", "requiredAttributes": ["label"] },
+        ]
         "controlComponents": ["CustomInput"]
       }
     ]
@@ -27,7 +31,7 @@ This rule takes one optional object argument of type object:
 
 For the `labelComponents` option, these strings determine which elements (**always including** `<label>`) should be checked for having the `for` prop. This is a good use case when you have a wrapper component that simply renders a `label` element.
 
-For the `labelComponentsWithLabel` option, these strings determine which elements should be checked for having a `label` or `aria-label` prop. This is a good use case when you have a wrapper component that renders a `label` element when provided.
+For the `labelComponentsWithRequiredAttributes` option, these objects determine which elements should be checked for having a value for any of the `requiredAttributes` as an attribute. This is a good use case when you have a wrapper component that renders a `label` element when a specific attribute is provided.
 
 For the `controlComponents` option, these strings determine which elements (**always including** `<input>`, `<textarea>` and `<select>`) should be checked for having an associated label. This is a good use case when you have a wrapper component that simply renders an input element.
 
