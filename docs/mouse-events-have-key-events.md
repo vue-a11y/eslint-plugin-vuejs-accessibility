@@ -8,7 +8,7 @@ This rule takes no arguments.
 
 ### Succeed
 
-```
+```vue
 <div @mouseover="foo" @focus="bar" />
 <div @mouseout="foo" @blur="bar" />
 ```
