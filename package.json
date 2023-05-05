@@ -36,7 +36,7 @@
     "@types/aria-query": "^5.0.0",
     "@types/eslint-scope": "^3.7.2",
     "@types/jest": "^29.2.5",
-    "@types/node": "^18.0.0",
+    "@types/node": "^20.1.0",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
     "eslint": "^8.8.0",
