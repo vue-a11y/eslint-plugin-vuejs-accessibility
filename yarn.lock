@@ -1800,9 +1800,9 @@ escape-string-regexp@^4.0.0:
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
 eslint-plugin-eslint-plugin@^5.0.0:
-  version "5.0.8"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-plugin/-/eslint-plugin-eslint-plugin-5.0.8.tgz#b0a04e874a52176f129270b8773a4635ce5be14f"
-  integrity sha512-bxPMZ3L/+5YypErWQMKUI9XdkLpgqOOO0CgbtHjk5Zxzcg4EVsWYPy8duvGSLxSyR60LBIoXNzVMueEZ3/j0AQ==
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-plugin/-/eslint-plugin-eslint-plugin-5.1.0.tgz#040e08aa057d187418acae9d7c336b156ba1db07"
+  integrity sha512-HOzgLRSZJdEZpLaXbA3qd/4Sfa09W6NTzDBqWd5zeQNc1wnsGfGYGE2Rr8nVDeckyFT5u7GlU+lYrXF89UyECg==
   dependencies:
     eslint-utils "^3.0.0"
     estraverse "^5.3.0"
