@@ -3997,9 +3997,9 @@ normalize-url@^8.0.0:
   integrity sha512-uVFpKhj5MheNBJRTiMZ9pE/7hD1QTeEvugSJW/OmLzAp78PB5O6adfMNTvmfKhXBkvCzC+rqifWcVYpGFwTjnw==
 
 np@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/np/-/np-8.0.1.tgz#e022b061598be29b371efc93aed628d210ca0728"
-  integrity sha512-5Vd3p5LlymIUhQjKIVhcf/Zh1/Mpeuo4agQ53LWXokPnGlWH3SAjZx5jmy56B904uwnKXyM/220GJae5p7/NhA==
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/np/-/np-8.0.2.tgz#617f5621885c67f6c0660cbda409478d995d77a1"
+  integrity sha512-mkQB4rEx736mbOd8gq4DfTW/Oh11CplO44AalimMehT7EKJB1vht50DdzpsXL78qPbzjPnnP7JddS179dbsAJg==
   dependencies:
     chalk "^5.2.0"
     cosmiconfig "^8.1.3"
