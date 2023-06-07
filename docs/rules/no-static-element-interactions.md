@@ -6,36 +6,38 @@ The [WAI-ARIA `role` attribute](https://www.w3.org/TR/wai-aria-1.1/#usage_intro)
 
 In order to add interactivity such as a mouse or key event listener to a static element, that element must be given a role value as well.
 
-## How do I resolve this error?
+## 🟢 How to resolve
 
 ### Case: This element acts like a button, link, menuitem, etc
 
 Indicate the element's role with the `role` attribute:
 
 ```vue
-<div
-  @click="onClickHandler"
-  @keypress="onKeyPressHandler"
-  role="button"
-  tabIndex="0"
->
-  Save
-</div>
+<template>
+  <div
+    @click="onClickHandler"
+    @keypress="onKeyPressHandler"
+    role="button"
+    tabIndex="0"
+  >
+    Save
+  </div>
+</template>
 ```
 
 Common interactive roles include:
 
-1. `button`
-1. `link`
-1. `checkbox`
-1. `menuitem`
-1. `menuitemcheckbox`
-1. `menuitemradio`
-1. `option`
-1. `radio`
-1. `searchbox`
-1. `switch`
-1. `textbox`
+- `button`
+- `link`
+- `checkbox`
+- `menuitem`
+- `menuitemcheckbox`
+- `menuitemradio`
+- `option`
+- `radio`
+- `searchbox`
+- `switch`
+- `textbox`
 
 Note: Adding a role to your element does **not** add behavior. When a semantic HTML element like `<button>` is used, then it will also respond to Enter key presses when it has focus. The developer is responsible for providing the expected behavior of an element that the role suggests it would have: focusability and key press support.
 
@@ -43,26 +45,27 @@ Do not use the role `presentation` on the element: it removes the element's sema
 
 Adjust the list of handler prop names in the handlers array to increase or decrease the coverage surface of this rule in your codebase.
 
-### Succeed
+### ✔ Succeed
 
 ```vue
-<button @click="() => {}" class="foo" />
-<div class="foo" @click="() => {}" role="button" />
-<input type="text" @click="() => {}" />
+<template>
+  <button @click="() => {}" class="foo" />
+  <div class="foo" @click="() => {}" role="button" />
+  <input type="text" @click="() => {}" />
+</template>
 ```
 
-### Fail
+### ❌ Fail
 
 ```vue
-<div @click="() => {}" />
+<template>
+  <div @click="() => {}" />
+</template>
 ```
 
-## Accessibility guidelines
+## 📚 Resources
 
 - [WCAG 4.1.2](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value)
-
-### Resources
-
 - [WAI-ARIA `role` attribute](https://www.w3.org/TR/wai-aria-1.1/#usage_intro)
 - [WAI-ARIA Authoring Practices Guide - Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex)
 - [Fundamental Keyboard Navigation Conventions](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_generalnav)

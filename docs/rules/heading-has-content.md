@@ -2,11 +2,7 @@
 
 Enforce that heading elements (`h1`, `h2`, etc.) have content and that the content is accessible to screen readers. Accessible means that it is not hidden using the `aria-hidden` prop. Refer to the references to learn about why this is important.
 
-_References:_
-
-1.  [Deque University](https://dequeuniversity.com/rules/axe/1.1/empty-heading)
-
-## Rule details
+## 🔧 Options
 
 This rule takes one optional object argument of type object:
 
@@ -31,21 +27,29 @@ For the `accessibleChildren` option, these strings determine which elements shou
 
 For the `accessibleDirectives` option, these strings declare an element should be marked as acceptably accessible if a directive is present. For example something like `<h1 v-bb="myBBCode" />` may provide content in the same way `v-html` would. You would add `bb` into this array. _Notice these strings should not include the `v-` prefix._
 
-### Succeed
+### ✔ Succeed
 
 ```vue
-<h1>Heading Content!</h1>
-<h1 v-html="msg"></h1>
-<h1 v-myAccessibleDirective="msg"></h1>
-<MyHeading>Heading Content!</MyHeading>
-<h1>
-  <MyAccessibleText />
-</h1>
+<template>
+  <h1>Heading Content!</h1>
+  <h1 v-html="msg"></h1>
+  <h1 v-myAccessibleDirective="msg"></h1>
+  <MyHeading>Heading Content!</MyHeading>
+  <h1>
+    <MyAccessibleText />
+  </h1>
+</template>
 ```
 
-### Fail
+### ❌ Fail
 
 ```vue
-<h1></h1>
-<MyHeading></MyHeading>
+<template>
+  <h1></h1>
+  <MyHeading></MyHeading>
+</template>
 ```
+
+## 📚 Resources
+
+- [Deque University](https://dequeuniversity.com/rules/axe/1.1/empty-heading)

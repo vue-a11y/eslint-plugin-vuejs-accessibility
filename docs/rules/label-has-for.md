@@ -7,7 +7,7 @@ Enforce label tags have associated control. There are two supported ways to asso
 
 To fully cover 100% of assistive devices, you're encouraged to validate for both nesting and id.
 
-## Rule details
+## 🔧 Options
 
 This rule takes one optional object argument of type object:
 
@@ -35,33 +35,39 @@ For the `controlComponents` option, these strings determine which elements shoul
 
 The `required` option (defaults to `"required": { "every": ["nesting", "id"] }`) determines which checks are activated. You're allowed to pass in one of the following types:
 
-- string: must be one of the acceptable strings (`"nesting"` or `"id"`)
-- object, must have one of the following properties:
+- `string`: must be one of the acceptable strings (`"nesting"` or `"id"`)
+- `object`, must have one of the following properties:
   - some: an array of acceptable strings, will pass if ANY of the requested checks passed
   - every: an array of acceptable strings, will pass if ALL of the requested checks passed
 
 The `allowChildren` option (defaults to `false`) determines whether default slot content is allowed to be passed into a `label` element. For example, the following pattern, by default, is not allowed:
 
 ```vue
-<label>
-  <slot />
-</label>
+<template>
+  <label>
+    <slot />
+  </label>
+</template>
 ```
 
 However, if `allowChildren` is set to `true`, no error will be raised. If you want to pass in default slot content without raising an error because you cannot be sure what the default slot will render, then set `allowChildren` to `true`.
 
-### Succeed
+### ✔ Succeed
 
 ```vue
-<label for="name">
-  <input type="text" id="name" />
-  Name
-</label>
+<template>
+  <label for="name">
+    <input type="text" id="name" />
+    Name
+  </label>
+</template>
 ```
 
-### Fail
+### ❌ Fail
 
 ```vue
-<input type="text" id="name" />
-<label>First Name</label>
+<template>
+  <input type="text" id="name" />
+  <label>First Name</label>
+</template>
 ```
