@@ -4,7 +4,7 @@ import { version } from "../../package.json";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "eslint-plugin-vuejs-accessibility",
+  title: "eslint-plugin-vuejs-a11y",
   description:
     "An eslint plugin for checking accessibility rules from within .vue files.",
   themeConfig: {
