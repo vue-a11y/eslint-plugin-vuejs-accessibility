@@ -2,12 +2,7 @@
 
 Enforces that no distracting elements are used. Elements that can be visually distracting can cause accessibility issues with visually impaired users. Such elements are most likely deprecated, and should be avoided. By default, the following elements are visually distracting: `<marquee>` and `<blink>`.
 
-_References:_
-
-1. [axe-core marquee](https://dequeuniversity.com/rules/axe/3.2/marquee)
-2. [axe-core blink](https://dequeuniversity.com/rules/axe/3.2/blink)
-
-## Rule details
+## 🔧 Options
 
 This rule takes one optional object argument of type object:
 
@@ -26,15 +21,24 @@ This rule takes one optional object argument of type object:
 
 For the `elements` option, these strings determine which elements should be checked for usage. This shouldn't need to be configured unless you have a seriously compelling use case for these elements.
 
-### Succeed
+### ✔ Succeed
 
 ```vue
-<div />
+<template>
+  <div />
+</template>
 ```
 
-### Fail
+### ❌ Fail
 
 ```vue
-<marquee />
-<blink />
+<template>
+  <marquee />
+  <blink />
+</template>
 ```
+
+## 📚 Resources
+
+- [axe-core marquee](https://dequeuniversity.com/rules/axe/3.2/marquee)
+- [axe-core blink](https://dequeuniversity.com/rules/axe/3.2/blink)

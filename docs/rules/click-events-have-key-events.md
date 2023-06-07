@@ -2,20 +2,24 @@
 
 Enforce `@click` is accompanied by at least one of the following: `@keyup`, `@keydown`, `@keypress`. Coding for the keyboard is important for users with physical disabilities who cannot use a mouse, AT compatibility, and screenreader users.
 
-## Rule details
+## 🔧 Options
 
 This rule takes no arguments.
 
-### Succeed
+### ✔ Succeed
 
 ```vue
-<div @click="foo" @keydown="bar" />
-<div @click="foo" @keyup="bar" />
-<div @click="foo" @keypress="bar" />
+<template>
+  <div @click="foo" @keydown="bar" />
+  <div @click="foo" @keyup="bar" />
+  <div @click="foo" @keypress="bar" />
+</template>
 ```
 
-### Fail
+### ❌ Fail
 
 ```vue
-<div @click="foo" />
+<template>
+  <div @click="foo" />
+</template>
 ```

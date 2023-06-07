@@ -4,12 +4,7 @@ Providing captions for media is essential for deaf users to follow along. Captio
 
 The captions should contain all important and relevant information to understand the corresponding media. This may mean that the captions are not a 1:1 mapping of the dialogue in the media content. However, captions are _not_ necessary for video components with the `muted` attribute.
 
-_References:_
-
-1. [AXE Audio](https://dequeuniversity.com/rules/axe/2.1/audio-caption)
-2. [AXE Video](https://dequeuniversity.com/rules/axe/2.1/video-caption)
-
-## Rule details
+## 🔧 Options
 
 This rule takes one optional object argument of type object:
 
@@ -30,17 +25,26 @@ This rule takes one optional object argument of type object:
 
 For the `audio`, `video`, and `track` options, these strings determine which elements (**always including** their corresponding DOM element) should be used for this rule. This is a good use case when you have a wrapper component that simply renders an `audio`, `video`, or `track` element.
 
-### Succeed
+### ✔ Succeed
 
 ```vue
-<audio><track kind="captions" /></audio>
-<video><track kind="captions" /></video>
-<video muted />
+<template>
+  <audio><track kind="captions" /></audio>
+  <video><track kind="captions" /></video>
+  <video muted />
+</template>
 ```
 
-### Fail
+### ❌ Fail
 
 ```vue
-<audio />
-<video />
+<template>
+  <audio />
+  <video />
+</template>
 ```
+
+## 📚 Resources
+
+- [AXE Audio](https://dequeuniversity.com/rules/axe/2.1/audio-caption)
+- [AXE Video](https://dequeuniversity.com/rules/axe/2.1/video-caption)

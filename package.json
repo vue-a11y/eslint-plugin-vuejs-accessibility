@@ -7,7 +7,9 @@
     "lint": "eslint --cache .",
     "prepublishOnly": "tsc -p tsconfig.build.json",
     "test": "jest",
-    "release": "np"
+    "release": "np",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs"
   },
   "author": "Kevin Newton",
   "license": "MIT",
@@ -48,7 +50,8 @@
     "pretty-quick": "^3.1.3",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.3.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "vitepress": "^1.0.0-beta.1"
   },
   "eslintConfig": {
     "env": {

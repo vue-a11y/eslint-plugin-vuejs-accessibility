@@ -2,18 +2,22 @@
 
 Elements cannot use an invalid ARIA attribute. This will fail if it finds an `aria-*` property that is not listed in [WAI-ARIA States and Properties spec](https://www.w3.org/TR/wai-aria/#state_prop_def).
 
-## Rule details
+## 🔧 Options
 
 This rule takes no arguments.
 
-### Succeed
+### ✔ Succeed
 
 ```vue
-<input aria-labelledby="address" />
+<template>
+  <input aria-labelledby="address" />
+</template>
 ```
 
-### Fail
+### ❌ Fail
 
 ```vue
-<input aria-labeledby="address" />
+<template>
+  <input aria-labeledby="address" />
+</template>
 ```

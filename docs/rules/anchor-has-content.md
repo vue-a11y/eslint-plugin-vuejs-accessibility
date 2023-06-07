@@ -2,11 +2,7 @@
 
 Enforce that anchors have content and that the content is accessible to screen readers. Accessible means that it is not hidden using the `aria-hidden` prop. Refer to the references to learn about why this is important.
 
-_References:_
-
-1. [Deque University](https://dequeuniversity.com/rules/axe/1.1/link-name)
-
-## Rule details
+## 🔧 Options
 
 This rule takes one optional object argument of type object:
 
@@ -31,24 +27,32 @@ For the `accessibleChildren` option, these strings determine which elements shou
 
 For the `accessibleDirectives` option, these strings declare an element should be marked as acceptably accessible if a directive is present. For example something like `<a href="#" v-bb="myBBCode" />` may provide content in the same way `v-html` would. You would add `bb` into this array. _Notice these strings should not include the `v-` prefix._
 
-### Succeed
+### ✔ Succeed
 
 <!-- prettier-ignore -->
 ```vue
-<a>Anchor Content!</a>
-<a><TextWrapper /><a>
-<a is="TextWrapper" />
-<a v-text="msg" />
-<a v-html="msg" />
-<a v-myAccessibleDirective="msg" />
-<Anchor>Anchor content</!Anchor>
-<a><my-accessible-text /></a>
+<template>
+  <a>Anchor Content!</a>
+  <a><TextWrapper /><a>
+  <a is="TextWrapper" />
+  <a v-text="msg" />
+  <a v-html="msg" />
+  <a v-myAccessibleDirective="msg" />
+  <Anchor>Anchor content</!Anchor>
+  <a><my-accessible-text /></a>
+</template>
 ```
 
-### Fail
+### ❌ Fail
 
 ```vue
-<a />
-<a><TextWrapper aria-hidden /></a>
-<Anchor></Anchor>
+<template>
+  <a />
+  <a><TextWrapper aria-hidden /></a>
+  <Anchor></Anchor>
+</template>
 ```
+
+## 📚 Resources
+
+- [Deque University](https://dequeuniversity.com/rules/axe/1.1/link-name)
