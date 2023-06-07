@@ -36,7 +36,8 @@ export default defineConfig({
     ],
 
     editLink: {
-      pattern: "https://github.com/vue-a11y/edit/master/docs/:path"
+      pattern:
+        "https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/edit/master/docs/:path"
     },
 
     socialLinks: [
