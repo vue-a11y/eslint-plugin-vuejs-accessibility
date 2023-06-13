@@ -1609,9 +1609,9 @@ argparse@^2.0.1:
   integrity sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==
 
 aria-query@>=5.0.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/aria-query/-/aria-query-5.2.0.tgz#1fed85495ba6bd94ab3ef7770d46f0c5579d44f6"
-  integrity sha512-WkRzi93hMI7J6SwwGaHPm/l4vvO1qy3skvo+YCXJQfcMPmiUtm6i6fq/+1PwBX3zfsD2Cb8HvfrmwT3ZhtFbzg==
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/aria-query/-/aria-query-5.2.1.tgz#bc285d9d654d1df121bcd0c134880d415ca67c15"
+  integrity sha512-7uFg4b+lETFgdaJyETnILsXgnnzVnkHcgRbwbPwevm5x/LmUlt3MjczMRe1zg824iBgXZNRPTBftNYyRSKLp2g==
   dependencies:
     dequal "^2.0.3"
 
