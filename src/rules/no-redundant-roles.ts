@@ -13,14 +13,22 @@ import {
 const exceptions: { [type: string]: string[] } = { nav: ["navigation"] };
 
 function getImplicitRoleSet(node: AST.VElement): any[] | null {
-  for (const [elementRole, roleSet] of elementRoles.entries()) {
-    if (matchesElementRole(node, elementRole)) {
-      // The types for this are wrong, it's actually a string[]
-      return roleSet as unknown as any[];
-    }
-  }
+  const matchingRoles = elementRoles.entries()
+    .filter(([consept]) => {
+      return matchesElementRole(node, consept);
+    })
+    .sort(([a], [b]) => {
+      // try ordering by the concept that is more difficult to match first.
+      // the number of attributes needed to "match" is used here as a proxy of
+      // that difficulty.
+      return (b.attributes?.length ?? 0) - (a.attributes?.length ?? 0);
+    });
 
-  return null;
+  const [preferedRole] = matchingRoles;
+  const [, roleSet = null] = preferedRole || [];
+
+  // The types for this are wrong, it's actually a string[]
+  return roleSet as unknown as string[];
 }
 
 const rule: Rule.RuleModule = {
