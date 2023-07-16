@@ -1,12 +1,11 @@
 import { defineConfig } from "vitepress";
 import { rules } from "./rulesForSidebar";
-import { version } from "../../package.json";
+import { description, version } from "../../package.json";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "eslint-plugin-vuejs-a11y",
-  description:
-    "An eslint plugin for checking accessibility rules from within .vue files.",
+  description,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
