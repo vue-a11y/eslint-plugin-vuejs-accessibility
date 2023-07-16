@@ -5,6 +5,7 @@ import { description, version } from "../../package.json";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "eslint-plugin-vuejs-a11y",
+  base: "/eslint-plugin-vuejs-accessibility/",
   description,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
