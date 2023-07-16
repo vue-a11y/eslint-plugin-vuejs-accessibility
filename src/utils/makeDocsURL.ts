@@ -1,6 +1,5 @@
-// TODO: Docs URL
 function makeDocsURL(name: string) {
-  return `https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/blob/master/docs/${name}.md`;
+  return `https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/${name}.html`;
 }
 
 export default makeDocsURL;
