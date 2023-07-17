@@ -13,7 +13,8 @@ import {
 const exceptions: { [type: string]: string[] } = { nav: ["navigation"] };
 
 function getImplicitRoleSet(node: AST.VElement): any[] | null {
-  const matchingRoles = elementRoles.entries()
+  const matchingRoles = elementRoles
+    .entries()
     .filter(([consept]) => {
       return matchesElementRole(node, consept);
     })
