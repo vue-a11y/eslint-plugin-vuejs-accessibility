@@ -7,6 +7,35 @@ export default defineConfig({
   title: "eslint-plugin-vuejs-a11y",
   base: "/eslint-plugin-vuejs-accessibility/",
   description,
+  head: [
+    [
+      "link",
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "https://vue-a11y.com/favicon/favicon-32x32.png"
+      }
+    ],
+    [
+      "link",
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "96x96",
+        href: "https://vue-a11y.com/favicon/favicon-96x96.png"
+      }
+    ],
+    [
+      "link",
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "https://vue-a11y.com/favicon/favicon-16x16.png"
+      }
+    ]
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
