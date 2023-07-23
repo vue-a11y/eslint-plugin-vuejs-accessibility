@@ -1,4 +1,5 @@
 .*
 bin/
+docs/
 src/
 jest.setup.ts
