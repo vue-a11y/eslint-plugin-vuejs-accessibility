@@ -10,6 +10,7 @@ import {
 const rule: Rule.RuleModule = {
   meta: {
     type: "problem",
+    deprecated: true,
     docs: {
       url: makeDocsURL("no-onchange")
     },
