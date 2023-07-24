@@ -1,11 +1,12 @@
 import { defineConfig } from "vitepress";
 import { rules } from "./rulesForSidebar";
 import { description, version } from "../../package.json";
+import { BASE_URL } from "./constants";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "eslint-plugin-vuejs-a11y",
-  base: "/eslint-plugin-vuejs-accessibility/",
+  base: BASE_URL,
   description,
   head: [
     [
@@ -66,7 +67,7 @@ export default defineConfig({
 
     editLink: {
       pattern:
-        "https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/edit/master/docs/:path"
+        "https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/edit/main/docs/:path"
     },
 
     socialLinks: [
