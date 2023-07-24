@@ -34,6 +34,6 @@ The code is available as open source under the terms of the [MIT License](https:
 
 The work for this plugin was largely based on previous work done on [eslint-plugin-vue-a11y](https://github.com/maranran/eslint-plugin-vue-a11y), as well as various other tools, including:
 
-- [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
+- [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
 - [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue)
 - [jsx-ast-utils](https://github.com/vuejs/eslint-plugin-vue)
