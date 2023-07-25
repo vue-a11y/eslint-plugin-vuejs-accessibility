@@ -1,12 +1,11 @@
 import { defineConfig } from "vitepress";
 import { rules } from "./rulesForSidebar";
 import { description, version } from "../../package.json";
-import { BASE_URL } from "./constants";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "eslint-plugin-vuejs-a11y",
-  base: BASE_URL,
+  base: "/eslint-plugin-vuejs-accessibility/",
   description,
   head: [
     [
