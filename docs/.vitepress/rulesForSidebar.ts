@@ -1,6 +1,5 @@
 import { join, parse } from "node:path";
 import { Dirent, readdirSync } from "node:fs";
-import { BASE_URL } from "./constants";
 
 export const rules = getRulesForSideBar();
 
@@ -30,6 +29,6 @@ function fileNameWithoutExtension(file: Dirent) {
 function ruleToSidebarItem(ruleName: string) {
   return {
     text: ruleName,
-    link: `${BASE_URL}rules/${ruleName}`
+    link: `/rules/${ruleName}`
   };
 }
