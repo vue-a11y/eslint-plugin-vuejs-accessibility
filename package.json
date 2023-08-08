@@ -17,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/issues"
   },
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "homepage": "https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility#readme",
   "keywords": [
     "eslint",
