@@ -54,7 +54,7 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.3.0",
     "typescript": "^5.0.2",
-    "vitepress": "1.0.0-rc.27"
+    "vitepress": "1.0.0-rc.29"
   },
   "eslintConfig": {
     "env": {
