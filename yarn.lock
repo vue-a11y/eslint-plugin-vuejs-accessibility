@@ -5417,14 +5417,14 @@ shebang-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-shikiji-transformers@^0.7.2:
+shikiji-transformers@^0.7.4:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/shikiji-transformers/-/shikiji-transformers-0.7.4.tgz#1d7525f9039d121fd1f25cf3e4538277585ff2c8"
   integrity sha512-oykilNekcW2FnRGbvZm+RNWHYroSeCVMOaMMwAbxozZgpTdcJtHoA+1+MDFw6/o2hCkX88kKbxG6FwAZoUZ6WQ==
   dependencies:
     shikiji "0.7.4"
 
-shikiji@0.7.4, shikiji@^0.7.2:
+shikiji@0.7.4, shikiji@^0.7.4:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/shikiji/-/shikiji-0.7.4.tgz#29053887ce6dbb2f2c3668048c8f86f5bc085fa3"
   integrity sha512-N5dmPvyhH/zfcsuWysUEAMwRJDMz26LUns2VEUs5y4Ozbf5jkAODU0Yswjcf/tZAwpFnk5x3y34dupFMnF2+NA==
@@ -6059,10 +6059,10 @@ vite@^5.0.2:
   optionalDependencies:
     fsevents "~2.3.3"
 
-vitepress@1.0.0-rc.30:
-  version "1.0.0-rc.30"
-  resolved "https://registry.yarnpkg.com/vitepress/-/vitepress-1.0.0-rc.30.tgz#50c6f2e3308e2bc0232b4fd38ca0b4e546d3c55f"
-  integrity sha512-OolAbFU2hjs0KuIpPq0wRd4vJlTMvrFgHSh/hB+XQid7U31KtB6F1NxWihMwKkwncpxu9mt2Somet5AGiyTgPA==
+vitepress@1.0.0-rc.31:
+  version "1.0.0-rc.31"
+  resolved "https://registry.yarnpkg.com/vitepress/-/vitepress-1.0.0-rc.31.tgz#8defda3d5705a219e5bf3565efe57c7d52315b01"
+  integrity sha512-ikH9pIjOOAbyoYAGBVfTz8TzuXp+UoWaIRMU4bw/oiTg8R65SbAaGKY84xx6TuL+f4VqUJ8lhzW82YyxSLvstA==
   dependencies:
     "@docsearch/css" "^3.5.2"
     "@docsearch/js" "^3.5.2"
@@ -6075,8 +6075,8 @@ vitepress@1.0.0-rc.30:
     mark.js "8.11.1"
     minisearch "^6.3.0"
     mrmime "^1.0.1"
-    shikiji "^0.7.2"
-    shikiji-transformers "^0.7.2"
+    shikiji "^0.7.4"
+    shikiji-transformers "^0.7.4"
     vite "^5.0.2"
     vue "^3.3.8"
 
