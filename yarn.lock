@@ -4671,9 +4671,9 @@ normalize-url@^8.0.0:
   integrity sha512-uVFpKhj5MheNBJRTiMZ9pE/7hD1QTeEvugSJW/OmLzAp78PB5O6adfMNTvmfKhXBkvCzC+rqifWcVYpGFwTjnw==
 
 np@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/np/-/np-9.0.0.tgz#f93e27951069cf3cb715cb9e7f1b6665cc91be1c"
-  integrity sha512-i6s+p2+Ur2QxfN7fWp3j2/mW8DiIvseYKMH8mXUjHCfTmJTosx+G5bgFlws6P/H4XYyt9NFGCbspWe3W/MUIpA==
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/np/-/np-9.1.0.tgz#549dd9ae3599fac2d504dd1a5f315e42f70f536b"
+  integrity sha512-c1QCU/+qN2N6epFyW4HpfIG5/wLIBOzmvjb2isjbecRK5qhHNjS67WnZ93jPScL1N3Iss7LfS9RFhpdj/VD7qQ==
   dependencies:
     chalk "^5.3.0"
     chalk-template "^1.1.0"
