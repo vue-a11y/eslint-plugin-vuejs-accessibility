@@ -81,6 +81,9 @@ const rule: Rule.RuleModule = {
           "input",
           "textarea",
           "select",
+          "meter",
+          "output",
+          "progress",
           ...(options.controlComponents || [])
         ];
 
