@@ -27,18 +27,30 @@ function isLabelElement(
   return isMatchingElement(node, allLabelComponents);
 }
 
-function hasLabelElement(
+function hasNestedLabelElement(
   node: AST.VElement,
   options: FormControlHasLabelOptions
 ): boolean {
   const { parent } = node;
 
-  return (
-    [parent, ...parent.children].some((node) =>
-      isLabelElement(node, options)
-    ) ||
-    (parent && parent.type === "VElement" && hasLabelElement(parent, options))
-  );
+  if (isLabelElement(parent, options)) {
+    return true;
+  }
+
+  return (parent && parent.type === "VElement" && hasNestedLabelElement(parent, options));
+}
+
+/**
+ * Check if the form control at least has an "id" to be associated with a label
+ * Can't really check for the label with a matching "for" attribute, because
+ * checking every element in the file may lead to bad performance.
+ */
+function hasIdForLabelElement(
+  node: AST.VElement
+): boolean {
+  const id = getElementAttributeValue(node, "id");
+
+  return Boolean(id);
 }
 
 const rule: Rule.RuleModule = {
@@ -104,7 +116,8 @@ const rule: Rule.RuleModule = {
         if (
           !isAriaHidden(node) &&
           !hasAriaLabel(node) &&
-          !hasLabelElement(node, options)
+          !hasNestedLabelElement(node, options) &&
+          !hasIdForLabelElement(node)
         ) {
           context.report({ node: node as any, messageId: "default" });
         }
