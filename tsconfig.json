@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
+    "moduleResolution": "nodenext",
+    "module": "nodenext",
     "target": "es2019",
-    "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
