@@ -15,6 +15,16 @@ function getAttributeValue(node: AST.VAttribute | AST.VDirective) {
       return node.value.expression.value;
     }
 
+    if (node.value.expression.type === 'LogicalExpression') {
+      const operator = node.value.expression.operator;
+      // @ts-ignore
+      const leftSideOfOperation = node.value.expression.left.value;
+      // @ts-ignore
+      const rightSideOfOperation = node.value.expression.right.value;
+
+      return eval(`${leftSideOfOperation} ${operator} ${rightSideOfOperation}`);
+    }
+
     // TODO we're effectively using this as just a placeholder to let rules know
     // that a value has been passed in for this attribute. We should replace
     // this with a stronger API to either explicitly handle all of the different
