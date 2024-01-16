@@ -37,7 +37,11 @@ function hasNestedLabelElement(
     return true;
   }
 
-  return (parent && parent.type === "VElement" && hasNestedLabelElement(parent, options));
+  return (
+    parent &&
+    parent.type === "VElement" &&
+    hasNestedLabelElement(parent, options)
+  );
 }
 
 /**
@@ -45,9 +49,7 @@ function hasNestedLabelElement(
  * Can't really check for the label with a matching "for" attribute, because
  * checking every element in the file may lead to bad performance.
  */
-function hasIdForLabelElement(
-  node: AST.VElement
-): boolean {
+function hasIdForLabelElement(node: AST.VElement): boolean {
   const id = getElementAttributeValue(node, "id");
 
   return Boolean(id);
