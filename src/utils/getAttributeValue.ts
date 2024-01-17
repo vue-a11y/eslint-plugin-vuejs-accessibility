@@ -17,9 +17,7 @@ function getAttributeValue(node: AST.VAttribute | AST.VDirective) {
 
     if (node.value.expression.type === 'LogicalExpression') {
       const operator = node.value.expression.operator;
-      // @ts-ignore
       const leftSideOfOperation = node.value.expression.left.value;
-      // @ts-ignore
       const rightSideOfOperation = node.value.expression.right.value;
 
       return eval(`${leftSideOfOperation} ${operator} ${rightSideOfOperation}`);
