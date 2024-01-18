@@ -17,8 +17,17 @@ function getAttributeValue(node: AST.VAttribute | AST.VDirective) {
 
     if (node.value.expression.type === 'LogicalExpression') {
       const operator = node.value.expression.operator;
-      const leftSideOfOperation = node.value.expression.left.value;
-      const rightSideOfOperation = node.value.expression.right.value;
+      let leftSideOfOperation;
+      let rightSideOfOperation;
+      node.value.expression.left.type
+
+      if (node.value.expression.left.type === 'Literal') {
+        leftSideOfOperation = node.value.expression.left.value;
+      }
+
+      if (node.value.expression.right.type === 'Literal') {
+        rightSideOfOperation = node.value.expression.right.value;
+      }
 
       return eval(`${leftSideOfOperation} ${operator} ${rightSideOfOperation}`);
     }
