@@ -19,7 +19,6 @@ function getAttributeValue(node: AST.VAttribute | AST.VDirective) {
       const operator = node.value.expression.operator;
       let leftSideOfOperation;
       let rightSideOfOperation;
-      node.value.expression.left.type
 
       if (node.value.expression.left.type === 'Literal') {
         leftSideOfOperation = node.value.expression.left.value;
