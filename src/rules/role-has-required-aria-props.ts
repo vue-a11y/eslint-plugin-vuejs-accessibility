@@ -25,7 +25,7 @@ function filterRequiredPropsExceptions(
   requiredProps: string[]
 ) {
   // Based on the pattern recommendation in https://www.w3.org/WAI/ARIA/apg/patterns/switch/#wai-ariaroles,states,andproperties
-  // "aria-checked" should not be required.
+  // "aria-checked" should not be required when elementType is `input` and has the type attribute `checkbox`.
   if (
     role.toLowerCase() === "switch" &&
     elementType === "input" &&
