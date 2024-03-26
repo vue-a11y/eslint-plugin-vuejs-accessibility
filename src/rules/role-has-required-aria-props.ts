@@ -18,6 +18,24 @@ function isAriaRoleDefinitionKey(role: any): role is ARIARoleDefinitionKey {
   return roles.has(role);
 }
 
+function filterRequiredPropsExceptions(
+  node: AST.VElement,
+  role: ARIARoleDefinitionKey,
+  elementType: string,
+  requiredProps: string[]
+) {
+  // Based on the pattern recommendation in https://www.w3.org/WAI/ARIA/apg/patterns/switch/#wai-ariaroles,states,andproperties
+  // "aria-checked" should not be required when elementType is `input` and has the type attribute `checkbox`.
+  if (
+    role.toLowerCase() === "switch" &&
+    elementType === "input" &&
+    getElementAttributeValue(node, "type") === "checkbox"
+  ) {
+    return requiredProps.filter((p) => p !== "aria-checked");
+  }
+  return requiredProps;
+}
+
 const rule: Rule.RuleModule = {
   meta: {
     type: "problem",
@@ -48,7 +66,12 @@ const rule: Rule.RuleModule = {
           .forEach((role) => {
             if (isAriaRoleDefinitionKey(role)) {
               const roleDefinition = roles.get(role) as any;
-              const requiredProps = Object.keys(roleDefinition.requiredProps);
+              const requiredProps = filterRequiredPropsExceptions(
+                node,
+                role,
+                elementType,
+                Object.keys(roleDefinition.requiredProps)
+              );
 
               if (requiredProps && !hasAttributes(node, requiredProps)) {
                 context.report({
