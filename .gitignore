@@ -2,7 +2,7 @@
 /.husky/
 /.idea/
 /dist/
-/node_modules/
+node_modules
 /docs/.vitepress/dist
 /docs/.vitepress/cache
 yarn-error.log
