@@ -38,4 +38,3 @@ td:last-of-type {
   width: 50px;
 }
 </style>
-./rule-overview.data.mjs
