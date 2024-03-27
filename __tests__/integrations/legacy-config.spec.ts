@@ -17,7 +17,7 @@ describe("Integration with legacy config", () => {
     originalCwd && process.chdir(originalCwd);
   });
 
-  it("should lint without errors", () => {
+  it("should work with config", () => {
     if (
       !semver.satisfies(
         process.version,
