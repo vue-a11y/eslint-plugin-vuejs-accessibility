@@ -1,6 +1,6 @@
 import { defineLoader } from "vitepress";
-import recommended from "../../src/configs/recommended";
-import { rules } from "../.vitepress/rulesForSidebar";
+import { rules as baseRules } from "../../src/configs/base.js";
+import { rules } from "../.vitepress/rulesForSidebar.js";
 
 export type Data = Array<{
   name: string;
@@ -23,8 +23,8 @@ export default defineLoader({
 });
 
 function getRecommendedRules() {
-  if (recommended.rules) {
-    return Object.keys(recommended.rules).map(removeRulePrefix);
+  if (baseRules) {
+    return Object.keys(baseRules).map(removeRulePrefix);
   }
   return [];
 }

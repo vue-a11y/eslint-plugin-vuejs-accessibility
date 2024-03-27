@@ -22,7 +22,33 @@ pnpm add -D eslint-plugin-vuejs-accessibility
 
 ## 📖 Usage
 
-Add `vuejs-accessibility` to the plugins section of your `eslint` configuration. You can omit the `eslint-plugin-` prefix:
+### Configuration (`eslint.config.js`)
+
+Use `eslint.config.js` file to configure rules. This is the default in ESLint v9, but can be used starting from ESLint v8.57.0. See also: https://eslint.org/docs/latest/use/configure/configuration-files-new.
+
+Example eslint.config.js:
+
+```js
+import pluginVueA11y from "eslint-plugin-vuejs-accessibility";
+
+export default [
+  // add more generic rulesets here, such as:
+  // js.configs.recommended,
+  ...pluginVueA11y.configs["flat/recommended"],
+  {
+    rules: {
+      // override/add rules settings here, such as:
+      // "vuejs-accessibility/alt-text": "error"
+    }
+  }
+];
+```
+
+### Configuration (`.eslintrc`)
+
+Use `.eslintrc.*` file to configure rules in ESLint < v9. See also: https://eslint.org/docs/latest/use/configure/.
+
+Add `vuejs-accessibility` to the plugins section of your configuration. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
