@@ -1,4 +1,5 @@
-import recommended from "./configs/recommended";
+import { default as recommended } from "./configs/recommended";
+import flatRecommended from "./configs/flat/recommended";
 
 import altText from "./rules/alt-text";
 import anchorHasContent from "./rules/anchor-has-content";
@@ -22,33 +23,35 @@ import noStaticElementInteractions from "./rules/no-static-element-interactions"
 import roleHasRequiredAriaProps from "./rules/role-has-required-aria-props";
 import tabindexNoPositive from "./rules/tabindex-no-positive";
 
-const plugin = {
-  configs: {
-    recommended
-  },
-  rules: {
-    "alt-text": altText,
-    "anchor-has-content": anchorHasContent,
-    "aria-props": ariaProps,
-    "aria-role": ariaRole,
-    "aria-unsupported-elements": ariaUnsupportedElements,
-    "click-events-have-key-events": clickEventsHaveKeyEvents,
-    "form-control-has-label": formControlHasLabel,
-    "heading-has-content": headingHasContent,
-    "iframe-has-title": iframeHasTitle,
-    "interactive-supports-focus": interactiveSupportsFocus,
-    "label-has-for": labelHasFor,
-    "media-has-caption": mediaHasCaption,
-    "mouse-events-have-key-events": mouseEventsHaveKeyEvents,
-    "no-access-key": noAccessKey,
-    "no-autofocus": noAutofocus,
-    "no-distracting-elements": noDistractingElements,
-    "no-onchange": noOnchange,
-    "no-redundant-roles": noRedundantRoles,
-    "no-static-element-interactions": noStaticElementInteractions,
-    "role-has-required-aria-props": roleHasRequiredAriaProps,
-    "tabindex-no-positive": tabindexNoPositive
-  }
+const configs = {
+  recommended,
+  "flat/recommended": flatRecommended
+};
+const rules = {
+  "alt-text": altText,
+  "anchor-has-content": anchorHasContent,
+  "aria-props": ariaProps,
+  "aria-role": ariaRole,
+  "aria-unsupported-elements": ariaUnsupportedElements,
+  "click-events-have-key-events": clickEventsHaveKeyEvents,
+  "form-control-has-label": formControlHasLabel,
+  "heading-has-content": headingHasContent,
+  "iframe-has-title": iframeHasTitle,
+  "interactive-supports-focus": interactiveSupportsFocus,
+  "label-has-for": labelHasFor,
+  "media-has-caption": mediaHasCaption,
+  "mouse-events-have-key-events": mouseEventsHaveKeyEvents,
+  "no-access-key": noAccessKey,
+  "no-autofocus": noAutofocus,
+  "no-distracting-elements": noDistractingElements,
+  "no-onchange": noOnchange,
+  "no-redundant-roles": noRedundantRoles,
+  "no-static-element-interactions": noStaticElementInteractions,
+  "role-has-required-aria-props": roleHasRequiredAriaProps,
+  "tabindex-no-positive": tabindexNoPositive
 };
 
-export = plugin;
+export = {
+  configs,
+  rules
+};

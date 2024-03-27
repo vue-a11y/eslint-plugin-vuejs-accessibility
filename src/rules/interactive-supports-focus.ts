@@ -71,7 +71,7 @@ function hasTabIndex(node: AST.VElement) {
   return value === null;
 }
 
-interface InteractiveSupportsFocus extends Rule.RuleModule {
+export interface InteractiveSupportsFocus extends Rule.RuleModule {
   interactiveHandlers: string[];
   interactiveRoles: ARIARoleDefinitionKey[];
 }
