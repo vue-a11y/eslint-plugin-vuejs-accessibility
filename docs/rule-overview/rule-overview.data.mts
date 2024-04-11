@@ -1,5 +1,5 @@
 import { defineLoader } from "vitepress";
-import { rules as baseRules } from "../../src/configs/base.js";
+import { rules as baseRules } from "../../src/configs/rules.js";
 import { rules } from "../.vitepress/rulesForSidebar.js";
 
 export type Data = Array<{

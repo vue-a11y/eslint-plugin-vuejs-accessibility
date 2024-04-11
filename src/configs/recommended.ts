@@ -1,5 +1,5 @@
 import type { Linter } from "eslint";
-import { rules } from "./base";
+import { rules } from "./rules";
 
 const recommended: Linter.BaseConfig = {
   parser: require.resolve("vue-eslint-parser"),
