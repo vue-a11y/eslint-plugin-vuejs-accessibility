@@ -14,7 +14,8 @@ function defineTemplateBodyVisitor(
   templateVisitor: TemplateListener,
   scriptVisitor?: Rule.RuleListener
 ) {
-  if (!context.parserServices.defineTemplateBodyVisitor) {
+  const parserServices = getParserServices(context);
+  if (!parserServices.defineTemplateBodyVisitor) {
     if (path.extname(context.getFilename()) === ".vue") {
       context.report({
         loc: { line: 1, column: 0 },
@@ -26,10 +27,21 @@ function defineTemplateBodyVisitor(
     return {};
   }
 
-  return context.parserServices.defineTemplateBodyVisitor(
+  return parserServices.defineTemplateBodyVisitor(
     templateVisitor,
     scriptVisitor
   );
+}
+
+/**
+ * This function is API compatible with eslint v8.x and eslint v9 or later.
+ * @see https://eslint.org/blog/2023/09/preparing-custom-rules-eslint-v9/#from-context-to-sourcecode
+ */
+function getParserServices(context: Rule.RuleContext) {
+  // @ts-expect-error TODO: remove this when eslint v8 support is dropped
+  const legacy = context.sourceCode;
+
+  return legacy ? legacy.parserServices : context.parserServices;
 }
 
 export default defineTemplateBodyVisitor;

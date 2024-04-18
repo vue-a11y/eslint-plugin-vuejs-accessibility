@@ -19,7 +19,8 @@ jobs:
       - name: Lint and test
         run: |
           yarn install --frozen-lockfile
-          yarn prepublishOnly
+          yarn build
           yarn lint
           yarn prettier --check '**/*'
           yarn test
+          yarn test:integration

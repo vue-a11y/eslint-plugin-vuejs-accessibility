@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "extends": ["plugin:vuejs-accessibility/recommended"],
+  "plugins": ["vuejs-accessibility"],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2019
+  },
+  "rules": {
+    "vuejs-accessibility/alt-text": "warn"
+  }
+}

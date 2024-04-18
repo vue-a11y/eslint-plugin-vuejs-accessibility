@@ -1,4 +1,5 @@
 .eslintcache
+.eslintignore
 .gitignore
 .husky
 .npmignore
@@ -6,3 +7,4 @@
 LICENSE
 yarn.lock
 dist
+__fixtures__
