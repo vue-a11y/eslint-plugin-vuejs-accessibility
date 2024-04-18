@@ -6,6 +6,6 @@
   "description": "Integration test for flat config",
   "dependencies": {
     "eslint": "^9.0.0",
-    "eslint-plugin-vuejs-accessibility": "file:../../.."
+    "eslint-plugin-vuejs-accessibility": "file:../../../.."
   }
 }

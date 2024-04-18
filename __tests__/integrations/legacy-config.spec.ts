@@ -7,10 +7,11 @@ const ESLINT = `.${path.sep}node_modules${path.sep}.bin${path.sep}eslint`;
 
 describe("Integration with legacy config", () => {
   let originalCwd: null | string = null;
+  const dirFixture = path.join(__dirname, "__fixtures__/legacy-config");
 
   beforeEach(() => {
     originalCwd = process.cwd();
-    process.chdir(path.join(__dirname, "legacy-config"));
+    process.chdir(dirFixture);
     cp.execSync("npm i -f", { stdio: "inherit" });
   });
   afterEach(() => {
@@ -22,7 +23,7 @@ describe("Integration with legacy config", () => {
       !semver.satisfies(
         process.version,
         readPackageJson(
-          path.resolve(__dirname, "legacy-config/node_modules/eslint")
+          path.resolve(dirFixture, "node_modules/eslint")
         ).engines.node
       )
     ) {

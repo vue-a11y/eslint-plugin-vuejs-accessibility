@@ -1,3 +1,2 @@
-__tests__/integrations/flat-config/
-__tests__/integrations/legacy-config/
+__fixtures__/
 dist/

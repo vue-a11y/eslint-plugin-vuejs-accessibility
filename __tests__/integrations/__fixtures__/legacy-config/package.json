@@ -6,6 +6,6 @@
   "description": "Integration test for legacy config",
   "dependencies": {
     "eslint": "^8.57.0-0",
-    "eslint-plugin-vuejs-accessibility": "file:../../.."
+    "eslint-plugin-vuejs-accessibility": "file:../../../.."
   }
 }
