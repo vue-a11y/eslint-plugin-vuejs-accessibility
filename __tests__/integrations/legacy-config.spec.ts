@@ -19,14 +19,13 @@ describe("Integration with legacy config", () => {
   });
 
   it("should work with config", () => {
-    if (
-      !semver.satisfies(
-        process.version,
-        readPackageJson(
-          path.resolve(dirFixture, "node_modules/eslint")
-        ).engines.node
-      )
-    ) {
+    expect.assertions(2);
+
+    const eslintPackageJson = readPackageJson(
+      path.resolve(dirFixture, "node_modules/eslint")
+    );
+
+    if (!semver.satisfies(process.version, eslintPackageJson.engines.node)) {
       return;
     }
 

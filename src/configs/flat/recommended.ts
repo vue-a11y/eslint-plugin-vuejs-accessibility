@@ -3,7 +3,7 @@ import { rules } from "../rules";
 
 const recommended = [
   {
-    name: 'vuejs-accessibility:setup:base',
+    name: "vuejs-accessibility:setup:base",
     plugins: {
       get "vuejs-accessibility"() {
         return require("../../index");
@@ -15,7 +15,7 @@ const recommended = [
     }
   },
   {
-    name: 'vuejs-accessibility:setup:with-files-rules-and-parser',
+    name: "vuejs-accessibility:setup:with-files-rules-and-parser",
     files: ["*.vue", "**/*.vue"],
     plugins: {
       get "vuejs-accessibility"() {

@@ -39,7 +39,9 @@ function defineTemplateBodyVisitor(
  */
 function getParserServices(context: Rule.RuleContext) {
   // @ts-expect-error TODO: remove this when eslint v8 support is dropped
-  return context.sourceCode ? context.sourceCode.parserServices : context.parserServices
+  return context.sourceCode
+    ? context.sourceCode.parserServices
+    : context.parserServices;
 }
 
 export default defineTemplateBodyVisitor;
