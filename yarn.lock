@@ -4290,7 +4290,7 @@ normalize-url@^8.0.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-8.0.0.tgz#593dbd284f743e8dcf6a5ddf8fadff149c82701a"
   integrity sha512-uVFpKhj5MheNBJRTiMZ9pE/7hD1QTeEvugSJW/OmLzAp78PB5O6adfMNTvmfKhXBkvCzC+rqifWcVYpGFwTjnw==
 
-np@^10.0.0:
+np@^10.0.4:
   version "10.0.4"
   resolved "https://registry.yarnpkg.com/np/-/np-10.0.4.tgz#a652a6318efe3f48d9fa2553041c46521420d6b4"
   integrity sha512-+oGAzU9lJJRcjKylJH8rp3ewWvAjkgxaQZ+IS1hHylOx3P+46xiZmfBpK5fRpLRQMIuMzXxlgen1UW5XsG+wwQ==
