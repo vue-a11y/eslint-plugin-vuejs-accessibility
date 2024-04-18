@@ -85,9 +85,6 @@
       "@typescript-eslint/no-explicit-any": "off"
     }
   },
-  "eslintIgnore": [
-    "dist"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
