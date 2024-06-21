@@ -38,7 +38,6 @@ function defineTemplateBodyVisitor(
  * @see https://eslint.org/blog/2023/09/preparing-custom-rules-eslint-v9/#from-context-to-sourcecode
  */
 function getParserServices(context: Rule.RuleContext) {
-  // @ts-expect-error TODO: remove this when eslint v8 support is dropped
   const legacy = context.sourceCode;
 
   return legacy ? legacy.parserServices : context.parserServices;

@@ -1,3 +1,4 @@
+import type { Linter } from "eslint";
 import globals from "globals";
 import { rules } from "../rules";
 
@@ -29,6 +30,6 @@ const recommended = [
     },
     rules
   }
-];
+] satisfies Linter.FlatConfig[];
 
 export = recommended;

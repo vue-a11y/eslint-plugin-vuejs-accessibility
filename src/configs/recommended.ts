@@ -1,7 +1,7 @@
 import type { Linter } from "eslint";
 import { rules } from "./rules";
 
-const recommended: Linter.BaseConfig = {
+const recommended = {
   parser: require.resolve("vue-eslint-parser"),
   parserOptions: {
     ecmaVersion: 2020,
@@ -13,6 +13,6 @@ const recommended: Linter.BaseConfig = {
   },
   plugins: ["vuejs-accessibility"],
   rules
-};
+} satisfies Linter.BaseConfig;
 
 export default recommended;
