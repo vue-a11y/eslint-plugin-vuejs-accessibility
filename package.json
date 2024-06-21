@@ -61,7 +61,7 @@
     "semver": "^7.6.0",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.3.0",
-    "typescript": "5.0.2",
+    "typescript": "5.5.2",
     "vitepress": "1.2.3"
   },
   "eslintConfig": {
