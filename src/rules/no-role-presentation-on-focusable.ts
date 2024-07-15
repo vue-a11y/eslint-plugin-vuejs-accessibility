@@ -19,13 +19,11 @@ const rule: Rule.RuleModule = {
         return defineTemplateBodyVisitor(context, {
             VElement(node) {
                 const hasRolePresentation = getElementAttributeValue(node, 'role') === 'presentation';
-                if (hasRolePresentation) {
-                    if (hasFocusableElements(node)) {
-                        context.report({
-                            node: node as any,
-                            messageId: 'default',
-                        });
-                    }
+                if (hasRolePresentation && hasFocusableElements(node)) {
+                    context.report({
+                        node: node as any,
+                        messageId: 'default',
+                    });
                 }
             },
         });
