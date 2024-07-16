@@ -1,5 +1,4 @@
 import type { Rule } from "eslint";
-// import type { AST } from "vue-eslint-parser";
 
 import {
   defineTemplateBodyVisitor,
