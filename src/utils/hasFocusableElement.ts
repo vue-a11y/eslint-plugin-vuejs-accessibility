@@ -1,19 +1,21 @@
-import type { AST } from 'vue-eslint-parser';
-import getElementAttributeValue from './getElementAttributeValue';
-import isInteractiveElement from './isInteractiveElement';
+import type { AST } from "vue-eslint-parser";
+import getElementAttributeValue from "./getElementAttributeValue";
+import isInteractiveElement from "./isInteractiveElement";
 
-function hasFocusableElements(node: AST.VElement):boolean {
-    const tabindex = getElementAttributeValue(node, 'tabindex');
-    
-    if(isInteractiveElement(node)) {
-        return tabindex !== '-1';
-    }
+function hasFocusableElements(node: AST.VElement): boolean {
+  const tabindex = getElementAttributeValue(node, "tabindex");
 
-    if(tabindex !== null && tabindex !== '-1') {
-        return true;
-    }
+  if (isInteractiveElement(node)) {
+    return tabindex !== "-1";
+  }
 
-    return node.children.some(child => child.type === 'VElement' && hasFocusableElements(child))
+  if (tabindex !== null && tabindex !== "-1") {
+    return true;
+  }
+
+  return node.children.some(
+    (child) => child.type === "VElement" && hasFocusableElements(child)
+  );
 }
 
 export default hasFocusableElements;
