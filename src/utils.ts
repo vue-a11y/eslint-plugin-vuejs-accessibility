@@ -9,6 +9,7 @@ export { default as getInteractiveRoles } from "./utils/getInteractiveRoles";
 export { default as hasAccessibleChild } from "./utils/hasAccessibleChild";
 export { default as hasAriaLabel } from "./utils/hasAriaLabel";
 export { default as hasContent } from "./utils/hasContent";
+export { default as hasFocusableElement } from "./utils/hasFocusableElement";
 export { default as hasOnDirective } from "./utils/hasOnDirective";
 export { default as hasOnDirectives } from "./utils/hasOnDirectives";
 export { default as interactiveHandlers } from "./utils/interactiveHandlers.json";
