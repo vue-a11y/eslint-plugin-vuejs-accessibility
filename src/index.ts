@@ -15,10 +15,12 @@ import labelHasFor from "./rules/label-has-for";
 import mediaHasCaption from "./rules/media-has-caption";
 import mouseEventsHaveKeyEvents from "./rules/mouse-events-have-key-events";
 import noAccessKey from "./rules/no-access-key";
+import noAriaHiddenOnFocusable from "./rules/no-aria-hidden-on-focusable";
 import noAutofocus from "./rules/no-autofocus";
 import noDistractingElements from "./rules/no-distracting-elements";
 import noOnchange from "./rules/no-onchange";
 import noRedundantRoles from "./rules/no-redundant-roles";
+import noRolePresentationOnFocusable from "./rules/no-role-presentation-on-focusable";
 import noStaticElementInteractions from "./rules/no-static-element-interactions";
 import roleHasRequiredAriaProps from "./rules/role-has-required-aria-props";
 import tabindexNoPositive from "./rules/tabindex-no-positive";
@@ -42,10 +44,12 @@ const rules = {
   "media-has-caption": mediaHasCaption,
   "mouse-events-have-key-events": mouseEventsHaveKeyEvents,
   "no-access-key": noAccessKey,
+  "no-aria-hidden-on-focusable": noAriaHiddenOnFocusable,
   "no-autofocus": noAutofocus,
   "no-distracting-elements": noDistractingElements,
   "no-onchange": noOnchange,
   "no-redundant-roles": noRedundantRoles,
+  "no-role-presentation-on-focusable": noRolePresentationOnFocusable,
   "no-static-element-interactions": noStaticElementInteractions,
   "role-has-required-aria-props": roleHasRequiredAriaProps,
   "tabindex-no-positive": tabindexNoPositive

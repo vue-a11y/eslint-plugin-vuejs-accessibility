@@ -1,4 +1,4 @@
-# no-aria-hidden-on-focusbable
+# no-aria-hidden-on-focusable
 
 Enforce that `aria-hidden="true"` is not set on focusable elements or parent of focusable elements.
 
