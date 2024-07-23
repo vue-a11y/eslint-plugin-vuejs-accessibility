@@ -16,7 +16,7 @@ export default defineLoader({
     const recommended = getRecommendedRules();
     return rules.map((rule) => ({
       name: rule.text,
-      link: rule.link,
+      link: formatRuleLink(rule.link),
       recommended: recommended.includes(rule.text)
     }));
   }
@@ -31,4 +31,8 @@ function getRecommendedRules() {
 
 function removeRulePrefix(ruleName: string) {
   return ruleName.replace("vuejs-accessibility/", "");
+}
+
+function formatRuleLink(ruleLink: string) {
+  return "..".concat(ruleLink);
 }
