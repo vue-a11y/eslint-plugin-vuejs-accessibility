@@ -1,4 +1,4 @@
-# no-role-presentaion-on-focusbable
+# no-role-presentation-on-focusable
 
 Enforce that `role="presentation"` is not set on focusable elements or parent of focusbale elements.
 
