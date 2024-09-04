@@ -18,7 +18,14 @@ type Required =
 
 type Options = { allowChildren: boolean; controlComponents: string[] };
 
-const controlTypes = ["input", "meter", "progress", "select", "textarea"];
+const controlTypes = [
+  "input",
+  "textarea",
+  "select",
+  "meter",
+  "output",
+  "progress"
+];
 
 function validateNesting(node: AST.VElement, options: Options): boolean {
   return node.children.some((child) => {
