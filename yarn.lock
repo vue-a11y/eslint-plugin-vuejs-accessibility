@@ -2615,9 +2615,9 @@ escape-string-regexp@^4.0.0:
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
 eslint-plugin-eslint-plugin@^6.0.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-plugin/-/eslint-plugin-eslint-plugin-6.2.0.tgz#225cc814dbc6296f5855fc6ea362a1df8ece2736"
-  integrity sha512-+SSHlThUMBb6MhXl/CqNhKvnUY3111s/1vEcu+paOwTJzniTanRZCfl0kQXNfK57XsWJ5aRsiwMlPg/FgnYsag==
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-plugin/-/eslint-plugin-eslint-plugin-6.3.0.tgz#e6b799b350eec86314b70eb34de23a53b3410ce8"
+  integrity sha512-R6Z/rPGY2Bl8Xf78/UikevEVVKve8L3b0We787U3GLH6f8RhmGWT6CcvlQkNsZDaHYoNfn/aIZKK438iF1A6iw==
   dependencies:
     "@eslint-community/eslint-utils" "^4.4.0"
     estraverse "^5.3.0"
