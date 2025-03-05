@@ -1832,6 +1832,11 @@ acorn-walk@^8.1.1:
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-8.2.0.tgz#741210f2e2426454508853a2f44d0ab83b7f69c1"
   integrity sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==
 
+acorn@^8.14.0:
+  version "8.14.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.14.1.tgz#721d5dc10f7d5b5609a891773d47731796935dfb"
+  integrity sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==
+
 acorn@^8.4.1, acorn@^8.9.0:
   version "8.9.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.9.0.tgz#78a16e3b2bcc198c10822786fa6679e245db5b59"
@@ -2430,12 +2435,12 @@ date-fns@^1.27.2:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
-debug@^4.1.0, debug@^4.1.1, debug@^4.3.1, debug@^4.3.2, debug@^4.3.4:
-  version "4.3.4"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
-  integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
+debug@^4.1.0, debug@^4.1.1, debug@^4.3.1, debug@^4.3.2, debug@^4.3.4, debug@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.4.0.tgz#2b3f2aea2ffeb776477460267377dc8710faba8a"
+  integrity sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==
   dependencies:
-    ms "2.1.2"
+    ms "^2.1.3"
 
 dedent@^1.0.0:
   version "1.3.0"
@@ -2651,10 +2656,18 @@ eslint-plugin-eslint-plugin@^6.0.0:
     "@eslint-community/eslint-utils" "^4.4.0"
     estraverse "^5.3.0"
 
-eslint-scope@^7.1.1, eslint-scope@^7.2.2:
+eslint-scope@^7.2.2:
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-7.2.2.tgz#deb4f92563390f32006894af62a22dba1c46423f"
   integrity sha512-dOt21O7lTMhDM+X9mB4GX+DZrZtCUJPL/wlcTqxyrx5IvO0IYtILdtrQGQp+8n5S0gwSVmOf9NQrjMOgfQZlIg==
+  dependencies:
+    esrecurse "^4.3.0"
+    estraverse "^5.2.0"
+
+eslint-scope@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-8.2.0.tgz#377aa6f1cb5dc7592cfd0b7f892fd0cf352ce442"
+  integrity sha512-PHlWUfG6lvPc3yvP5A4PNyBL1W8fkDUccmI21JUu/+GKZBoH/W5u6usENXUrWFRsyoW5ACUjFGgAFQp5gUlb/A==
   dependencies:
     esrecurse "^4.3.0"
     estraverse "^5.2.0"
@@ -2663,6 +2676,11 @@ eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1, eslint-visitor-keys@^3.4
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz#0cd72fe8550e3c2eae156a96a4dddcd1c8ac5800"
   integrity sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==
+
+eslint-visitor-keys@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-4.2.0.tgz#687bacb2af884fcdda8a6e7d65c606f46a14cd45"
+  integrity sha512-UyLnSehNt62FFhSwjZlHmeokpRK59rcz29j+F1/aDgbkbRTk7wIc9XzdoasMUbRNKDM0qQt/+BJ4BrpFeABemw==
 
 eslint@^8.8.0:
   version "8.57.1"
@@ -2708,7 +2726,16 @@ eslint@^8.8.0:
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
 
-espree@^9.3.1, espree@^9.6.0, espree@^9.6.1:
+espree@^10.3.0:
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/espree/-/espree-10.3.0.tgz#29267cf5b0cb98735b65e64ba07e0ed49d1eed8a"
+  integrity sha512-0QYC8b24HWY8zjRnDTL6RiHfDbAWn63qb4LMj1Z4b076A4une81+z03Kg7l7mn/48PUTqoLptSXez8oknU8Clg==
+  dependencies:
+    acorn "^8.14.0"
+    acorn-jsx "^5.3.2"
+    eslint-visitor-keys "^4.2.0"
+
+espree@^9.6.0, espree@^9.6.1:
   version "9.6.1"
   resolved "https://registry.yarnpkg.com/espree/-/espree-9.6.1.tgz#a2a17b8e434690a5432f2f8018ce71d331a48c6f"
   integrity sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==
@@ -2722,10 +2749,10 @@ esprima@^4.0.0:
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
   integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
 
-esquery@^1.4.0, esquery@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/esquery/-/esquery-1.4.2.tgz#c6d3fee05dd665808e2ad870631f221f5617b1d1"
-  integrity sha512-JVSoLdTlTDkmjFmab7H/9SL9qGSyjElT3myyKp7krqjVFQCDLmj1QFaCLRFBszBKI0XVZaiiXvuPIX3ZwHe1Ng==
+esquery@^1.4.2, esquery@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/esquery/-/esquery-1.6.0.tgz#91419234f804d852a82dceec3e16cdc22cf9dae7"
+  integrity sha512-ca9pw9fomFcKPvFLXhBKUK90ZvGibiGOvRJNbjljY7s7uq/5YO4BOzcYtJqExdx99rF6aAcnRxHmcUHcz6sQsg==
   dependencies:
     estraverse "^5.1.0"
 
@@ -4281,10 +4308,10 @@ mri@^1.2.0:
   resolved "https://registry.yarnpkg.com/mri/-/mri-1.2.0.tgz#6721480fec2a11a4889861115a48b6cbe7cc8f0b"
   integrity sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==
 
-ms@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
-  integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+ms@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
+  integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
 mute-stream@0.0.7:
   version "0.0.7"
@@ -4985,7 +5012,7 @@ semver@^6.0.0, semver@^6.3.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.1.tgz#556d2ef8689146e46dcea4bfdd095f3434dffcb4"
   integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
 
-semver@^7.0.0, semver@^7.3.5, semver@^7.3.6, semver@^7.5.3, semver@^7.5.4, semver@^7.6.0, semver@^7.6.3, semver@^7.7.1:
+semver@^7.0.0, semver@^7.3.5, semver@^7.5.3, semver@^7.5.4, semver@^7.6.0, semver@^7.6.3, semver@^7.7.1:
   version "7.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.1.tgz#abd5098d82b18c6c81f6074ff2647fd3e7220c9f"
   integrity sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==
@@ -5610,18 +5637,18 @@ vitepress@1.6.3:
     vite "^5.4.14"
     vue "^3.5.13"
 
-vue-eslint-parser@^9.0.1:
-  version "9.4.3"
-  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-9.4.3.tgz#9b04b22c71401f1e8bca9be7c3e3416a4bde76a8"
-  integrity sha512-2rYRLWlIpaiN8xbPiDyXZXRgLGOtWxERV7ND5fFAv5qo1D2N9Fu9MNajBNc6o13lZ+24DAWCkQCvj4klgmcITg==
+vue-eslint-parser@^10.1.1:
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-10.1.1.tgz#0d56d17a8e64cda088c8601dcbfc2ea51548e3d2"
+  integrity sha512-bh2Z/Au5slro9QJ3neFYLanZtb1jH+W2bKqGHXAoYD4vZgNG3KeotL7JpPv5xzY4UXUXJl7TrIsnzECH63kd3Q==
   dependencies:
-    debug "^4.3.4"
-    eslint-scope "^7.1.1"
-    eslint-visitor-keys "^3.3.0"
-    espree "^9.3.1"
-    esquery "^1.4.0"
+    debug "^4.4.0"
+    eslint-scope "^8.2.0"
+    eslint-visitor-keys "^4.2.0"
+    espree "^10.3.0"
+    esquery "^1.6.0"
     lodash "^4.17.21"
-    semver "^7.3.6"
+    semver "^7.6.3"
 
 vue@^3.5.13:
   version "3.5.13"
