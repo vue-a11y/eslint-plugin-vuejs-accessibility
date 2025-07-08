@@ -1763,9 +1763,9 @@
     "@babel/types" "^7.3.0"
 
 "@types/eslint-scope@^8.3.0":
-  version "8.3.0"
-  resolved "https://registry.yarnpkg.com/@types/eslint-scope/-/eslint-scope-8.3.0.tgz#81bcb75433c1c3b531c4eab77aa1586fe383f8df"
-  integrity sha512-FaY/QEfIyGJzJdkObuvtaROKv7A0zArw+be0tgXfWd1s1/AqPzEbyf7eyK0Pg0YezUpKrSwK4kgBn/kjzQOjtQ==
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/@types/eslint-scope/-/eslint-scope-8.3.1.tgz#aec5313e8048a00c44f1b1d3f724caff07514dbf"
+  integrity sha512-TA1UHHt+kOdoEixpauJ+NKRkatun98fEz3qMecjLfahS4EzHcQFXxU2vIhWvygZmcTyEuoQf27Ld0LXfp04vkQ==
   dependencies:
     "@types/eslint" "*"
     "@types/estree" "*"
