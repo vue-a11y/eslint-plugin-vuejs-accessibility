@@ -1763,12 +1763,14 @@
     "@babel/types" "^7.3.0"
 
 "@types/eslint-scope@^8.3.0":
-  version "8.3.1"
-  resolved "https://registry.yarnpkg.com/@types/eslint-scope/-/eslint-scope-8.3.1.tgz#aec5313e8048a00c44f1b1d3f724caff07514dbf"
-  integrity sha512-TA1UHHt+kOdoEixpauJ+NKRkatun98fEz3qMecjLfahS4EzHcQFXxU2vIhWvygZmcTyEuoQf27Ld0LXfp04vkQ==
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/@types/eslint-scope/-/eslint-scope-8.3.2.tgz#c7f9205b80c1b01411b38a38240fb001d6d0bfd9"
+  integrity sha512-ygPtnKRQjbXB6LKQ+m6SLyZDMgFeQFVNCkjUK/HivS58Ce6JBjxpVzHbE1+RS6pC5fP4FQg4qh8lvVSm2oxYZw==
   dependencies:
     "@types/eslint" "*"
+    "@types/esrecurse" "*"
     "@types/estree" "*"
+    eslint-visitor-keys "*"
 
 "@types/eslint@*":
   version "8.56.10"
@@ -1777,6 +1779,11 @@
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
+
+"@types/esrecurse@*":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@types/esrecurse/-/esrecurse-4.3.1.tgz#6f636af962fbe6191b830bd676ba5986926bccec"
+  integrity sha512-xJBAbDifo5hpffDBuHl0Y8ywswbiAp/Wi7Y/GtAgSlZyIABppyurxVueOPE8LUQOxdlgi6Zqce7uoEpqNTeiUw==
 
 "@types/estree@*", "@types/estree@1.0.5":
   version "1.0.5"
@@ -3089,15 +3096,15 @@ eslint-scope@^8.2.0:
     esrecurse "^4.3.0"
     estraverse "^5.2.0"
 
+eslint-visitor-keys@*, eslint-visitor-keys@^4.2.0:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-4.2.1.tgz#4cfea60fe7dd0ad8e816e1ed026c1d5251b512c1"
+  integrity sha512-Uhdk5sfqcee/9H/rCOJikYz67o0a2Tw2hGRPOG2Y1R2dg7brRe1uG0yaNQDHu+TO/uQPF/5eCapvYSmHUjt7JQ==
+
 eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1, eslint-visitor-keys@^3.4.3:
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz#0cd72fe8550e3c2eae156a96a4dddcd1c8ac5800"
   integrity sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==
-
-eslint-visitor-keys@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-4.2.0.tgz#687bacb2af884fcdda8a6e7d65c606f46a14cd45"
-  integrity sha512-UyLnSehNt62FFhSwjZlHmeokpRK59rcz29j+F1/aDgbkbRTk7wIc9XzdoasMUbRNKDM0qQt/+BJ4BrpFeABemw==
 
 eslint@^8.8.0:
   version "8.57.1"
