@@ -83,7 +83,8 @@ const rule: Rule.RuleModule = {
             },
             uniqueItems: true
           }
-        }
+        },
+        additionalProperties: false
       }
     ]
   },
