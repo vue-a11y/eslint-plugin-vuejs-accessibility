@@ -5005,9 +5005,9 @@ normalize-path@^3.0.0:
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
 np@^11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/np/-/np-11.0.0.tgz#8afba0f00d1b832a5d18863036fbf852ea59604f"
-  integrity sha512-a2a4Dfq0myz178jviPjFVHyqYnNfVy6iBiTkWnQhs1Bs1NPAP5D80LuvnE5CI4qLK5YRc6oiZj0Vsxj9oN/YuQ==
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/np/-/np-11.0.1.tgz#a1eed6070b763618fc1926c1104be8356b19984f"
+  integrity sha512-1akYJndLbTNwGQTKSiadsA1xRneVo0DigPLhzlpa1VamPreZJH6UtzjahjiDuadypefA+NA+/codG2wK8+Lp0A==
   dependencies:
     chalk "^5.6.2"
     chalk-template "^1.1.2"
