@@ -64,6 +64,9 @@
     "typescript": "5.9.3",
     "vitepress": "1.6.4"
   },
+  "resolutions": {
+    "vitepress/@vitejs/plugin-vue": "^4.0.0"
+  },
   "eslintConfig": {
     "env": {
       "es6": true,
