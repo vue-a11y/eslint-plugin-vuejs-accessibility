@@ -9,8 +9,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  ci:
-    name: CI
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 16
+          cache: yarn
+      - run: |
+          yarn install
+          yarn lint
+          yarn prettier --check '**/*'
+  test:
     runs-on: ubuntu-latest
     env:
       CI: true
@@ -24,7 +35,5 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           yarn build
-          yarn lint
-          yarn prettier --check '**/*'
           yarn test
           yarn test:integration
