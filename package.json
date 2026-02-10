@@ -65,7 +65,8 @@
     "vitepress": "1.6.4"
   },
   "resolutions": {
-    "vitepress/@vitejs/plugin-vue": "^4.0.0"
+    "vitepress/@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.0.0"
   },
   "eslintConfig": {
     "env": {
