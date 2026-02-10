@@ -38,4 +38,4 @@ For the `ignoreNonDOM` option, this determines if developer created components a
 
 ## 📚 Resources
 
-- [W3C](https://w3c.github.io/html/sec-forms.html#autofocusing-a-form-control-the-autofocus-attribute)
+- [WHATWG](https://html.spec.whatwg.org/multipage/forms.html#autofocusing-a-form-control-the-autofocus-attribute)
