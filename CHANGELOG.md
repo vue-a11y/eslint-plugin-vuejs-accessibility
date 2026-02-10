@@ -6,6 +6,51 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Changed
+
+- Replace W3C link with WHATWG in documentation
+
+## [2.4.1] - 2024-07-23
+
+### Changed
+
+- Use relative path for table links
+- Export the new rules for prohibiting use of aria-hidden and role='presentation' on focusable elements.
+
+## [2.4.0] - 2024-07-17
+
+### Added
+
+- Add rules for prohibiting use of aria-hidden and role='presentation' on focusable elements.
+
+## [2.3.1] - 2024-06-21
+
+### Changed
+
+- Use types from ESLint for flat config
+- Fix role "switch" requiring "aria-checked" when used with native input element
+
+## [2.3.0] - 2024-04-18
+
+### Added
+
+- Support flat config and ESLint v9
+
+## [2.2.1] - 2024-06-16
+
+### Changed
+
+- (form-control-has-label): allow form-element to pass if it has an id
+- (form-control-has-label): Add meter, output, and progress to default list of controls to check
+
+## [2.2.0] - 2023-08-08
+
+### Added
+
+- Add `engines.node` to package.json
+
+## [2.1.0] - 2023-01-14
+
 ## [2.0.0] - 2022-10-30
 
 ### Added
@@ -141,7 +186,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Initial release 🎉.
 
-[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v2.0.0...HEAD
+[unreleased]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v2.4.1...HEAD
+[2.4.1]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v2.4.1...v2.4.0
+[2.4.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v2.4.0...v2.3.1
+[2.3.1]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v2.3.1...v2.3.0
+[2.3.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v2.3.0...v2.2.1
+[2.2.1]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v2.2.1...v2.2.0
+[2.2.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v2.2.0...v2.1.0
+[2.1.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v2.1.0...v2.0.0
 [2.0.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.1.1...v2.0.0
 [1.1.1]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/compare/v1.0.0...v1.1.0
