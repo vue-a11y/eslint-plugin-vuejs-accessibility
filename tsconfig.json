@@ -7,6 +7,9 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "declaration": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+
+    // todo: remove once we've moved off Node v16
+    "skipLibCheck": true
   }
 }
