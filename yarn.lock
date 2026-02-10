@@ -1464,13 +1464,15 @@
     "@types/node" "*"
     "@types/responselike" "^1.0.0"
 
-"@types/eslint-scope@^3.0.0":
-  version "3.7.7"
-  resolved "https://registry.yarnpkg.com/@types/eslint-scope/-/eslint-scope-3.7.7.tgz#3108bd5f18b0cdb277c867b3dd449c9ed7079ac5"
-  integrity sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==
+"@types/eslint-scope@^8.4.0":
+  version "8.4.0"
+  resolved "https://registry.yarnpkg.com/@types/eslint-scope/-/eslint-scope-8.4.0.tgz#f89ecfcea94a2f45c8aa7149680c988de5766c58"
+  integrity sha512-RhVLLrJB96ufa3O58HBsOd4IVVaYN7gBIn7K9fxHQBB++AJYOWNQcevpHDIVVw6YD0Ycup/XodUlZ3ZntVrqhA==
   dependencies:
     "@types/eslint" "*"
+    "@types/esrecurse" "*"
     "@types/estree" "*"
+    eslint-visitor-keys "*"
 
 "@types/eslint@*":
   version "8.56.10"
@@ -1479,6 +1481,11 @@
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
+
+"@types/esrecurse@*":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@types/esrecurse/-/esrecurse-4.3.1.tgz#6f636af962fbe6191b830bd676ba5986926bccec"
+  integrity sha512-xJBAbDifo5hpffDBuHl0Y8ywswbiAp/Wi7Y/GtAgSlZyIABppyurxVueOPE8LUQOxdlgi6Zqce7uoEpqNTeiUw==
 
 "@types/estree@*":
   version "1.0.5"
@@ -2853,6 +2860,11 @@ eslint-utils@^3.0.0:
   integrity sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==
   dependencies:
     eslint-visitor-keys "^2.0.0"
+
+eslint-visitor-keys@*:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-5.0.0.tgz#b9aa1a74aa48c44b3ae46c1597ce7171246a94a9"
+  integrity sha512-A0XeIi7CXU7nPlfHS9loMYEKxUaONu/hTEzHTGba9Huu94Cq1hPivf+DE5erJozZOky0LfvXAyrV/tcswpLI0Q==
 
 eslint-visitor-keys@^1.1.0, eslint-visitor-keys@^1.3.0:
   version "1.3.0"
