@@ -19,8 +19,6 @@ describe("Integration with flat config", () => {
   });
 
   it("should work with config", () => {
-    expect.assertions(2);
-
     const eslintPackageJson = readPackageJson(
       path.resolve(dirFixture, "node_modules/eslint")
     );
@@ -28,6 +26,8 @@ describe("Integration with flat config", () => {
     if (!semver.satisfies(process.version, eslintPackageJson.engines.node)) {
       return;
     }
+
+    expect.assertions(2);
 
     const result = JSON.parse(
       cp.execSync(`${ESLINT} a.vue --max-warnings 1 --format=json`, {
