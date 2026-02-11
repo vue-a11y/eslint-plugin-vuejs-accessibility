@@ -3,7 +3,7 @@ import { RuleTester } from "eslint";
 import { version as eslintVersion } from "eslint/package.json";
 import * as semver from "semver";
 
-const usingFlatConfig = semver.major(eslintVersion) >= 9;
+export const usingFlatConfig = semver.major(eslintVersion) >= 9;
 
 type ValidCase = string | { code: string; options?: any[] };
 type InvalidCase = string | { code: string; options?: any[]; errors: any[] };

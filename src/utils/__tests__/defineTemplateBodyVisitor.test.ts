@@ -1,10 +1,7 @@
 import assert from "assert";
 import { Linter } from "eslint";
 import plugin from "../../index";
-import { version as eslintVersion } from "eslint/package.json";
-import * as semver from "semver";
-
-const usingFlatConfig = semver.major(eslintVersion) >= 9;
+import { usingFlatConfig } from "../../rules/__tests__/makeRuleTester";
 
 function runLinter(key: string, rule: any, filename: string) {
   const code = "var a;";
