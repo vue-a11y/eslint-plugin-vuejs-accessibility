@@ -22,6 +22,8 @@ function runLinter(key: string, rule: any, filename: string) {
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore this does not exist in ESLint v10, but we don't get here if we're on ESLint v9+
   linter.defineRule(ruleId, rule);
   const config: Linter.Config = {
     rules: { [ruleId]: "error" }
