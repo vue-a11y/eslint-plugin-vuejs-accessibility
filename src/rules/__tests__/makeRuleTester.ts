@@ -44,7 +44,7 @@ function makeRuleTester(name: string, rule: Rule.RuleModule, config: Config) {
 
   if (usingFlatConfig) {
     theConfig = {
-      // @ts-expect-error
+      // @ts-expect-error this is for flat config
       languageOptions: {
         parser: require("vue-eslint-parser"),
         parserOptions: theConfig.parserOptions
