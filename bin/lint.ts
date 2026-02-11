@@ -5,6 +5,7 @@ import a11yPlugin from "../src";
 
 (async function main() {
   const eslint = new ESLint({
+    // @ts-ignore this only supports ESLint <v8 for now
     baseConfig: a11yPlugin.configs.recommended,
     plugins: { "eslint-plugin-vuejs-accessibility": a11yPlugin },
     useEslintrc: false
