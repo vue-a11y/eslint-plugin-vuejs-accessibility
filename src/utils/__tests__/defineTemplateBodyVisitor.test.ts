@@ -1,32 +1,50 @@
 import assert from "assert";
 import { Linter } from "eslint";
 import plugin from "../../index";
+import { usingFlatConfig } from "../../rules/__tests__/makeRuleTester";
+
+function runLinter(key: string, rule: any, filename: string) {
+  const code = "var a;";
+  const ruleId = `vuejs-accessibility/${key}`;
+  const linter = new Linter();
+
+  if (usingFlatConfig) {
+    return linter.verify(
+      code,
+      [
+        {
+          files: ["*.vue"],
+          plugins: { "vuejs-accessibility": { rules: { [key]: rule } } },
+          rules: { [ruleId]: "error" }
+        }
+      ],
+      filename
+    );
+  }
+
+  linter.defineRule(ruleId, rule);
+  const config: Linter.Config = {
+    rules: { [ruleId]: "error" }
+  };
+
+  return linter.verifyAndFix(code, config, filename).messages;
+}
 
 describe("Don't crash even if without vue-eslint-parser.", () => {
-  const code = "var a;";
-
   for (const [key, rule] of Object.entries(plugin.rules)) {
     const ruleId = `vuejs-accessibility/${key}`;
 
     it(ruleId, () => {
-      const linter = new Linter();
-      linter.defineRule(ruleId, rule);
-      const config: Linter.Config = {
-        parser: "espree",
-        rules: {
-          [ruleId]: "error"
-        }
-      };
-      const resultVue = linter.verifyAndFix(code, config, "test.vue");
-      for (const { message } of resultVue.messages) {
+      const resultVue = runLinter(key, rule, "test.vue");
+      for (const { message } of resultVue) {
         assert.strictEqual(
           message,
           "Use the latest vue-eslint-parser. See also https://eslint.vuejs.org/user-guide/#what-is-the-use-the-latest-vue-eslint-parser-error."
         );
       }
 
-      const resultJs = linter.verifyAndFix(code, config, "test.js");
-      assert.strictEqual(resultJs.messages.length, 0);
+      const resultJs = runLinter(key, rule, "test.js");
+      assert.strictEqual(resultJs.length, 0);
     });
   }
 });

@@ -37,9 +37,6 @@ jobs:
         exclude:
           - node-version: 16.x
             eslint-version: 9
-          # todo: currently v9 is failing due to a TypeScript check,
-          #  but it does actually work at runtime
-          - eslint-version: 9
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6

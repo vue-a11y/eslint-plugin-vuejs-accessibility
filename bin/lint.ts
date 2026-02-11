@@ -5,6 +5,9 @@ import a11yPlugin from "../src";
 
 (async function main() {
   const eslint = new ESLint({
+    // the types here will be correct on older versions of eslint
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore this only supports ESLint <v8 for now
     baseConfig: a11yPlugin.configs.recommended,
     plugins: { "eslint-plugin-vuejs-accessibility": a11yPlugin },
     useEslintrc: false
