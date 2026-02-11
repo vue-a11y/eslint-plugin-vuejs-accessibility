@@ -16,7 +16,7 @@ function defineTemplateBodyVisitor(
 ) {
   const parserServices = getParserServices(context);
   if (!parserServices.defineTemplateBodyVisitor) {
-    if (path.extname(context.getFilename()) === ".vue") {
+    if (path.extname(getFilename(context)) === ".vue") {
       context.report({
         loc: { line: 1, column: 0 },
         message:
@@ -41,6 +41,14 @@ declare module "eslint" {
       parserServices: SourceCode.ParserServices;
     }
   }
+}
+
+/**
+ * This function is API compatible with eslint v8.x and eslint v9 or later.
+ * @see https://eslint.org/blog/2023/09/preparing-custom-rules-eslint-v9/#context-methods-becoming-properties
+ */
+function getFilename(context: Rule.RuleContext) {
+  return context.filename || context.getFilename();
 }
 
 /**

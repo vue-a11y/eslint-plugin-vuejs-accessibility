@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Replace W3C link with WHATWG in documentation
 - Add `globals` as an explicit peer dependency
+- Replace use of deprecated `getFilename` method for ESLint v9+
 
 ## [2.4.1] - 2024-07-23
 
