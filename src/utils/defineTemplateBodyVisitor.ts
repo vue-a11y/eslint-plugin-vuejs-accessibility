@@ -33,6 +33,15 @@ function defineTemplateBodyVisitor(
   );
 }
 
+// this ensures TypeScript is happy when using ESLint v9
+declare module "eslint" {
+  export namespace Rule {
+    export interface RuleContext {
+      parserServices: SourceCode.ParserServices;
+    }
+  }
+}
+
 /**
  * This function is API compatible with eslint v8.x and eslint v9 or later.
  * @see https://eslint.org/blog/2023/09/preparing-custom-rules-eslint-v9/#from-context-to-sourcecode
