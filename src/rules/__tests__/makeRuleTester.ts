@@ -1,5 +1,9 @@
-import type { Rule } from "eslint";
+import type { Rule, Linter } from "eslint";
 import { RuleTester } from "eslint";
+import { version as eslintVersion } from "eslint/package.json";
+import * as semver from "semver";
+
+const usingFlatConfig = semver.major(eslintVersion) >= 9;
 
 type ValidCase = string | { code: string; options?: any[] };
 type InvalidCase = string | { code: string; options?: any[]; errors: any[] };
@@ -29,13 +33,27 @@ function makeInvalidExample(example: InvalidCase) {
 }
 
 function makeRuleTester(name: string, rule: Rule.RuleModule, config: Config) {
-  const ruleTester = new RuleTester({
+  // todo: cean this up once we only support ESLint v8/9
+  let theConfig = {
     parser: require.resolve("vue-eslint-parser"),
     parserOptions: {
       ecmaVersion: 2015,
       sourceType: "module"
-    }
-  });
+    } as const
+  };
+
+  if (usingFlatConfig) {
+    theConfig = {
+      // @ts-ignore
+      languageOptions: {
+        parser: require("vue-eslint-parser"),
+        parserOptions: theConfig.parserOptions
+      }
+    } satisfies Linter.FlatConfig;
+  }
+
+  // @ts-ignore
+  const ruleTester = new RuleTester(theConfig);
 
   ruleTester.run(name, rule, {
     valid: config.valid.map(makeValidExample),
