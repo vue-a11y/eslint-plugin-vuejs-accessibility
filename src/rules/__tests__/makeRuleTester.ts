@@ -44,7 +44,7 @@ function makeRuleTester(name: string, rule: Rule.RuleModule, config: Config) {
 
   if (usingFlatConfig) {
     theConfig = {
-      // @ts-ignore
+      // @ts-expect-error
       languageOptions: {
         parser: require("vue-eslint-parser"),
         parserOptions: theConfig.parserOptions
@@ -52,6 +52,8 @@ function makeRuleTester(name: string, rule: Rule.RuleModule, config: Config) {
     } satisfies Linter.FlatConfig;
   }
 
+  // the types here will be correct on older versions of eslint
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const ruleTester = new RuleTester(theConfig);
 

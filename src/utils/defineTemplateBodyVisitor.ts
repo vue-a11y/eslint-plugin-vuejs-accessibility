@@ -35,6 +35,7 @@ function defineTemplateBodyVisitor(
 
 // this ensures TypeScript is happy when using ESLint v9
 declare module "eslint" {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   export namespace Rule {
     export interface RuleContext {
       parserServices: SourceCode.ParserServices;
