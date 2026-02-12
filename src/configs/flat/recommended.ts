@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Linter, ESLint } from "eslint";
 import globals from "globals";
 import { rules } from "../rules";
 
@@ -12,7 +12,8 @@ const recommended = [
     },
     languageOptions: {
       sourceType: "module",
-      globals: globals.browser
+      // todo: this can be removed once we are building w/ a newer version of globals
+      globals: globals.browser as ESLint.Environment["globals"]
     }
   },
   {
@@ -26,7 +27,8 @@ const recommended = [
     languageOptions: {
       parser: require("vue-eslint-parser"),
       sourceType: "module",
-      globals: globals.browser
+      // todo: this can be removed once we are building w/ a newer version of globals
+      globals: globals.browser as ESLint.Environment["globals"]
     },
     rules
   }
