@@ -29,7 +29,7 @@ const rule: Rule.RuleModule = {
         const title = getElementAttributeValue(node, "title");
 
         if (title === null || !["string", "object"].includes(typeof title)) {
-          context.report({ node: node as any, messageId: "default" });
+          context.report({ node, messageId: "default" });
         }
       }
     });

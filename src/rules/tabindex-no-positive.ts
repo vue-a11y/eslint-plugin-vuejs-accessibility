@@ -26,7 +26,7 @@ const rule: Rule.RuleModule = {
           (typeof tabIndex === "string" || typeof tabIndex === "number") &&
           +tabIndex > 0
         ) {
-          context.report({ node: node as any, messageId: "default" });
+          context.report({ node, messageId: "default" });
         }
       }
     });

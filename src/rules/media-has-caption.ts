@@ -79,7 +79,7 @@ const rule: Rule.RuleModule = {
           trackElements.length === 0 ||
           !trackElements.some(isCaptionsTrackElement)
         ) {
-          context.report({ node: node as any, messageId: "default" });
+          context.report({ node, messageId: "default" });
         }
       }
     });

@@ -75,7 +75,7 @@ const rule: Rule.RuleModule = {
 
               if (requiredProps && !hasAttributes(node, requiredProps)) {
                 context.report({
-                  node: node as any,
+                  node,
                   messageId: "default",
                   data: {
                     role: role.toLowerCase(),

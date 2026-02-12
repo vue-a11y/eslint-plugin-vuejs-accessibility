@@ -161,7 +161,7 @@ const rule: Rule.RuleModule = {
           labelComponents.includes(getElementType(node)) &&
           !isValidLabel(node, required, options)
         ) {
-          context.report({ node: node as any, messageId: "default" });
+          context.report({ node, messageId: "default" });
         }
       }
     });

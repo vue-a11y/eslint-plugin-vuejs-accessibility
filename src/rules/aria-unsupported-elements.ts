@@ -31,7 +31,7 @@ const rule: Rule.RuleModule = {
 
           if (name && (aria.has(name as any) || name === "role")) {
             context.report({
-              node: node as any,
+              node,
               messageId: "default",
               data: { name }
             });

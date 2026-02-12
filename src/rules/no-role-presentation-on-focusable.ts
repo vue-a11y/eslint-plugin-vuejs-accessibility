@@ -26,7 +26,7 @@ const rule: Rule.RuleModule = {
           getElementAttributeValue(node, "role") === "presentation";
         if (hasRolePresentation && hasFocusableElements(node)) {
           context.report({
-            node: node as any,
+            node,
             messageId: "default"
           });
         }

@@ -58,7 +58,7 @@ const rule: Rule.RuleModule = {
           !hasContent(node, accessibleChildTypes, accessibleDirectives) &&
           !hasAriaLabel(node)
         ) {
-          context.report({ node: node as any, messageId: "default" });
+          context.report({ node, messageId: "default" });
         }
       }
     });

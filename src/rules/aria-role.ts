@@ -55,7 +55,7 @@ const rule: Rule.RuleModule = {
         }
 
         if (!value.toLowerCase().split(" ").every(isValidRole)) {
-          context.report({ node: node as any, messageId: "default" });
+          context.report({ node, messageId: "default" });
         }
       }
     });

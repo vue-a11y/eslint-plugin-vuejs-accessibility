@@ -43,7 +43,7 @@ const rule: Rule.RuleModule = {
           return;
         }
 
-        context.report({ node: node as any, messageId: "default" });
+        context.report({ node, messageId: "default" });
       }
     });
   }

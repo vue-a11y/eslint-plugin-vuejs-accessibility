@@ -42,7 +42,7 @@ const rule: Rule.RuleModule = {
           !isInteractiveElement(node) &&
           !isInteractiveRole(role)
         ) {
-          context.report({ node: node as any, messageId: "default" });
+          context.report({ node, messageId: "default" });
         }
       }
     });

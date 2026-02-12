@@ -77,7 +77,7 @@ const rule: Rule.RuleModule = {
 
         if (implicitRoleSet.includes(explicitRole)) {
           context.report({
-            node: node as any,
+            node,
             messageId: "default",
             data: { type, role: explicitRole.toString() }
           });
