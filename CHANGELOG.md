@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+### Added
+
+- Support ESLint v10
+
 ### Changed
 
 - Replace W3C link with WHATWG in documentation
