@@ -32,6 +32,6 @@ const recommended = [
     },
     rules
   }
-] satisfies Linter.FlatConfig[];
+] as const satisfies Linter.FlatConfig[];
 
 export = recommended;
