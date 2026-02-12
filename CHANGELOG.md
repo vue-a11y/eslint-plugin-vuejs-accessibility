@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Replace W3C link with WHATWG in documentation
 - Add `globals` as an explicit peer dependency
 - Remove unused `emoji-regex` dependency
+- Modified recommended types to avoid requiring `type-fest`
 
 ## [2.4.1] - 2024-07-23
 
