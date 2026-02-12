@@ -6083,7 +6083,7 @@ vitepress@1.6.4:
     vite "^5.4.14"
     vue "^3.5.13"
 
-vue-eslint-parser@^9.0.0:
+"vue-eslint-parser@^9.0.0 || ^10.0.0":
   version "9.4.3"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-9.4.3.tgz#9b04b22c71401f1e8bca9be7c3e3416a4bde76a8"
   integrity sha512-2rYRLWlIpaiN8xbPiDyXZXRgLGOtWxERV7ND5fFAv5qo1D2N9Fu9MNajBNc6o13lZ+24DAWCkQCvj4klgmcITg==
