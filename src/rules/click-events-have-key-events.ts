@@ -34,7 +34,7 @@ const rule: Rule.RuleModule = {
           !isInteractiveElement(node) &&
           !hasOnDirectives(node, ["keydown", "keyup", "keypress"])
         ) {
-          context.report({ node: node as any, messageId: "default" });
+          context.report({ node, messageId: "default" });
         }
       }
     });

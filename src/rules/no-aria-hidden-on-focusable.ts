@@ -25,7 +25,7 @@ const rule: Rule.RuleModule = {
         const hasAriaHidden = getElementAttributeValue(node, "aria-hidden");
         if (hasAriaHidden && hasFocusableElements(node)) {
           context.report({
-            node: node as any,
+            node,
             messageId: "default"
           });
         }

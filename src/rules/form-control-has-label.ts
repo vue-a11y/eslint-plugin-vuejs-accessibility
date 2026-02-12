@@ -121,7 +121,7 @@ const rule: Rule.RuleModule = {
           !hasNestedLabelElement(node, options) &&
           !hasIdForLabelElement(node)
         ) {
-          context.report({ node: node as any, messageId: "default" });
+          context.report({ node, messageId: "default" });
         }
       }
     });

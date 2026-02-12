@@ -25,6 +25,15 @@ import noStaticElementInteractions from "./rules/no-static-element-interactions"
 import roleHasRequiredAriaProps from "./rules/role-has-required-aria-props";
 import tabindexNoPositive from "./rules/tabindex-no-positive";
 
+import type { AST } from "vue-eslint-parser";
+
+declare module "estree" {
+  export interface NodeMap {
+    VElement: AST.VElement;
+    VAttribute: AST.VAttribute;
+  }
+}
+
 const configs = {
   recommended,
   "flat/recommended": flatRecommended

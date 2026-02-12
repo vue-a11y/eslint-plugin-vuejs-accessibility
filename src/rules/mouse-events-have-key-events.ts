@@ -27,14 +27,14 @@ const rule: Rule.RuleModule = {
           hasOnDirectives(node, ["mouseover", "mouseenter", "hover"]) &&
           !hasOnDirectives(node, ["focus", "focusin"])
         ) {
-          context.report({ node: node as any, messageId: "mouseOver" });
+          context.report({ node, messageId: "mouseOver" });
         }
 
         if (
           hasOnDirectives(node, ["mouseout", "mouseleave"]) &&
           !hasOnDirectives(node, ["blur", "focusout"])
         ) {
-          context.report({ node: node as any, messageId: "mouseOut" });
+          context.report({ node, messageId: "mouseOut" });
         }
       }
     });

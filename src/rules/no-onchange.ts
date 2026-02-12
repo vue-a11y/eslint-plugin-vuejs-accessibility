@@ -28,7 +28,7 @@ const rule: Rule.RuleModule = {
         }
 
         if (hasOnDirective(node, "change") && !hasOnDirective(node, "blur")) {
-          context.report({ node: node as any, messageId: "default" });
+          context.report({ node, messageId: "default" });
         }
       }
     });

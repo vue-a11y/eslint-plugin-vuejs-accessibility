@@ -58,7 +58,7 @@ const rule: Rule.RuleModule = {
           elementTypes.includes(elementType) &&
           !hasContent(node, accessibleChildTypes, accessibleDirectives)
         ) {
-          context.report({ node: node as any, messageId: "default" });
+          context.report({ node, messageId: "default" });
         }
       }
     });

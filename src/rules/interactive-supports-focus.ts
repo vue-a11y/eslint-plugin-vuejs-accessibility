@@ -132,14 +132,14 @@ const rule: InteractiveSupportsFocus = {
           if (tabbable.includes(role)) {
             // Always tabbable, tabIndex = 0
             context.report({
-              node: node as any,
+              node,
               messageId: "tabbable",
               data: { role }
             });
           } else {
             // Focusable, tabIndex = -1 or 0
             context.report({
-              node: node as any,
+              node,
               messageId: "focusable",
               data: { role }
             });

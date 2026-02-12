@@ -22,7 +22,7 @@ const rule: Rule.RuleModule = {
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
         if (getElementAttributeValue(node, "accesskey")) {
-          context.report({ node: node as any, messageId: "default" });
+          context.report({ node, messageId: "default" });
         }
       }
     });

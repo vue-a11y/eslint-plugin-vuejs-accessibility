@@ -30,7 +30,7 @@ const rule: Rule.RuleModule = {
           !aria.has(lowered as any)
         ) {
           context.report({
-            node: node as any,
+            node,
             messageId: "default",
             data: { name: name as string }
           });

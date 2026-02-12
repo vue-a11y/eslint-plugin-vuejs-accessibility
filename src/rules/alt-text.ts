@@ -23,15 +23,15 @@ const ruleByElement: RuleByElement = {
 
     if (!altAttribute) {
       if (isPresentationRole(node)) {
-        context.report({ node: node as any, messageId: "imgPresentation" });
+        context.report({ node, messageId: "imgPresentation" });
       } else {
-        context.report({ node: node as any, messageId: "imgMissingAlt" });
+        context.report({ node, messageId: "imgMissingAlt" });
       }
     } else {
       const altValue = getAttributeValue(altAttribute);
 
       if (!altValue && altValue !== "") {
-        context.report({ node: node as any, messageId: "imgInvalidAlt" });
+        context.report({ node, messageId: "imgInvalidAlt" });
       }
     }
   },
@@ -41,12 +41,12 @@ const ruleByElement: RuleByElement = {
       !getElementAttributeValue(node, "title") &&
       !hasAccessibleChild(node)
     ) {
-      context.report({ node: node as any, messageId: "object" });
+      context.report({ node, messageId: "object" });
     }
   },
   area(context, node) {
     if (!hasAriaLabel(node) && !getElementAttributeValue(node, "alt")) {
-      context.report({ node: node as any, messageId: "area" });
+      context.report({ node, messageId: "area" });
     }
   },
   'input[type="image"]'(context, node) {
@@ -55,7 +55,7 @@ const ruleByElement: RuleByElement = {
       !hasAriaLabel(node) &&
       !getElementAttributeValue(node, "alt")
     ) {
-      context.report({ node: node as any, messageId: "input" });
+      context.report({ node, messageId: "input" });
     }
   }
 };
