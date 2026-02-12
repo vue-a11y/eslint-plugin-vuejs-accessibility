@@ -5,6 +5,8 @@ makeRuleTester("label-has-for", rule, {
   valid: [
     "<label for='id'><input type='text' /></label>",
     "<label :for='id'><input type='text' :id='id' /></label>",
+    "<label :for='`id`'><input type='text' :id='`id`' /></label>",
+    "<label :for='\"id\"'><input type='text' :id='\"id\"' /></label>",
     "<label for='id'><span><input type='text' /></span></label>",
     {
       code: "<label for='id' /><input type='text' />",
@@ -30,6 +32,11 @@ makeRuleTester("label-has-for", rule, {
     "<label for='id'><div /></label>",
     "<label for='id'><VInput /></label>",
     "<label for='id'><div><VInput /></div></label>",
+    {
+      code: "<label for='id' /><input type='text' />",
+      options: [{ required: "nesting" }],
+      errors: [{ messageId: "default" }]
+    },
     {
       code: "<v-label for='id' />",
       options: [{ components: ["VLabel"] }],

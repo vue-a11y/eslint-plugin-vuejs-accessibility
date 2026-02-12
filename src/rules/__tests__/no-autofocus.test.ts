@@ -3,6 +3,7 @@ import makeRuleTester from "./makeRuleTester";
 
 makeRuleTester("no-autofocus", rule, {
   valid: [
+    "<input required />",
     "<div />",
     {
       code: "<Anchor autofocus='autofocus' />",
