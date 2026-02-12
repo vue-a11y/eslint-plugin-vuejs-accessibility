@@ -3,6 +3,7 @@ import makeRuleTester from "./makeRuleTester";
 
 makeRuleTester("aria-role", rule, {
   valid: [
+    "<input required />",
     "<div role='button' />",
     "<div :role='role' />",
     "<div />",
