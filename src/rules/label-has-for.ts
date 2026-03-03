@@ -118,7 +118,8 @@ const rule: Rule.RuleModule = {
                     uniqueItems: true
                   }
                 },
-                required: ["some"]
+                required: ["some"],
+                additionalProperties: false
               },
               {
                 type: "object",
@@ -132,14 +133,16 @@ const rule: Rule.RuleModule = {
                     uniqueItems: true
                   }
                 },
-                required: ["every"]
+                required: ["every"],
+                additionalProperties: false
               }
             ]
           },
           allowChildren: {
             type: "boolean"
           }
-        }
+        },
+        additionalProperties: false
       }
     ]
   },
