@@ -18,6 +18,10 @@ makeRuleTester("anchor-has-content", rule, {
       options: [{ accessibleDirectives: ["accessibleDirective"] }]
     },
     {
+      code: "<a><span v-accessibleDirective='msg' /></a>",
+      options: [{ accessibleDirectives: ["accessibleDirective"] }]
+    },
+    {
       code: "<a><accessible-child /></a>",
       options: [{ accessibleChildren: ["AccessibleChild"] }]
     }
