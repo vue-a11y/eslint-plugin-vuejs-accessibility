@@ -40,7 +40,9 @@ function hasAccessibleDirective(
   accessibleDirectives: string[]
 ): boolean {
   return accessibleDirectives.some((directive) => {
-    return hasDirective(node, directive);
+    return (
+      hasDirective(node, directive) || hasChildWithDirective(node, directive)
+    );
   });
 }
 
