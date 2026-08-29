@@ -35,7 +35,8 @@ const rule: Rule.RuleModule = {
             type: "array",
             items: { type: "string" }
           }
-        }
+        },
+        additionalProperties: false
       }
     ]
   },
