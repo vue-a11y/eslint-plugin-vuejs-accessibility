@@ -1,6 +1,6 @@
 # form-control-has-label
 
-Each form element must have a programmatically associated label element. You can do so by using an implicit `<label>`, explicit `<label>`, `aria-label` or `aria-labelledby`.
+Each form element must have a programmatically associated label element. You can do so by using an implicit `<label>`, explicit `<label>`, `aria-label`, `aria-labelledby` or `title`.
 
 ## 🔧 Options
 
@@ -32,6 +32,8 @@ For the `controlComponents` option, these strings determine which elements (**al
   <input aria-label="test" type="text" />
   <input aria-labelledby="#id" type="text" />
   <label for="id"></label><input aria-labelledby="#id" id="id" />
+  <input title="test" type="text" />
+  <input :title="test" type="text" />
   <input type="image" />
 </template>
 ```
@@ -48,3 +50,4 @@ For the `controlComponents` option, these strings determine which elements (**al
 ## 📚 Resources
 
 - [AXE](https://dequeuniversity.com/rules/axe/2.1/label)
+- [WCAG H65](https://www.w3.org/WAI/WCAG21/Techniques/html/H65.html)

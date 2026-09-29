@@ -55,6 +55,15 @@ function hasIdForLabelElement(node: AST.VElement): boolean {
   return Boolean(id);
 }
 
+/**
+ * Check if the form control has a title attribute per WCAG H65
+ */
+function hasTitle(node: AST.VElement): boolean {
+  const title = getElementAttributeValue(node, "title");
+
+  return Boolean(title);
+}
+
 const rule: Rule.RuleModule = {
   meta: {
     type: "problem",
@@ -119,7 +128,8 @@ const rule: Rule.RuleModule = {
           !isAriaHidden(node) &&
           !hasAriaLabel(node) &&
           !hasNestedLabelElement(node, options) &&
-          !hasIdForLabelElement(node)
+          !hasIdForLabelElement(node) &&
+          !hasTitle(node)
         ) {
           context.report({ node, messageId: "default" });
         }
