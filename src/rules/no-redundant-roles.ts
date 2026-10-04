@@ -58,11 +58,15 @@ const rule: Rule.RuleModule = {
   create(context) {
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
+        // most elements have no role, so bail before the costly implicit role lookup
+        const explicitRole = getElementAttributeValue(node, "role");
+        if (!explicitRole) {
+          return;
+        }
+
         const type = getElementType(node);
         const implicitRoleSet = getImplicitRoleSet(node);
-        const explicitRole = getElementAttributeValue(node, "role");
-
-        if (!implicitRoleSet || !explicitRole) {
+        if (!implicitRoleSet) {
           return;
         }
 
