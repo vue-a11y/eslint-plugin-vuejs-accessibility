@@ -64,11 +64,12 @@ const rule: Rule.RuleModule = {
           return;
         }
 
-        const type = getElementType(node);
         const implicitRoleSet = getImplicitRoleSet(node);
         if (!implicitRoleSet) {
           return;
         }
+
+        const type = getElementType(node);
 
         const permittedRoles = context.options[0] || {};
         if (
