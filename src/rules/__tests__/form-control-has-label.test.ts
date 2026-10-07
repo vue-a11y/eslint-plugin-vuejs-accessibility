@@ -40,7 +40,14 @@ makeRuleTester("form-control-has-label", rule, {
       code: "<custom-label for='input'>text</custom-label><input type='text' id='input' />",
       options: [{ labelComponents: ["CustomLabel"] }]
     },
-    "<b-form-input />"
+    "<b-form-input />",
+    "<input type='text' title='test' />",
+    "<input type='text' :title='test' />",
+    "<input type='text' v-bind:title='test' />",
+    "<textarea title='test'></textarea>",
+    "<textarea :title='test'></textarea>",
+    "<select title='test'></select>",
+    "<select :title='test'></select>"
   ],
   invalid: [
     "<label for=''>text</label><input type='text' />",
@@ -52,6 +59,9 @@ makeRuleTester("form-control-has-label", rule, {
     `,
     "<input type='text' />",
     "<textarea type='text'></textarea>",
+    "<input type='text' title='' />",
+    "<input type='text' :title='\"\"' />",
+    "<input type='text' title />",
     {
       code: "<div><b-form-input /></div>",
       options: [{ controlComponents: ["b-form-input"] }],
