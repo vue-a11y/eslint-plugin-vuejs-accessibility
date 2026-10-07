@@ -10,7 +10,7 @@
     "lint": "eslint --cache .",
     "build": "tsc -p tsconfig.build.json",
     "prepublishOnly": "tsc -p tsconfig.build.json",
-    "test": "jest",
+    "test": "jest --maxWorkers=2",
     "test:integration": "jest --testTimeout 60000 --testRegex \".*\\.spec\\.ts$\"",
     "release": "np",
     "docs:dev": "vitepress dev docs",
