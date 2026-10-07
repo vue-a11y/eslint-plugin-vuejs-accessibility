@@ -108,7 +108,8 @@ const rule: InteractiveSupportsFocus = {
             uniqueItems: true,
             additionalItems: false
           }
-        }
+        },
+        additionalProperties: false
       }
     ]
   },

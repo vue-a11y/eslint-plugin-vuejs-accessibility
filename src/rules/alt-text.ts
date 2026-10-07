@@ -91,7 +91,8 @@ const rule: Rule.RuleModule = {
               }
             }),
           {}
-        )
+        ),
+        additionalProperties: false
       }
     ]
   },
