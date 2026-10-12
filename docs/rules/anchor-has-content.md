@@ -2,6 +2,8 @@
 
 Enforce that anchors have content and that the content is accessible to screen readers. Accessible means that it is not hidden using the `aria-hidden` prop. Refer to the references to learn about why this is important.
 
+Anchors that are themselves hidden from screen readers with `aria-hidden` are not checked, since there is nothing for a screen reader to announce. Such an anchor should also be removed from the tab order with `tabindex="-1"`, which is covered by the [`no-aria-hidden-on-focusable`](./no-aria-hidden-on-focusable.md) rule.
+
 ## 🔧 Options
 
 This rule takes one optional object argument of type object:
@@ -40,6 +42,7 @@ For the `accessibleDirectives` option, these strings declare an element should b
   <a v-myAccessibleDirective="msg" />
   <Anchor>Anchor content</!Anchor>
   <a><my-accessible-text /></a>
+  <a aria-hidden="true" href="#example" tabindex="-1"><div class="box" /></a>
 </template>
 ```
 

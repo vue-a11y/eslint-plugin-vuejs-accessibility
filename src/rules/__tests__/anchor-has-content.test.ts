@@ -13,6 +13,8 @@ makeRuleTester("anchor-has-content", rule, {
     "<a><img alt='foo' /></a>",
     "<a><span v-html='msg' /></a>",
     "<a><span v-text='msg' /></a>",
+    "<a aria-hidden />",
+    "<a aria-hidden='true' href='#example' tabindex='-1'><div class='box' /></a>",
     {
       code: "<a v-accessibleDirective='msg' />",
       options: [{ accessibleDirectives: ["accessibleDirective"] }]
@@ -33,6 +35,8 @@ makeRuleTester("anchor-has-content", rule, {
       options: [{ components: ["VAnchor"] }],
       errors: [{ messageId: "default" }]
     },
-    "<a><img aria-hidden alt='foo' /></a>"
+    "<a><img aria-hidden alt='foo' /></a>",
+    "<a aria-hidden='false' />",
+    "<a role='presentation' />"
   ]
 });
