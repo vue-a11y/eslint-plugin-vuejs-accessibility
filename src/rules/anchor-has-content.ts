@@ -5,6 +5,7 @@ import {
   getElementType,
   hasAriaLabel,
   hasContent,
+  isHiddenFromScreenReader,
   makeDocsURL,
   makeKebabCase
 } from "../utils";
@@ -55,6 +56,7 @@ const rule: Rule.RuleModule = {
 
         if (
           elementTypes.includes(elementType) &&
+          !isHiddenFromScreenReader(node) &&
           !hasContent(node, accessibleChildTypes, accessibleDirectives) &&
           !hasAriaLabel(node)
         ) {
