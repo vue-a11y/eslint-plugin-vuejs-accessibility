@@ -22,7 +22,7 @@ const rule: Rule.RuleModule = {
     schema: [
       {
         type: "object",
-        elements: {
+        additionalProperties: {
           type: "array",
           items: {
             type: "string",
