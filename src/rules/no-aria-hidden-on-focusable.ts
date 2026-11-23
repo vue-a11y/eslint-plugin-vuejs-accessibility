@@ -22,8 +22,12 @@ const rule: Rule.RuleModule = {
   create(context) {
     return defineTemplateBodyVisitor(context, {
       VElement(node) {
-        const hasAriaHidden = getElementAttributeValue(node, "aria-hidden");
-        if (hasAriaHidden && hasFocusableElements(node)) {
+        const ariaHidden = getElementAttributeValue(node, "aria-hidden");
+        if (
+          ariaHidden &&
+          ariaHidden !== "false" &&
+          hasFocusableElements(node)
+        ) {
           context.report({
             node,
             messageId: "default"

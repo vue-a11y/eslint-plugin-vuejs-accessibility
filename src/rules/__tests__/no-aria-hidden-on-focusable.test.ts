@@ -8,7 +8,13 @@ makeRuleTester("no-presentation-role-or-aria-hidden-on-focusable", rule, {
     "<div><button>Submit</button></div>",
     "<a href='#' tabindex='-1'>link</a>",
     "<button tabindex='-1' aria-hidden='true'>Press</button>",
-    "<div aria-hidden='true'><a href='#' tabindex='-1'>Link</a></div>"
+    "<div aria-hidden='true'><a href='#' tabindex='-1'>Link</a></div>",
+    "<button aria-hidden='false'>Press</button>",
+    "<div aria-hidden='false'><a href='#top'>Top</a></div>",
+    "<button :tabindex='-1' aria-hidden='true'>Press</button>",
+    "<div aria-hidden='true'><button :tabindex='-1'>Press</button></div>",
+    "<input type='hidden' name='token' aria-hidden='true' />",
+    "<div aria-hidden='true'><input type='hidden' name='token' /></div>"
   ],
   invalid: [
     {
@@ -25,6 +31,14 @@ makeRuleTester("no-presentation-role-or-aria-hidden-on-focusable", rule, {
     },
     {
       code: "<span tabindex='0' aria-hidden='true'><em>Icon</em></span>",
+      errors: [{ messageId: "default" }]
+    },
+    {
+      code: "<button :tabindex='0' aria-hidden='true'>Press</button>",
+      errors: [{ messageId: "default" }]
+    },
+    {
+      code: "<div aria-hidden='true'><input type='text' /></div>",
       errors: [{ messageId: "default" }]
     }
   ]
