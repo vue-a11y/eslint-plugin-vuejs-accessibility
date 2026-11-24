@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Skip the implicit role lookup in `no-redundant-roles` for elements without a `role`
 - Skip anchors hidden with `aria-hidden` in `anchor-has-content`
+- Stop reporting `aria-hidden="false"`, `:tabindex="-1"` and `<input type="hidden">` in `no-aria-hidden-on-focusable`
 
 ## [2.5.0] - 2026-02-13
 

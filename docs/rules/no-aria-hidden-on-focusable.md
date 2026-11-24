@@ -44,6 +44,24 @@ See more in [WAI-ARIA Use in HTML](https://www.w3.org/TR/using-aria/#fourth).
 </template>
 ```
 
+```vue
+<template>
+  <button :tabindex="-1" aria-hidden="true">Press</button>
+</template>
+```
+
+```vue
+<template>
+  <div aria-hidden="false"><a href="#top">Top</a></div>
+</template>
+```
+
+```vue
+<template>
+  <div aria-hidden="true"><input type="hidden" name="token" /></div>
+</template>
+```
+
 ### ❌ Fail
 
 ```vue
